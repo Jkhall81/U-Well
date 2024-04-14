@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Open_Sans } from "next/font/google";
+import { NavBar } from "@/components/NavBar";
 
 import "./globals.css";
 
@@ -23,7 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={open_sans.className}>{children}</body>
+      <body className={open_sans.className}>
+        <NavBar />
+        <main className="h-full min-h-screen w-full">{children}</main>
+      </body>
     </html>
   );
 }

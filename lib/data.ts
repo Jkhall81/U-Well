@@ -1,6 +1,6 @@
 import slugify from "react-slugify";
 
-let navLinks = [
+let links = [
   {
     title: "Home",
   },
@@ -21,9 +21,7 @@ let navLinks = [
   },
 ];
 
-navLinks = navLinks.map((link) => ({
+export const navLinks = links.map((link) => ({
   ...link,
   href: `/${slugify(link.title)}`,
 }));
-
-export { navLinks };
