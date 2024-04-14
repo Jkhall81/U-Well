@@ -8,16 +8,16 @@ let links = [
     title: "About Us",
   },
   {
-    title: "How It Works",
+    title: "Provider Registration",
   },
   {
-    title: "Our App",
-  },
-  {
-    title: "Testimonials",
+    title: "Patient Registration",
   },
   {
     title: "Contact Us",
+  },
+  {
+    title: "Testimonials",
   },
 ];
 

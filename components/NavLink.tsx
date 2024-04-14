@@ -13,7 +13,10 @@ export const NavLink = ({ title, href }: NavLinkProps) => {
   const pathname = usePathname();
   return (
     <nav>
-      <Link className="text-white hover:text-neutral-700" href={href}>
+      <Link
+        className="font-semibold text-white hover:text-neutral-700"
+        href={href}
+      >
         {title}
       </Link>
       {pathname === href ? (

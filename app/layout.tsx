@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { NavBar } from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
@@ -26,6 +27,14 @@ export default function RootLayout({
       <body className={open_sans.className}>
         <NavBar />
         <main className="h-full min-h-screen w-full">{children}</main>
+
+        {/* Footer  */}
+        <div className="absolute bottom-0 z-40 flex h-[300px] w-full">
+          <div className="w-[50%]"></div>
+          <div className="w-[50%] pt-[50px]">
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
