@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { PatientRegistrationSteps } from "@/lib/data";
 import { StepStandardAlpha } from "./formsteps/StepStandardAlpha";
 import { StepNumberSelect } from "./formsteps/StepNumberSelect";
+import { IoChevronBack } from "react-icons/io5";
 
 type Inputs = {
   [step: string | number]: string;
@@ -14,7 +14,6 @@ type Inputs = {
 export const MultiStepForm = () => {
   const stepData = PatientRegistrationSteps;
   const [currentStep, setCurrentStep] = useState(0);
-  const [previousStep, setPreviousStep] = useState(0);
 
   const onSubmit = (data: Inputs) => {
     console.log(data);
@@ -23,7 +22,6 @@ export const MultiStepForm = () => {
   const {
     handleSubmit,
     setValue,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -46,9 +44,28 @@ export const MultiStepForm = () => {
     ) : null;
   });
 
+  const handlePrevious = (currentStep: number) => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
+
+  useEffect(() => {
+    if (currentStep === 31) {
+      handleSubmit(onSubmit)();
+    }
+  }, [currentStep, handleSubmit]);
+
   console.log(currentStep);
   return (
     <section className="z-50 flex justify-center pt-2">
+      <div
+        onClick={() => handlePrevious(currentStep)}
+        className="absolute left-5 z-40 mt-[200px] flex items-center hover:cursor-pointer"
+      >
+        <IoChevronBack color="white" size={40} />
+        <span className="text-2xl font-semibold text-white">Previous Step</span>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Step 1 */}
         {currentStep === 0 && (
@@ -74,8 +91,6 @@ export const MultiStepForm = () => {
 
         {/* Render steps 3 to 31 */}
         {stepComponents}
-
-        <Button type="submit">Submit</Button>
       </form>
     </section>
   );
