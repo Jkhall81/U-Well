@@ -29,9 +29,9 @@ export default function RootLayout({
         <main className="h-full min-h-screen w-full">{children}</main>
 
         {/* Footer  */}
-        <div className="absolute bottom-0 z-40 flex h-[300px] w-full">
+        <div className="absolute bottom-0 z-30 flex h-[300px] w-full">
           <div className="w-[50%]"></div>
-          <div className="w-[50%] pt-[50px]">
+          <div className="w-[50%] pt-[220px]">
             <Footer />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Footer } from "@/components/Footer";
+import { MultiStepForm } from "@/components/MultiStepForm";
 
 const PatientRegistrationPage = () => {
   return (
@@ -6,25 +6,20 @@ const PatientRegistrationPage = () => {
       {/* Background Stuff */}
       <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
       <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
-      <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
+      <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 mix-blend-multiply" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full">
-        {/* Left Heading and Paragraph Text */}
-        <div className="flex h-full w-[50%] flex-col">
-          <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]"></div>
-          <div className="flex h-[55%] w-full items-center justify-center pl-[45px]"></div>
+      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full flex-col border border-red-600">
+        <div className="flex w-full items-center justify-center px-5">
+          <h1 className="prose-2xl text-white">
+            Please answer all questions as open and honest as possible. We use
+            these to help match you to a provider that will mesh well with your
+            needs and values.
+          </h1>
         </div>
-        {/* Image */}
-        <div className="flex h-full w-[50%]">
-          <div className="flex h-full w-[50%] flex-col pt-[220px]"></div>
-          <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
-        </div>
-      </div>
-      <div className="absolute bottom-0 z-40 flex h-[300px] w-full">
-        <div className="w-[50%]"></div>
-        <div className="w-[50%] pt-[50px]">
-          <Footer />
+        {/* Form Container */}
+        <div className="h-full w-full border border-red-600">
+          <MultiStepForm />
         </div>
       </div>
     </main>

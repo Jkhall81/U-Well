@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { NavLink } from "./NavLink";
@@ -17,7 +19,7 @@ export const NavBar = () => {
           />
         </Link>
       </div>
-      <div className="flex gap-6">
+      <div className="hidden gap-6 lg:flex">
         {navLinks.map((item, index) => {
           return <NavLink key={index} title={item.title} href={item.href} />;
         })}

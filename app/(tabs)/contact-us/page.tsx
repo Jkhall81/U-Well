@@ -228,8 +228,9 @@ const ContactUsPage = () => {
         </div>
         {/* Image */}
         <div className="flex h-full w-[50%]">
-          <div className="flex h-full w-[50%] flex-col pt-[220px]"></div>
-          <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
+          <div className="animate-blob absolute right-[200px] top-[300px] h-[300px] w-[300px] rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
+          <div className="animate-blob animation-delay-2000 absolute right-8 top-40 h-72 w-72 rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
+          <div className="animation-delay-4000 animate-blob absolute top-[390px] h-[350px] w-[350px] rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
         </div>
       </div>
 
