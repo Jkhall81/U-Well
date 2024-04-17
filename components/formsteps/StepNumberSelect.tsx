@@ -7,6 +7,7 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { cn } from "@/lib/utils";
 
 import {
   Form,
@@ -68,7 +69,7 @@ export const StepNumberSelect = ({
         render={({ field }) => (
           <FormItem>
             <Select onValueChange={handleClick}>
-              <SelectTrigger className="w-[600px]">
+              <SelectTrigger className="w-[600px] rounded-3xl">
                 <SelectValue placeholder="Select your age." />
               </SelectTrigger>
               <SelectContent>

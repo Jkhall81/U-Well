@@ -4,6 +4,8 @@
 
 import { Button } from "../ui/button";
 import { striptQuotes } from "@/lib/utils";
+import { cn } from "@/lib/utils";
+import { CSSTransition } from "react-transition-group";
 
 interface StepStandardAlphaProps {
   question: string;
@@ -30,18 +32,23 @@ export const StepStandardAlpha = ({
       <h1 className="prose mx-auto px-5 text-3xl font-bold text-white">
         {question}
       </h1>
-      <div className="flex w-[640px] flex-col items-center gap-4 rounded-md py-10 shadow-md shadow-gray-600">
+
+      <div
+        className={cn(
+          "flex w-[640px] flex-col items-center gap-4 rounded-md py-10 shadow-md shadow-gray-600",
+        )}
+      >
         {answers.map((answer: string, index) => {
           return (
             <Button
-              className="w-[600px] rounded-2xl hover:bg-blue-600 hover:text-white"
+              className="w-[600px] rounded-3xl hover:bg-blue-600 hover:text-white"
               onClick={() => handleClick(answer)}
               value={answer}
               variant="outline"
               size="lg"
               key={index}
             >
-              <span className="text-xl font-semibold">
+              <span className="text-lg font-semibold">
                 {striptQuotes(answer)}
               </span>
             </Button>

@@ -1,5 +1,3 @@
-import { Footer } from "@/components/Footer";
-
 const ProviderRegistrationPage = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
@@ -23,9 +21,7 @@ const ProviderRegistrationPage = () => {
       </div>
       <div className="absolute bottom-0 z-40 flex h-[300px] w-full">
         <div className="w-[50%]"></div>
-        <div className="w-[50%] pt-[50px]">
-          <Footer />
-        </div>
+        <div className="w-[50%] pt-[50px]"></div>
       </div>
     </main>
   );

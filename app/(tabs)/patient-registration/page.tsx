@@ -9,7 +9,7 @@ const PatientRegistrationPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 mix-blend-multiply" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full flex-col border border-red-600">
+      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full flex-col">
         <div className="flex w-full items-center justify-center px-5">
           <h1 className="prose-2xl text-white">
             Please answer all questions as open and honest as possible. We use
@@ -18,7 +18,7 @@ const PatientRegistrationPage = () => {
           </h1>
         </div>
         {/* Form Container */}
-        <div className="h-full w-full border border-red-600">
+        <div className="h-full w-full">
           <MultiStepForm />
         </div>
       </div>
