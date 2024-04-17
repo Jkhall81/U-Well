@@ -1,4 +1,4 @@
-export const TestimonialsPage = () => {
+const TestimonialsPage = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
       {/* Background Stuff */}
