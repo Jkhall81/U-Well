@@ -6,7 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="flex justify-evenly">
+    <footer className="flex h-full w-full justify-evenly">
       <Link href="/">
         <FaYoutube color="white" size={70} />
       </Link>

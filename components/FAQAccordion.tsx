@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Separator } from "./ui/separator";
 import { FAQData } from "@/lib/data";
 
 export const FAQAccordion = () => {
@@ -13,16 +14,27 @@ export const FAQAccordion = () => {
         return (
           <Accordion key={index} type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-2xl">
+              <Separator />
+              <AccordionTrigger className="py-8 text-left text-4xl font-bold">
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="">
-                <p>{item.answer}</p>
+                {item.answer.map((paragraph, index) => {
+                  return (
+                    <p
+                      className="mt-5 pb-4 text-3xl font-medium leading-tight"
+                      key={index}
+                    >
+                      {paragraph}
+                    </p>
+                  );
+                })}
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         );
       })}
+      <div className="h-[200px]"></div>
     </section>
   );
 };
