@@ -318,8 +318,10 @@ export const FAQData = [
   {
     question: "How do I schedule an online visit and how long does it last?",
     answer: `You can schedule an online visit by using our website or mobile application and selecting the provider and time slot that suits you. You can choose from 30, 45, or 60 minute sessions depending on your needs and availability. You will receive a confirmation email and a reminder before your scheduled visit.
+    
 
-    The fees and payment options for the online visits and the mobile application service vary depending on your insurance coverage and the type and length of the session. You can pay with cash, credit card, debit card, or PayPal. You will be able to see the cost of the visit before you book it and you will only be charged after the visit is completed. We do not have any hidden costs or fees. If you have any questions about the fees and payment options, you can contact our customer support team at any time.`,
+    The fees and payment options for the online visits and the mobile application service vary depending on your insurance coverage and the type and length of the session. You can pay with cash, credit card, debit card, or PayPal. You will be able to see the cost of the visit before you book it and you will only be charged after the visit is completed. We do not have any hidden costs or fees. If you have any questions about the fees and payment options, you can contact our customer support team at any time.
+    `,
   },
   {
     question:

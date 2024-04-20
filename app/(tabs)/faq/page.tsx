@@ -1,3 +1,5 @@
+import { FAQAccordion } from "@/components/FAQAccordion";
+
 const FAQPage = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
@@ -7,7 +9,9 @@ const FAQPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full"></div>
+      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full">
+        <FAQAccordion />
+      </div>
     </main>
   );
 };
