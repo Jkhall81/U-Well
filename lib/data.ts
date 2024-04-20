@@ -8,6 +8,9 @@ let links = [
     title: "About Us",
   },
   {
+    title: "FAQ",
+  },
+  {
     title: "Provider Registration",
   },
   {
@@ -15,9 +18,6 @@ let links = [
   },
   {
     title: "Contact Us",
-  },
-  {
-    title: "Testimonials",
   },
 ];
 
@@ -305,5 +305,83 @@ export const PatientRegistrationSteps = [
     question:
       "Are you currently experiencing anxiety, panic attacks or have any phobias?",
     answers: ["Yes", "No"],
+  },
+];
+
+export const FAQData = [
+  {
+    question:
+      "What are the qualifications and credentials of the mental health professionals who provide online visits?",
+    answer:
+      "Our providers come from all backgrounds and walks of life, and the licensure is no different. We work with everyone from peer counselors to psychologists and all other mental health professionals. You can view the profiles of our providers on our website or mobile application and choose the one that best suits your needs and preferences. All our providers are licensed and qualified to provide online mental health services in accordance with the laws and regulations of their jurisdiction.",
+  },
+  {
+    question: "How do I schedule an online visit and how long does it last?",
+    answer: `You can schedule an online visit by using our website or mobile application and selecting the provider and time slot that suits you. You can choose from 30, 45, or 60 minute sessions depending on your needs and availability. You will receive a confirmation email and a reminder before your scheduled visit.
+
+    The fees and payment options for the online visits and the mobile application service vary depending on your insurance coverage and the type and length of the session. You can pay with cash, credit card, debit card, or PayPal. You will be able to see the cost of the visit before you book it and you will only be charged after the visit is completed. We do not have any hidden costs or fees. If you have any questions about the fees and payment options, you can contact our customer support team at any time.`,
+  },
+  {
+    question:
+      "What are the fees and payment options for the online visits and the mobile application service?",
+    answer: `You can download the mobile application for free from the Google Play or Apple Store and use it to schedule and access your online visits with our mental health professionals.
+
+    You can also use our website to schedule and access your online visits if you prefer a browser-based option.
+
+    The fees for the online visits depend on your insurance coverage and the type and length of the session. You can choose from 30, 45, or 60 minute sessions depending on your needs and availability. You will be able to see the cost of the visit before you book it and you will only be charged after the visit is completed. We do not have any hidden costs or fees.
+
+    You can pay for the online visits with credit card, debit card, or PayPal. You can also use in-app purchases to pay for the online visits if you use the mobile application. You can manage your subscriptions and payments from the website or the mobile application at any time.
+
+    If you have any questions about the fees and payment options, you can contact our customer support team at any time.`,
+  },
+  {
+    question:
+      "What are the privacy and security policies and practices of the mobile application service and how is my personal and health information protected?",
+    answer: `We take your privacy and security very seriously and we follow the highest standards of data protection. Our mobile application service is HIPAA compliant, which means that we adhere to the federal law that protects your personal and health information from unauthorized access or disclosure. All of our data is encrypted using advanced encryption algorithms and stored in secure servers.
+
+    We also ensure that our partner platforms for practice management and electronic health records are HIPAA compliant and have the same level of data protection as we do. We do not sell or give away any of your data to third parties and we do not use your data for any purpose outside of U-Well Health. You can review our terms of service and privacy notice for detailed information on how we collect, use, and safeguard your data.
+
+    You can also control your own privacy settings and choose what information you want to share with the mental health professional during the online visit. You can access and update your privacy settings from the website or the mobile application at any time.`,
+  },
+  {
+    question:
+      "How do I communicate with the mental health professional during the online visit and what are the options for audio and video?",
+    answer: `To communicate with the mental health professional during the online visit, you can use our secure and encrypted platform that is integrated with Zoom. You can access the platform from the website or the mobile application and join the online visit with a simple click. You do not need to download or install any additional software or create a separate Zoom account.
+
+    You can choose between audio and video options for the online visit, depending on your preference and internet connection. However, we recommend using video as much as possible, as it allows the mental health professional to see your facial expressions, body language, and other non-verbal cues that are important for effective communication and diagnosis. Video also helps create a more personal and engaging experience that is closer to an in-person visit.`,
+  },
+  {
+    question:
+      "What are the benefits and limitations of online visits compared to in-person visits?",
+    answer: `Online visits have many benefits compared to in-person visits, such as convenience, accessibility, affordability, and privacy. You can receive mental health care from the comfort of your own home or wherever you feel most comfortable, without having to travel, take time off work, or deal with waiting rooms. You can also access a wider range of mental health professionals across the country, who may have different expertise, experience, and availability than those in your local area. Online visits can also be more affordable than in-person visits, as they may have lower fees or be covered by your insurance. Additionally, online visits can offer more privacy and anonymity than in-person visits, as you do not have to disclose your identity or location to anyone except the mental health professional you are seeing.
+    
+    However, online visits also have some limitations compared to in-person visits, such as technical issues, quality of connection, security risks, and lack of physical presence. Technical issues such as internet outage, device malfunction, or software glitches can disrupt or cancel your online visit, which can be frustrating and stressful. Quality of connection can also affect your online visit, as poor audio or video quality can make it hard to hear or see the mental health professional clearly, or cause delays or interruptions in the conversation. Security risks can also arise if your online visit is hacked, recorded, or leaked by malicious third parties, which can compromise your confidentiality and privacy. Finally, online visits lack the physical presence and human touch that in-person visits offer, which can make it harder to establish rapport, trust, and empathy with the mental health professional, or to convey subtle emotions and signals that are essential for effective communication and diagnosis.`,
+  },
+  {
+    question:
+      "How do I provide feedback and ratings for the online visits and the mobile application service?",
+    answer: `To provide feedback and ratings for the online visits and the mobile application service, you can use the in-app rating system that is available after your appointment. You will have the opportunity to rate your provider on a scale of 1 to 5 stars and leave feedback about your experience. This is completely anonymous and will not affect your relationship with your provider or the quality of care you receive. Your feedback and ratings will help us improve our service and match you with the best provider for your needs. Thank you for using our mobile application service for your mental health care.`,
+  },
+  {
+    question:
+      "What are the emergency procedures and protocols in case of a crisis or a technical issue during the online visit?",
+    answer: `If you are experiencing a crisis or a technical issue during the online visit, you can use the integrated crisis support feature that is available on the mobile application. By clicking on the crisis support button, you will be immediately connected to a live person who can assist you with your situation. The crisis support person will assess your level of risk and provide you with appropriate resources and referrals. They will also notify your provider and help you reschedule your appointment if needed. Our goal is to ensure you get the help you need when you need it. Please do not hesitate to use the crisis support feature if you feel unsafe or distressed during the online visit.`,
+  },
+  {
+    question:
+      "How do I access additional resources and support from the mobile application service such as self-help tools, peer support, or referrals?",
+    answer: `To access additional resources and support from the mobile application service, you can use the menu icon on the top left corner of the screen. Once you tap on the menu icon, you will see a list of options that include self-help tools, peer support, referrals, and more. Our self-help tools include motivational speakers, life coaches, calming music, journaling, and other activities that can help you cope with stress, anxiety, depression, or any other mental health challenges. Our peer support option allows you to join online communities and chat groups where you can share your experiences and learn from others who are going through similar situations. Our referrals option provides you with a directory of local and online resources that can offer you additional support and guidance, such as counseling centers, crisis hotlines, wellness centers, and more. We are constantly adding new features and services to our mobile application to help you along your wellness journey. You can also provide us with feedback and suggestions on how we can improve our service by using the contact us option on the menu. We hope you enjoy using our mobile application service and find it beneficial for your mental health and well-being. How do I manage my account and preferences on the mobile application service and how can I change or cancel my subscription? How do I contact the customer service or technical support of the mobile application service if I have any questions or concerns? How do I verify the identity and authenticity of the mental health professional and the mobile application service?`,
+  },
+  {
+    question:
+      "How do I contact the customer service or technical support of the mobile application service if I have any questions or concerns?",
+    answer:
+      "If you have any questions or concerns about the mobile application service, you can contact us by using the contact us form on our website. You can also leave feedback in the application by tapping on the feedback option on the menu. We appreciate your comments and suggestions and we will try to respond to your inquiries as soon as possible. We value your satisfaction and trust and we are committed to providing you with the best service possible.",
+  },
+  {
+    question:
+      "How do I verify the identity and authenticity of the mental health professional and the mobile application service?",
+    answer:
+      "To verify the identity and authenticity of the mental health professional and the mobile application service, you can check the credentials and licenses of our providers on our website. Our providers are all licensed and credentialed with their respective state and federal agencies. Licensing for any of our providers can be supplied upon request. You can also verify the security and privacy of the mobile application service by reading our terms of service and privacy policy. We use encryption and other measures to protect your personal information and data. We comply with all applicable laws and regulations regarding mental health services and online platforms.",
   },
 ];

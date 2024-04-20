@@ -1,4 +1,4 @@
-const TestimonialsPage = () => {
+const FAQPage = () => {
   return (
     <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
       {/* Background Stuff */}
@@ -12,4 +12,4 @@ const TestimonialsPage = () => {
   );
 };
 
-export default TestimonialsPage;
+export default FAQPage;
