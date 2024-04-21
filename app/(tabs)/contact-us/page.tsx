@@ -43,7 +43,7 @@ const ContactUsPage = () => {
   };
 
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
+    <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
       <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
       <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
@@ -228,9 +228,9 @@ const ContactUsPage = () => {
         </div>
         {/* Image */}
         <div className="flex h-full w-[50%]">
-          <div className="animate-blob absolute right-[200px] top-[300px] h-[300px] w-[300px] rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
-          <div className="animate-blob animation-delay-2000 absolute right-8 top-40 h-72 w-72 rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
-          <div className="animation-delay-4000 animate-blob absolute top-[390px] h-[350px] w-[350px] rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
+          <div className="absolute right-[200px] top-[300px] h-[300px] w-[300px] animate-blob rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
+          <div className="animation-delay-2000 absolute right-8 top-40 h-72 w-72 animate-blob rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
+          <div className="animation-delay-4000 absolute top-[390px] h-[350px] w-[350px] animate-blob rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
         </div>
       </div>
 

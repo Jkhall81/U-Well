@@ -1,6 +1,6 @@
 const AboutUsPage = () => {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
+    <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
       <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
       <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />

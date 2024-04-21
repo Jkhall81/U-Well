@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -8,14 +11,24 @@ import { Separator } from "./ui/separator";
 import { FAQData } from "@/lib/data";
 
 export const FAQAccordion = () => {
+  const [solidNav, setSolidNav] = useState(false);
+  console.log(solidNav);
   return (
     <section className="px-14 text-white">
       {FAQData.map((item, index) => {
         return (
-          <Accordion key={index} type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
+          <Accordion
+            key={index}
+            type="single"
+            collapsible
+            className="w-full px-[90px]"
+          >
+            <AccordionItem value={`item-${index + 1}`}>
               <Separator />
-              <AccordionTrigger className="py-8 text-left text-4xl font-bold">
+              <AccordionTrigger
+                onClick={() => setSolidNav(!solidNav)}
+                className="py-8 text-left text-3xl font-bold text-blue-800"
+              >
                 {item.question}
               </AccordionTrigger>
               <AccordionContent className="">

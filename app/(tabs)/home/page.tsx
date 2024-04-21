@@ -1,10 +1,9 @@
 import Image from "next/image";
-import { Footer } from "@/components/Footer";
 import { raleway } from "@/lib/fonts";
 
 const HomePage = () => {
   return (
-    <main className="relative min-h-screen w-full overflow-hidden bg-blue-500">
+    <main className="relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
       <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
       <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
@@ -15,16 +14,16 @@ const HomePage = () => {
         {/* Left Heading and Paragraph Text */}
         <div className="flex h-full w-[50%] flex-col">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
-            <h1 className={`3xl:pl-[200px] text-9xl font-semibold text-white`}>
+            <h1 className={`text-9xl font-semibold text-white 3xl:pl-[200px]`}>
               U-Well
             </h1>
-            <h1 className="3xl:pl-[200px] text-9xl font-semibold text-white">
+            <h1 className="text-9xl font-semibold text-white 3xl:pl-[200px]">
               Health
             </h1>
           </div>
-          <div className="3xl:pl-[250px] flex h-[55%] w-full items-center justify-center pl-[45px] 2xl:w-[900px]">
+          <div className="flex h-[55%] w-full items-center justify-center pl-[45px] 2xl:w-[900px] 3xl:pl-[250px]">
             <p
-              className={`prose-2xl font-semibold text-white ${raleway.className}`}
+              className={`prose-2xl pr-4 font-semibold text-white ${raleway.className}`}
             >
               At U-Well, we understand that your mental well-being is a
               priority. That&#39;s why we offer personalized mental health
@@ -39,7 +38,7 @@ const HomePage = () => {
 
         {/* Image */}
         <div className="flex h-full w-[50%]">
-          <div className="4xl:flex absolute ml-[-350px] mt-[-50px] hidden">
+          <div className="absolute ml-[-350px] mt-[-50px] hidden 4xl:flex">
             <Image
               src="/landing_page_image.png"
               alt="cell phone"
@@ -50,7 +49,7 @@ const HomePage = () => {
           </div>
           {/* Left Image Block */}
 
-          <div className="4xl:pl-[300px] 3xl:pl-[180px] flex h-full w-[50%] flex-col pt-[220px] 2xl:pl-[90px]">
+          <div className="flex h-full w-[50%] flex-col pr-6 pt-[220px] 2xl:pl-[90px] 3xl:pl-[180px] 4xl:pl-[300px]">
             <Image
               src="/smiling_people/smiling_woman_1.png"
               alt="smiling woman"
