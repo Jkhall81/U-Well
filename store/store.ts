@@ -6,7 +6,6 @@ type NavStore = {
   setNavSolidFalse: () => void;
 };
 
-// store
 export const useNavStore = create<NavStore>((set) => ({
   navSolid: false,
   setNavSolidTrue: () => {
