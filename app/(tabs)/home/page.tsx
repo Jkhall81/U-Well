@@ -3,9 +3,26 @@
 import Image from "next/image";
 import { raleway } from "@/lib/fonts";
 import { fadeIn } from "@/lib/utils";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { useFooterStore } from "@/store/store";
+import { splitStringUsingRegex } from "@/lib/utils";
+
+// Text reveal animation constants
+const text = `At U-Well, we understand that your mental well-being is a
+priority. That's why we offer personalized mental health
+solutions designed to fit your unique needs and those of your
+family. Our customized surveys, telehealth sessions, and
+collaboration opportunities for organizations empower you to take
+control of your mental health journey. Because we believe that
+everyone deserves tailored care and the opportunity to be well.`;
+
+const textChars = splitStringUsingRegex(text);
+
+const charVariants = {
+  hidden: { opacity: 0 },
+  reveal: { opacity: 1 },
+};
 
 const HomePage = () => {
   const yHeight = useFooterStore((state) => state.pageHeight);
@@ -31,17 +48,22 @@ const HomePage = () => {
             </h1>
           </div>
           <div className="flex h-[55%] w-full items-center justify-center pl-[45px] 2xl:w-[900px] 3xl:pl-[250px]">
-            <p
+            <motion.p
+              initial="hidden"
+              whileInView="reveal"
+              transition={{ staggerChildren: 0.01 }}
               className={`prose-2xl pr-4 font-semibold text-white ${raleway.className}`}
             >
-              At U-Well, we understand that your mental well-being is a
-              priority. That&#39;s why we offer personalized mental health
-              solutions designed to fit your unique needs and those of your
-              family. Our customized surveys, telehealth sessions, and
-              collaboration opportunities for organizations empower you to take
-              control of your mental health journey. Because we believe that
-              everyone deserves tailored care and the opportunity to be well.
-            </p>
+              {textChars.map((char) => (
+                <motion.span
+                  key={char}
+                  transition={{ duration: 0.04 }}
+                  variants={charVariants}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.p>
           </div>
         </div>
 
