@@ -25,18 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn(" h-full min-h-screen ", open_sans.className)}>
+      <body className={cn("h-full min-h-screen", open_sans.className)}>
         <NavBar />
         <main className=" h-full min-h-screen w-full ">{children}</main>
 
         {/* Footer  */}
-        <div className="absolute bottom-0 flex h-[300px] w-full">
-          <div className="w-[50%]"></div>
-          <div className="w-[50%] pt-[220px]">
-            <Footer />
-          </div>
-        </div>
-        <div className="absolute left-0 top-0 h-screen w-full bg-black/20 bg-gradient-to-r from-black" />
+        <div className="absolute bottom-0 flex w-full"></div>
+        <div className="overflow-y absolute left-0 top-0 h-screen w-full bg-black/20 bg-gradient-to-r from-black" />
       </body>
     </html>
   );

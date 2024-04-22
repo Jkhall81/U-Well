@@ -47,7 +47,7 @@ export const FAQAccordion = () => {
               <Separator />
               <AccordionTrigger
                 onClick={() => toggleAccordion(index)}
-                className="py-8 text-left text-3xl font-bold text-neutral-500"
+                className="py-8 text-left text-3xl font-bold text-neutral-300"
               >
                 {item.question}
               </AccordionTrigger>

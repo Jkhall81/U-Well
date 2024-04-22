@@ -4,8 +4,13 @@ import Image from "next/image";
 import { raleway } from "@/lib/fonts";
 import { fadeIn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { Footer } from "@/components/Footer";
+import { useFooterStore } from "@/store/store";
 
 const HomePage = () => {
+  const yHeight = useFooterStore((state) => state.pageHeight);
+
+  console.log(yHeight);
   return (
     <main className="relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -68,28 +73,36 @@ const HomePage = () => {
                   className="ml-[50px] rounded-2xl rounded-tl-[120px]"
                 />
               </motion.div>
-              <motion.div
-                variants={fadeIn("up", 0.6)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
-                className="mt-8 flex w-full"
-              >
-                <Image
-                  src="/smiling_people/smiling_woman_2.png"
-                  alt="smiling woman"
-                  height={100}
-                  width={130}
-                  className="ml-[10px] rounded-2xl rounded-bl-[60px]"
-                />
-                <Image
-                  src="/smiling_people/smiling_man_2.png"
-                  alt="smiling man"
-                  height={130}
-                  width={130}
-                  className="ml-[31px] rounded-2xl rounded-br-[60px]"
-                />
-              </motion.div>
+              <div className="mt-8 flex w-full">
+                <motion.div
+                  variants={fadeIn("right", 0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.4 }}
+                >
+                  <Image
+                    src="/smiling_people/smiling_woman_2.png"
+                    alt="smiling woman"
+                    height={100}
+                    width={130}
+                    className="ml-[10px] rounded-2xl rounded-bl-[60px]"
+                  />
+                </motion.div>
+                <motion.div
+                  variants={fadeIn("left", 0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: false, amount: 0.4 }}
+                >
+                  <Image
+                    src="/smiling_people/smiling_man_2.png"
+                    alt="smiling man"
+                    height={130}
+                    width={130}
+                    className="ml-[31px] rounded-2xl rounded-br-[60px]"
+                  />
+                </motion.div>
+              </div>
             </div>
 
             {/* Right Image Block */}
@@ -137,6 +150,12 @@ const HomePage = () => {
                 />
               </motion.div>
             </div>
+          </div>
+          <div
+            style={{ marginTop: `${yHeight}px` }}
+            className={`absolute left-0 flex w-full items-center justify-between pb-2`}
+          >
+            <Footer />
           </div>
         </div>
       </div>

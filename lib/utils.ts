@@ -5,10 +5,12 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+// Was going to use this, but didn't end up needing it
 export const striptQuotes = (str: string) => {
   return str.replace(/^['"]|['"]$/g, "");
 };
 
+// Animation function
 export const fadeIn = (direction: string, delay: number) => {
   return {
     hidden: {
@@ -35,3 +37,15 @@ export const fadeIn = (direction: string, delay: number) => {
     },
   };
 };
+
+export function splitStringUsingRegex(inputString: string): string[] {
+  const characters: string[] = [];
+  const regex = /[\s\S]/gu;
+
+  let match;
+
+  while ((match = regex.exec(inputString)) !== null) {
+    characters.push(match[0]);
+  }
+  return characters;
+}

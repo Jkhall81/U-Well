@@ -11,11 +11,12 @@ export const NavBar = () => {
   const navState = useNavStore((state) => state.navSolid);
   console.log("navState", navState);
 
+  //`${navState ? "bg-sky-600" : ""}`,
+
   return (
     <nav
       className={cn(
         "fixed right-0 top-0 z-50 flex h-[110px] w-full items-center justify-between px-12",
-        `${navState ? "bg-sky-600" : ""}`,
       )}
     >
       <div>

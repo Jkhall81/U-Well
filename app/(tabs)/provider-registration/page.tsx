@@ -1,4 +1,10 @@
+"use client";
+
+import { Footer } from "@/components/Footer";
+import { useFooterStore } from "@/store/store";
+
 const ProviderRegistrationPage = () => {
+  const yHeight = useFooterStore((state) => state.pageHeight);
   return (
     <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -18,10 +24,12 @@ const ProviderRegistrationPage = () => {
           <div className="flex h-full w-[50%] flex-col pt-[220px]"></div>
           <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
         </div>
-      </div>
-      <div className="absolute bottom-0 z-40 flex h-[300px] w-full">
-        <div className="w-[50%]"></div>
-        <div className="w-[50%] pt-[50px]"></div>
+        <div
+          style={{ marginTop: `${yHeight}px` }}
+          className={`absolute left-0 flex w-full items-center justify-between pb-2`}
+        >
+          <Footer />
+        </div>
       </div>
     </main>
   );

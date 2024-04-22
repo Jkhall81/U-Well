@@ -1,6 +1,11 @@
+"use client";
+
 import { MultiStepForm } from "@/components/MultiStepForm";
+import { Footer } from "@/components/Footer";
+import { useFooterStore } from "@/store/store";
 
 const PatientRegistrationPage = () => {
+  const yHeight = useFooterStore((state) => state.pageHeight);
   return (
     <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -20,6 +25,12 @@ const PatientRegistrationPage = () => {
         {/* Form Container */}
         <div className="h-full w-full">
           <MultiStepForm />
+        </div>
+        <div
+          style={{ marginTop: `${yHeight}px` }}
+          className={`absolute left-0 flex w-full items-center justify-between pb-2`}
+        >
+          <Footer />
         </div>
       </div>
     </main>

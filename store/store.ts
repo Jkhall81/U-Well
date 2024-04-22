@@ -6,6 +6,11 @@ interface NavStore {
   setNavSolidFalse: () => void;
 }
 
+interface FooterStore {
+  pageHeight: number;
+  setPageHeight: (value: number) => void;
+}
+
 export const useNavStore = create<NavStore>((set) => ({
   navSolid: false,
   setNavSolidTrue: () => {
@@ -13,5 +18,12 @@ export const useNavStore = create<NavStore>((set) => ({
   },
   setNavSolidFalse: () => {
     set({ navSolid: false });
+  },
+}));
+
+export const useFooterStore = create<FooterStore>((set) => ({
+  pageHeight: 0,
+  setPageHeight: (value: number) => {
+    set({ pageHeight: value });
   },
 }));
