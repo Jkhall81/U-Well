@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { MobileNav } from "@/components/MobileNav";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn("h-full min-h-screen", open_sans.className)}>
         <NavBar />
+        <MobileNav />
         <main className=" h-full min-h-screen w-full ">{children}</main>
 
         {/* Footer  */}
