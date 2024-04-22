@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
 import { Footer } from "@/components/Footer";
-import { useFooterStore } from "@/store/store";
 import { FAQData } from "@/lib/data";
 import { useNavStore } from "@/store/store";
 

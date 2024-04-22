@@ -36,14 +36,16 @@ const HomePage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full">
+      <div className="absolute z-40 mt-[150px] h-[800px] w-full lg:flex">
         {/* Left Heading and Paragraph Text */}
-        <div className="flex h-full w-[50%] flex-col">
+        <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
-            <h1 className={`text-9xl font-semibold text-white 3xl:pl-[200px]`}>
+            <h1
+              className={`text-8xl font-semibold text-white lg:text-9xl 3xl:pl-[200px]`}
+            >
               U-Well
             </h1>
-            <h1 className="text-9xl font-semibold text-white 3xl:pl-[200px]">
+            <h1 className="text-8xl font-semibold text-white lg:text-9xl 3xl:pl-[200px]">
               Health
             </h1>
           </div>

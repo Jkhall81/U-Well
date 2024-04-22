@@ -20,7 +20,7 @@ export const MobileNav = () => {
       />
       <aside
         className={cn(
-          "fixed bottom-0 top-0 z-50 w-full bg-black p-10 transition-all duration-500",
+          "fixed bottom-0 top-0 z-50 w-full bg-black/90 p-10 transition-all duration-500",
           isOpen ? "right-0" : "-right-full",
         )}
       >
@@ -28,9 +28,9 @@ export const MobileNav = () => {
           {/* nav close btn */}
           <div
             onClick={() => setIsOpen(false)}
-            className="absolute right-8 top-8 flex h-10 w-10 cursor-pointer items-center justify-center text-4xl text-white"
+            className="absolute right-8 top-8 flex cursor-pointer items-center justify-center text-4xl text-white"
           >
-            <IoCloseOutline />
+            <IoCloseOutline size={55} />
           </div>
           <div className="flex h-full flex-col items-center justify-center gap-y-8">
             {navLinks.map((link, index) => {

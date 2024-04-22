@@ -49,8 +49,8 @@ export const MultiStepForm = () => {
         onClick={() => handlePrevious(currentStep)}
         className="absolute left-5 mt-[200px] flex items-center hover:cursor-pointer"
       >
-        <IoChevronBack color="white" size={40} />
-        <span className="text-2xl font-semibold text-white">Previous Step</span>
+        {/* <IoChevronBack color="white" size={40} />
+        <span className="text-2xl font-semibold text-white">Previous Step</span> */}
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* Step 1 */}

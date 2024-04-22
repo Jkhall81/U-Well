@@ -13,7 +13,7 @@ const FAQPage = () => {
       {/* Above Background Content */}
       <div className="absolute z-40 mt-[150px] flex h-full w-full flex-col items-center ">
         <div className="mb-12 py-16">
-          <h1 className="text-9xl font-semibold text-white">
+          <h1 className="text-center text-8xl font-semibold text-white lg:text-9xl">
             Frequently asked questions
           </h1>
         </div>

@@ -59,7 +59,7 @@ const ContactUsPage = () => {
         {/* Left Header and Form Container*/}
         <div className="flex h-full w-full  flex-col items-center pt-[50px]">
           <h1 className="pl-5 text-9xl font-semibold text-white">Contact us</h1>
-          <p className="prose px-5 py-10 pt-10 text-3xl text-white">
+          <p className="prose px-5 py-10 pt-10 text-center text-3xl text-white lg:text-left">
             Whatever your needs, we can help. Please complete the form below and
             we will begin assisting you immediately.
           </p>
@@ -232,7 +232,7 @@ const ContactUsPage = () => {
           </Form>
         </div>
         {/* Image */}
-        <div className="flex h-full">
+        <div className="hidden h-full 4xl:flex">
           <div className="absolute right-[200px] top-[300px] h-[400px] w-[450px] animate-blob rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-2000 absolute right-8 top-40 h-[340px] w-[340px] animate-blob rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-4000 absolute right-[350px] top-[390px] h-[550px] w-[550px] animate-blob rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
