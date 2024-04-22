@@ -14,7 +14,7 @@ export const NavLink = ({ title, href }: NavLinkProps) => {
   return (
     <nav>
       <Link
-        className="text-xl font-semibold text-white hover:text-neutral-700"
+        className="select-none text-xl font-semibold text-white hover:text-neutral-700"
         href={href}
       >
         {title}

@@ -36,6 +36,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <div className="absolute left-0 top-0 h-screen w-full bg-black/20 bg-gradient-to-r from-black" />
       </body>
     </html>
   );

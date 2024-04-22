@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { raleway } from "@/lib/fonts";
+import { fadeIn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   return (
@@ -37,8 +41,8 @@ const HomePage = () => {
         </div>
 
         {/* Image */}
-        <div className="flex h-full w-[50%]">
-          <div className="absolute ml-[-350px] mt-[-50px] hidden 4xl:flex">
+        <div className="flex h-full w-[50%] ">
+          {/* <div className="absolute ml-[-350px] mt-[-50px] hidden 4xl:flex">
             <Image
               src="/landing_page_image.png"
               alt="cell phone"
@@ -46,58 +50,93 @@ const HomePage = () => {
               width={600}
               className=""
             />
-          </div>
+          </div> */}
           {/* Left Image Block */}
-
-          <div className="flex h-full w-[50%] flex-col pr-6 pt-[220px] 2xl:pl-[90px] 3xl:pl-[180px] 4xl:pl-[300px]">
-            <Image
-              src="/smiling_people/smiling_woman_1.png"
-              alt="smiling woman"
-              height={250}
-              width={250}
-              className="ml-[50px] rounded-2xl rounded-tl-[120px]"
-            />
-            <div className="mt-8 flex w-full">
-              <Image
-                src="/smiling_people/smiling_woman_2.png"
-                alt="smiling woman"
-                height={100}
-                width={130}
-                className="ml-[10px] rounded-2xl rounded-bl-[60px]"
-              />
-              <Image
-                src="/smiling_people/smiling_man_2.png"
-                alt="smiling man"
-                height={130}
-                width={130}
-                className="ml-[31px] rounded-2xl rounded-br-[60px]"
-              />
+          <div className="flex min-h-[1000px] min-w-[1000px] flex-row">
+            <div className="flex h-full w-[50%] flex-col pl-[150px] pr-6 pt-[220px]">
+              <motion.div
+                variants={fadeIn("down", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <Image
+                  src="/smiling_people/smiling_woman_1.png"
+                  alt="smiling woman"
+                  height={250}
+                  width={250}
+                  className="ml-[50px] rounded-2xl rounded-tl-[120px]"
+                />
+              </motion.div>
+              <motion.div
+                variants={fadeIn("up", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.4 }}
+                className="mt-8 flex w-full"
+              >
+                <Image
+                  src="/smiling_people/smiling_woman_2.png"
+                  alt="smiling woman"
+                  height={100}
+                  width={130}
+                  className="ml-[10px] rounded-2xl rounded-bl-[60px]"
+                />
+                <Image
+                  src="/smiling_people/smiling_man_2.png"
+                  alt="smiling man"
+                  height={130}
+                  width={130}
+                  className="ml-[31px] rounded-2xl rounded-br-[60px]"
+                />
+              </motion.div>
             </div>
-          </div>
 
-          {/* Right Image Block */}
-          <div className="h-full w-[50%] pl-[10px] pt-[180px]">
-            <Image
-              src="/smiling_people/smiling_man_1.png"
-              alt="smiling man"
-              height={100}
-              width={100}
-              className="rounded-2xl rounded-tl-[50px]"
-            />
-            <Image
-              src="/smiling_people/smiling_woman_3.png"
-              alt="smiling man"
-              height={130}
-              width={130}
-              className="mt-6 rounded-2xl rounded-tr-[50px]"
-            />
-            <Image
-              src="/smiling_people/smiling_woman_4.png"
-              alt="smiling woman"
-              height={160}
-              width={160}
-              className="mt-6 rounded-2xl rounded-tr-[70px]"
-            />
+            {/* Right Image Block */}
+            <div className="border-3 h-full w-[50%] border-red-600 pl-[10px] pt-[180px]">
+              <motion.div
+                variants={fadeIn("left", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <Image
+                  src="/smiling_people/smiling_man_1.png"
+                  alt="smiling man"
+                  height={100}
+                  width={100}
+                  className="rounded-2xl rounded-tl-[50px]"
+                />
+              </motion.div>
+              <motion.div
+                variants={fadeIn("right", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <Image
+                  src="/smiling_people/smiling_woman_3.png"
+                  alt="smiling man"
+                  height={130}
+                  width={130}
+                  className="mt-6 rounded-2xl rounded-tr-[50px]"
+                />
+              </motion.div>
+              <motion.div
+                variants={fadeIn("left", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <Image
+                  src="/smiling_people/smiling_woman_4.png"
+                  alt="smiling woman"
+                  height={160}
+                  width={160}
+                  className="mt-6 rounded-2xl rounded-tr-[70px]"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
