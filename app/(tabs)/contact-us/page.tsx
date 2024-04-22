@@ -48,7 +48,7 @@ const ContactUsPage = () => {
   const formLabelFontSize = "text-2xl";
   const inputStyles = "text-xl h-[50px]";
   return (
-    <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
+    <main className="relative min-h-screen w-full overflow-x-hidden overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
       <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
       <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
@@ -58,7 +58,7 @@ const ContactUsPage = () => {
       <div className="absolute z-40 mt-[100px] flex h-[800px] w-full flex-col ">
         {/* Left Header and Form Container*/}
         <div className="flex h-full w-full  flex-col items-center pt-[50px]">
-          <h1 className="pl-5 text-9xl font-bold text-white">Contact us</h1>
+          <h1 className="pl-5 text-9xl font-semibold text-white">Contact us</h1>
           <p className="prose px-5 py-10 pt-10 text-3xl text-white">
             Whatever your needs, we can help. Please complete the form below and
             we will begin assisting you immediately.
