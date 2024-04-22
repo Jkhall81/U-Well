@@ -1,3 +1,5 @@
+"use client";
+
 import { FAQAccordion } from "@/components/FAQAccordion";
 
 const FAQPage = () => {

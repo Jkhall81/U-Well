@@ -13,30 +13,29 @@ export const Footer = () => {
 
   useEffect(() => {
     setIsVisible(true);
-  }, []);
 
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
+    const updatePageHeight = () => {
       const totalPageLength = document.body.scrollHeight;
       console.log("Total Page Length", totalPageLength);
       setHeight(totalPageLength);
-    });
+    };
 
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      characterData: true,
-    });
+    updatePageHeight();
+
+    const handleResize = () => {
+      updatePageHeight();
+    };
+
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
     };
   }, [setHeight]);
 
   return (
     <footer
-      className={`h-full w-full justify-evenly ${isVisible ? "flex" : "hidden"}`}
+      className={`h-[100px] w-full justify-evenly ${isVisible ? "flex" : "hidden"}`}
     >
       <Link href="/">
         <FaYoutube color="white" size={70} />
