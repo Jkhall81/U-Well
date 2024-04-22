@@ -23,8 +23,11 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Footer } from "@/components/Footer";
+import { useFooterStore } from "@/store/store";
 
 const ContactUsPage = () => {
+  const yHeight = useFooterStore((state) => state.pageHeight);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -42,6 +45,8 @@ const ContactUsPage = () => {
     console.log(data);
   };
 
+  const formLabelFontSize = "text-2xl";
+  const inputStyles = "text-xl h-[50px]";
   return (
     <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -50,11 +55,11 @@ const ContactUsPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[100px] flex h-[800px] w-full ">
+      <div className="absolute z-40 mt-[100px] flex h-[800px] w-full flex-col ">
         {/* Left Header and Form Container*/}
-        <div className="flex h-full w-[50%] flex-col pt-[50px]">
-          <h1 className="pl-5 text-4xl font-bold text-white">Contact us</h1>
-          <p className="prose-xl px-5 pt-5 text-white">
+        <div className="flex h-full w-full  flex-col items-center pt-[50px]">
+          <h1 className="pl-5 text-9xl font-bold text-white">Contact us</h1>
+          <p className="prose px-5 py-10 pt-10 text-3xl text-white">
             Whatever your needs, we can help. Please complete the form below and
             we will begin assisting you immediately.
           </p>
@@ -70,12 +75,12 @@ const ContactUsPage = () => {
                   name="firstName"
                   render={({ field }) => (
                     <FormItem className="mb-3">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         First Name
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="w-full"
+                          className={`w-[700px] ${inputStyles}`}
                           placeholder="John"
                           {...field}
                         />
@@ -91,12 +96,12 @@ const ContactUsPage = () => {
                   name="lastName"
                   render={({ field }) => (
                     <FormItem className="mb-3">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         Last Name
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="w-full"
+                          className={`w-full ${inputStyles}`}
                           placeholder="Doe"
                           {...field}
                         />
@@ -112,12 +117,12 @@ const ContactUsPage = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem className="mb-3">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         Email Address
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="w-full"
+                          className={`w-full ${inputStyles}`}
                           placeholder="John.Doe@email.com"
                           {...field}
                         />
@@ -133,12 +138,12 @@ const ContactUsPage = () => {
                   name="companyName"
                   render={({ field }) => (
                     <FormItem className="mb-3">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         Company Name
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className="w-full"
+                          className={`w-full ${inputStyles}`}
                           placeholder="ACME inc."
                           {...field}
                         />
@@ -154,7 +159,7 @@ const ContactUsPage = () => {
                   name="senderStatus"
                   render={({ field }) => (
                     <FormItem className="mb-3">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         I am a:
                       </FormLabel>
                       <FormControl>
@@ -163,7 +168,7 @@ const ContactUsPage = () => {
                             <Input
                               placeholder="Select your status."
                               value={position}
-                              className="w-full text-gray-500"
+                              className={`w-full text-gray-500 ${inputStyles}`}
                               readOnly
                             />
                           </DropdownMenuTrigger>
@@ -199,13 +204,13 @@ const ContactUsPage = () => {
                   name="comments"
                   render={({ field }) => (
                     <FormItem className="mb-7">
-                      <FormLabel className="text-lg text-white">
+                      <FormLabel className={`${formLabelFontSize} text-white`}>
                         Comments
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="How may we help you?"
-                          className="text-gray-500"
+                          className="text-xl text-gray-500"
                           rows={7}
                           {...field}
                         />
@@ -217,7 +222,7 @@ const ContactUsPage = () => {
               </div>
               <Button
                 size="lg"
-                className="ml-5"
+                className="ml-5 h-[60px] w-[700px] text-2xl font-semibold hover:bg-sky-600 hover:text-white"
                 variant="outline"
                 type="submit"
               >
@@ -227,14 +232,19 @@ const ContactUsPage = () => {
           </Form>
         </div>
         {/* Image */}
-        <div className="flex h-full min-w-[900px]">
+        <div className="flex h-full">
           <div className="absolute right-[200px] top-[300px] h-[400px] w-[450px] animate-blob rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-2000 absolute right-8 top-40 h-[340px] w-[340px] animate-blob rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-4000 absolute right-[350px] top-[390px] h-[550px] w-[550px] animate-blob rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
         </div>
+        {/* Footer */}
+        <div
+          style={{ marginTop: `${yHeight}px` }}
+          className={`absolute left-0 flex w-full items-center justify-between pb-2`}
+        >
+          <Footer />
+        </div>
       </div>
-
-      {/* Footer */}
     </main>
   );
 };
