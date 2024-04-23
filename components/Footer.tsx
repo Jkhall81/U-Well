@@ -16,7 +16,6 @@ export const Footer = () => {
 
     const updatePageHeight = () => {
       const totalPageLength = document.body.scrollHeight;
-      console.log("Total Page Length", totalPageLength);
       setHeight(totalPageLength);
     };
 

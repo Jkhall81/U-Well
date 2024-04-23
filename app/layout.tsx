@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/MobileNav";
+import { ScrollDetector } from "@/components/ScrollDetector";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         {/* Footer  */}
         <div className="absolute bottom-0 flex w-full"></div>
         <div className="overflow-y absolute left-0 top-0 h-screen w-full bg-black/20 bg-gradient-to-r from-black" />
+        <ScrollDetector />
       </body>
     </html>
   );

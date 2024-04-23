@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { raleway } from "@/lib/fonts";
 import { fadeIn } from "@/lib/utils";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { useFooterStore } from "@/store/store";
 import { splitStringUsingRegex } from "@/lib/utils";
@@ -27,7 +27,6 @@ const charVariants = {
 const HomePage = () => {
   const yHeight = useFooterStore((state) => state.pageHeight);
 
-  console.log(yHeight);
   return (
     <main className="relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -36,7 +35,7 @@ const HomePage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] h-full w-full lg:flex">
+      <div className="scroll-container absolute z-40 mt-[150px] h-full w-full lg:flex">
         {/* Left Heading and Paragraph Text */}
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
@@ -56,9 +55,9 @@ const HomePage = () => {
               transition={{ staggerChildren: 0.01 }}
               className={`prose-2xl mt-[-50px] pr-4 font-semibold text-white ${raleway.className}`}
             >
-              {textChars.map((char) => (
+              {textChars.map((char, index) => (
                 <motion.span
-                  key={char}
+                  key={index}
                   transition={{ duration: 0.04 }}
                   variants={charVariants}
                 >
