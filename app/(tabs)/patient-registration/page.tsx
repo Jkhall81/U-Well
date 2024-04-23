@@ -23,7 +23,7 @@ const PatientRegistrationPage = () => {
           </h1>
         </div>
         {/* Form Container */}
-        <div className="h-full w-full">
+        <div className="w-ful h-full">
           <MultiStepForm />
         </div>
         <div

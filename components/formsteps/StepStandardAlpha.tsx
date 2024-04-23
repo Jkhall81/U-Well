@@ -35,7 +35,7 @@ export const StepStandardAlpha = ({
 
       <div
         className={cn(
-          "flex w-[640px] flex-col items-center gap-4 rounded-md py-10 shadow-md shadow-gray-600",
+          "flex w-[640px] flex-col items-center gap-4 rounded-md py-10",
         )}
       >
         {answers.map((answer: string, index) => {
