@@ -55,11 +55,11 @@ const ContactUsPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[100px] flex h-[800px] w-full flex-col ">
+      <div className="absolute z-40 mt-[100px] flex h-full w-full flex-col ">
         {/* Left Header and Form Container*/}
-        <div className="flex h-full w-full  flex-col items-center pt-[50px]">
-          <h1 className="pl-5 text-9xl font-semibold text-white">Contact us</h1>
-          <p className="prose px-5 py-10 pt-10 text-center text-3xl text-white lg:text-left">
+        <div className="flex h-[1700px] w-full flex-col items-center pt-[50px]">
+          <h1 className="pl-5 text-9xl font-semibold text-white">Contact Us</h1>
+          <p className="prose px-5 py-10 pt-10 text-center text-3xl text-white">
             Whatever your needs, we can help. Please complete the form below and
             we will begin assisting you immediately.
           </p>
@@ -228,6 +228,7 @@ const ContactUsPage = () => {
               >
                 Submit
               </Button>
+              <div className="h-[500px] w-full" />
             </form>
           </Form>
         </div>
@@ -239,7 +240,7 @@ const ContactUsPage = () => {
         </div>
         {/* Footer */}
         <div
-          style={{ marginTop: `${yHeight}px` }}
+          style={{ marginTop: `${yHeight + 500}px` }}
           className={`absolute left-0 flex w-full items-center justify-between pb-2`}
         >
           <Footer />

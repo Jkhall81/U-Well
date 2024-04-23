@@ -14,20 +14,21 @@ const PatientRegistrationPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[800px] w-full flex-col">
+      <div className="absolute z-40 mt-[150px] flex h-[1900px] w-full flex-col">
         <div className="flex w-full items-center justify-center px-5">
-          <h1 className="prose-2xl px-10 pb-12 text-white">
+          <h1 className="prose pb-12 text-center text-3xl text-white">
             Please answer all questions as open and honest as possible. We use
             these to help match you to a provider that will mesh well with your
             needs and values.
           </h1>
         </div>
         {/* Form Container */}
-        <div className="w-ful h-full">
+        <div className="h-full w-full">
           <MultiStepForm />
         </div>
+
         <div
-          style={{ marginTop: `${yHeight}px` }}
+          style={{ marginTop: `${yHeight + 500}px` }}
           className={`absolute left-0 flex w-full items-center justify-between pb-2`}
         >
           <Footer />

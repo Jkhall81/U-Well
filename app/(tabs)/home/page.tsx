@@ -36,7 +36,7 @@ const HomePage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] h-[800px] w-full lg:flex">
+      <div className="absolute z-40 mt-[150px] h-full w-full lg:flex">
         {/* Left Heading and Paragraph Text */}
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
@@ -49,12 +49,12 @@ const HomePage = () => {
               Health
             </h1>
           </div>
-          <div className="flex h-[55%] w-full items-center justify-center pl-[45px] 2xl:w-[900px] 3xl:pl-[250px]">
+          <div className="flex h-[45%] w-full items-start pl-[45px] 2xl:w-[900px] 3xl:pl-[250px]">
             <motion.p
               initial="hidden"
               whileInView="reveal"
               transition={{ staggerChildren: 0.01 }}
-              className={`prose-2xl pr-4 font-semibold text-white ${raleway.className}`}
+              className={`prose-2xl mt-[-50px] pr-4 font-semibold text-white ${raleway.className}`}
             >
               {textChars.map((char) => (
                 <motion.span

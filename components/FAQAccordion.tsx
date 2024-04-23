@@ -68,7 +68,7 @@ export const FAQAccordion = () => {
           </Accordion>
         );
       })}
-      <div className="h-[200px]"></div>
+      <div className="h-[500px]"></div>
       <Footer />
     </section>
   );
