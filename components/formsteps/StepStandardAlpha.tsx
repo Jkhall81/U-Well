@@ -41,7 +41,7 @@ export const StepStandardAlpha = ({
         {answers.map((answer: string, index) => {
           return (
             <Button
-              className="w-[600px] rounded-3xl hover:bg-blue-600 hover:text-white"
+              className="w-[400px] rounded-3xl hover:bg-blue-600 hover:text-white lg:w-[600px]"
               onClick={() => handleClick(answer)}
               value={answer}
               variant="outline"

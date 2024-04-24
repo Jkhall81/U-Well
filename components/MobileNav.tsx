@@ -6,13 +6,15 @@ import { IoCloseOutline } from "react-icons/io5";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useNavStore } from "@/store/store";
 
 export const MobileNav = () => {
+  const navState = useNavStore((state) => state.navSolid);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <nav className="fixed right-0 top-0 z-50 flex h-[110px] w-full items-center justify-end lg:hidden">
       <RxHamburgerMenu
-        className="cursor-pointer pr-10"
+        className={cn("cursor-pointer pr-10", navState ? "hidden" : null)}
         size={100}
         color="white"
         aria-label="Mobile hamburger menu"

@@ -69,7 +69,7 @@ export const StepNumberSelect = ({
         render={({ field }) => (
           <FormItem>
             <Select onValueChange={handleClick}>
-              <SelectTrigger className="w-[600px] rounded-3xl">
+              <SelectTrigger className="w-[400px] rounded-3xl lg:w-[600px]">
                 <SelectValue placeholder="Select your age." />
               </SelectTrigger>
               <SelectContent>

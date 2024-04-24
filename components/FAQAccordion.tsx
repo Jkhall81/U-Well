@@ -35,14 +35,14 @@ export const FAQAccordion = () => {
   }, [accordionStates, setStateTrue, setStateFalse]);
 
   return (
-    <section className="px-14 text-white">
+    <section className="text-white lg:px-14">
       {FAQData.map((item, index) => {
         return (
           <Accordion
             key={index}
             type="single"
             collapsible
-            className="w-full px-[90px]"
+            className="w-full px-4 lg:px-[90px]"
           >
             <AccordionItem value={`item-${index + 1}`}>
               <Separator />

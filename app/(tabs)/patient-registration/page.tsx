@@ -14,7 +14,7 @@ const PatientRegistrationPage = () => {
       <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[150px] flex h-[1900px] w-full flex-col">
+      <div className="absolute z-40 mt-[150px] flex h-[1500px] w-full flex-col">
         <div className="flex w-full items-center justify-center px-5">
           <h1 className="prose pb-12 text-center text-3xl text-white">
             Please answer all questions as open and honest as possible. We use

@@ -58,7 +58,9 @@ const ContactUsPage = () => {
       <div className="absolute z-40 mt-[100px] flex h-full w-full flex-col ">
         {/* Left Header and Form Container*/}
         <div className="flex h-[1700px] w-full flex-col items-center pt-[50px]">
-          <h1 className="pl-5 text-9xl font-semibold text-white">Contact Us</h1>
+          <h1 className="pl-5 text-7xl font-semibold text-white lg:text-9xl">
+            Contact Us
+          </h1>
           <p className="prose px-5 py-10 pt-10 text-center text-3xl text-white">
             Whatever your needs, we can help. Please complete the form below and
             we will begin assisting you immediately.
@@ -68,7 +70,7 @@ const ContactUsPage = () => {
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}>
               {/* Form Fields Container */}
-              <div className="flex w-full flex-col px-5 text-xl font-semibold">
+              <div className="mx-auto flex w-[410px] flex-col px-5 text-xl font-semibold lg:w-full">
                 {/* First Name */}
                 <FormField
                   control={form.control}
@@ -80,7 +82,7 @@ const ContactUsPage = () => {
                       </FormLabel>
                       <FormControl>
                         <Input
-                          className={`w-[700px] ${inputStyles}`}
+                          className={`lg:w-[700px] ${inputStyles}`}
                           placeholder="John"
                           {...field}
                         />
@@ -219,15 +221,15 @@ const ContactUsPage = () => {
                     </FormItem>
                   )}
                 />
+                <Button
+                  size="lg"
+                  className="h-[60px] w-full text-2xl font-semibold hover:bg-sky-600 hover:text-white lg:w-[700px]"
+                  variant="outline"
+                  type="submit"
+                >
+                  Submit
+                </Button>
               </div>
-              <Button
-                size="lg"
-                className="ml-5 h-[60px] w-[700px] text-2xl font-semibold hover:bg-sky-600 hover:text-white"
-                variant="outline"
-                type="submit"
-              >
-                Submit
-              </Button>
               <div className="h-[500px] w-full" />
             </form>
           </Form>
@@ -240,7 +242,7 @@ const ContactUsPage = () => {
         </div>
         {/* Footer */}
         <div
-          style={{ marginTop: `${yHeight + 500}px` }}
+          style={{ marginTop: `${1900}px` }}
           className={`absolute left-0 flex w-full items-center justify-between pb-2`}
         >
           <Footer />

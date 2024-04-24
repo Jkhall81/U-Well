@@ -25,7 +25,7 @@ const AboutUsPage = () => {
           <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
         </div>
         <div
-          style={{ marginTop: `${yHeight}px` }}
+          style={{ marginTop: `${yHeight + 500}px` }}
           className={`absolute left-0 flex w-full items-center justify-between pb-2`}
         >
           <Footer />
