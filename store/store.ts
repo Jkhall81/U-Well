@@ -1,14 +1,11 @@
 import { create } from "zustand";
 
+// NavStore, set NavBar to hidden when scrolling is detected in ScrollDetector component
+
 interface NavStore {
   navSolid: boolean;
   setNavSolidTrue: () => void;
   setNavSolidFalse: () => void;
-}
-
-interface FooterStore {
-  pageHeight: number;
-  setPageHeight: (value: number) => void;
 }
 
 export const useNavStore = create<NavStore>((set) => ({
@@ -20,6 +17,12 @@ export const useNavStore = create<NavStore>((set) => ({
     set({ navSolid: false });
   },
 }));
+
+// Used to store total screen height to dynamically set footer location
+interface FooterStore {
+  pageHeight: number;
+  setPageHeight: (value: number) => void;
+}
 
 export const useFooterStore = create<FooterStore>((set) => ({
   pageHeight: 0,
