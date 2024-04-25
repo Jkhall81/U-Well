@@ -1,6 +1,9 @@
-"use client";
-
+import { Metadata } from "next";
 import { FAQAccordion } from "@/components/FAQAccordion";
+
+export const metadata: Metadata = {
+  title: "FAQ",
+};
 
 const FAQPage = () => {
   return (

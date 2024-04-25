@@ -1,11 +1,12 @@
-"use client";
-
 import { MultiStepForm } from "@/components/MultiStepForm";
-import { Footer } from "@/components/Footer";
-import { useFooterStore } from "@/store/store";
+import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Patient Registration",
+};
 
 const PatientRegistrationPage = () => {
-  const yHeight = useFooterStore((state) => state.pageHeight);
   return (
     <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -27,12 +28,7 @@ const PatientRegistrationPage = () => {
           <MultiStepForm />
         </div>
 
-        <div
-          style={{ marginTop: `${yHeight + 500}px` }}
-          className={`absolute left-0 flex w-full items-center justify-between pb-2`}
-        >
-          <Footer />
-        </div>
+        <UseClientComponent />
       </div>
     </main>
   );

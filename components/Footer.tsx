@@ -36,13 +36,16 @@ export const Footer = () => {
     <footer
       className={`h-[100px] w-full justify-evenly ${isVisible ? "flex" : "hidden"}`}
     >
-      <Link href="/">
+      <Link href="/" target="_blank">
         <FaYoutube color="white" size={70} />
       </Link>
-      <Link href="/">
+      <Link href="/" target="_blank">
         <FaFacebook color="white" size={70} />
       </Link>
-      <Link href="/">
+      <Link
+        href="https://www.linkedin.com/company/u-well-health/"
+        target="_blank"
+      >
         <FaLinkedin className="text-white" size={70} />
       </Link>
     </footer>

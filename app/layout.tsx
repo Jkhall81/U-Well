@@ -14,8 +14,11 @@ const open_sans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title:
-    "U-Well: Mental Health Support for Organizations | Customized Telephone Solutions",
+  title: {
+    default:
+      "U-Well: Mental Health Support for Organizations | Customized Telephone Solutions",
+    template: "U-Well: %s",
+  },
   description:
     "U-Well offers targeted Health support to organizations through personalized surveys and telehealth sessions.",
 };

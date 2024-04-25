@@ -1,10 +1,11 @@
-"use client";
+import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
+import { Metadata } from "next";
 
-import { Footer } from "@/components/Footer";
-import { useFooterStore } from "@/store/store";
+export const metadata: Metadata = {
+  title: "Provider Registration",
+};
 
 const ProviderRegistrationPage = () => {
-  const yHeight = useFooterStore((state) => state.pageHeight);
   return (
     <main className="relative min-h-screen w-full overflow-y-scroll bg-blue-500">
       {/* Background Stuff */}
@@ -24,12 +25,8 @@ const ProviderRegistrationPage = () => {
           <div className="flex h-full w-[50%] flex-col pt-[220px]"></div>
           <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
         </div>
-        <div
-          style={{ marginTop: `${yHeight + 500}px` }}
-          className={`absolute left-0 flex w-full items-center justify-between pb-2`}
-        >
-          <Footer />
-        </div>
+
+        <UseClientComponent />
       </div>
     </main>
   );
