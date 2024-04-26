@@ -138,3 +138,11 @@
     transform 500ms ease-in-out;
   transform: translateX(100%);
 }
+
+.main-container {
+  @apply relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500;
+}
+
+.content-container {
+  @apply absolute z-40 mt-[150px] h-full w-full;
+}

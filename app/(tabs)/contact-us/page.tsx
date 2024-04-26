@@ -1,6 +1,7 @@
 import { ContactUsUseClient } from "@/components/useClientComponents/ContactUsUseClient";
 import { Footer } from "@/components/Footer";
 import { Metadata } from "next";
+import { BackgroundContent } from "@/components/BackgroundContent";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -8,14 +9,12 @@ export const metadata: Metadata = {
 
 const ContactUsPage = () => {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden overflow-y-scroll bg-blue-500">
+    <main className="main-container">
       {/* Background Stuff */}
-      <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
-      <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
-      <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
+      <BackgroundContent />
 
       {/* Above Background Content */}
-      <div className="absolute z-40 mt-[100px] flex h-full w-full flex-col ">
+      <div className="content-container flex flex-col">
         {/* Left Header and Form Container*/}
         <div className="flex h-[1700px] w-full flex-col items-center pt-[50px]">
           <h1 className="pl-5 text-7xl font-semibold text-white lg:text-9xl">

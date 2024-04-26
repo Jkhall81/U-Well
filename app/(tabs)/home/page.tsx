@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
 import { useFooterStore } from "@/store/store";
 import { splitStringUsingRegex } from "@/lib/utils";
+import { BackgroundContent } from "@/components/BackgroundContent";
 
 // Text reveal animation constants
 const text = `At U-Well, we understand that your mental well-being is a
@@ -28,14 +29,11 @@ const HomePage = () => {
   const yHeight = useFooterStore((state) => state.pageHeight);
 
   return (
-    <main className="relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500">
+    <main className="main-container">
       {/* Background Stuff */}
-      <div className="absolute z-30 ml-[-190px] mt-[-190px] h-[520px] w-[520px] rounded-full bg-gradient-to-br from-blue-700 to-cyan-400" />
-      <div className="absolute z-20 ml-[-490px] mt-[-490px] h-[1420px] w-[1420px] rounded-full bg-gradient-to-bl from-blue-800 to-cyan-400" />
-      <div className="absolute ml-[-490px] mt-[-490px] h-[1920px] w-[1920px] rounded-full bg-gradient-to-br from-blue-500 to-cyan-400" />
-
+      <BackgroundContent />
       {/* Above Background Content */}
-      <div className="scroll-container absolute z-40 mt-[150px] h-full w-full lg:flex">
+      <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
