@@ -68,15 +68,6 @@ const HomePage = () => {
 
         {/* Image */}
         <div className="flex h-full w-[50%] ">
-          {/* <div className="absolute ml-[-350px] mt-[-50px] hidden 4xl:flex">
-            <Image
-              src="/landing_page_image.png"
-              alt="cell phone"
-              height={600}
-              width={600}
-              className=""
-            />
-          </div> */}
           {/* Left Image Block */}
           <div className="ml-[-105px] flex min-h-[1000px] min-w-[1000px] flex-row sm:ml-0">
             <div className="flex h-full w-[50%] flex-col pl-[150px] pr-6 pt-[220px]">
@@ -84,7 +75,6 @@ const HomePage = () => {
                 variants={fadeIn("down", 0.6)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
               >
                 <Image
                   src="/smiling_people/smiling_woman_1.png"
@@ -94,6 +84,7 @@ const HomePage = () => {
                   className="ml-[50px] rounded-2xl rounded-tl-[120px]"
                 />
               </motion.div>
+
               <div className="mt-8 flex w-full">
                 <motion.div
                   variants={fadeIn("right", 0.6)}

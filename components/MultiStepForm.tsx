@@ -7,6 +7,8 @@ import { StepStandardAlpha } from "./formsteps/StepStandardAlpha";
 import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 // import { IoChevronBack } from "react-icons/io5";
 import { CSSTransition } from "react-transition-group";
+import { LastStep } from "./formsteps/LastStep";
+import { EndOfForm } from "./EndOfForm";
 
 type Inputs = {
   [step: string | number]: string;
@@ -15,8 +17,14 @@ type Inputs = {
 export const MultiStepForm = () => {
   const stepData = PatientRegistrationSteps;
   const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useState({});
+
+  const updateFormData = (data: any) => {
+    setFormData((prevData) => ({ ...prevData, ...data }));
+  };
 
   const onSubmit = (data: Inputs) => {
+    Object.assign(data, { 32: formData });
     console.log(data);
   };
 
@@ -36,8 +44,9 @@ export const MultiStepForm = () => {
     }
   };
 
+  // Autosubmit, currently 31 questions
   useEffect(() => {
-    if (currentStep === 31) {
+    if (currentStep === 32) {
       handleSubmit(onSubmit)();
     }
   }, [currentStep, handleSubmit]);
@@ -128,7 +137,32 @@ export const MultiStepForm = () => {
               </CSSTransition>
             );
           })}
+          {/* Last Step */}
+          {currentStep === 31 && (
+            <CSSTransition
+              key={currentStep}
+              className=""
+              in={currentStep === 31}
+              timeout={300}
+              classNames={{
+                enter: "left-enter",
+                enterActive: "left-enter-active",
+                exit: "left-exit",
+                exitActive: "left-exit-active",
+              }}
+              unmountOnExit
+            >
+              <LastStep
+                updateFormData={updateFormData}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                setStep={setStep}
+              />
+            </CSSTransition>
+          )}
         </form>
+        {/* Thank you message */}
+        {currentStep === 32 && <EndOfForm />}
       </div>
     </section>
   );

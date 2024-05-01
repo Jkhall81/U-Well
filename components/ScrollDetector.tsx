@@ -10,12 +10,14 @@ export const ScrollDetector = () => {
   useEffect(() => {
     const handleScroll = () => {
       const mainElement = document.body.querySelector("main");
-      const scrollPosition = mainElement!.querySelector("main")!.scrollTop;
-      const scrollThreshold = 110;
-      if (scrollPosition >= scrollThreshold) {
-        setNavTrue();
-      } else {
-        setNavFalse();
+      if (mainElement) {
+        const scrollPosition = mainElement!.querySelector("main")!.scrollTop;
+        const scrollThreshold = 110;
+        if (scrollPosition >= scrollThreshold) {
+          setNavTrue();
+        } else {
+          setNavFalse();
+        }
       }
     };
     document.body
@@ -23,9 +25,10 @@ export const ScrollDetector = () => {
       .addEventListener("scroll", handleScroll, true);
 
     return () => {
-      document.body
-        .querySelector("main")!
-        .removeEventListener("scroll", handleScroll, true);
+      const mainElement = document.body.querySelector("main");
+      if (mainElement) {
+        mainElement.removeEventListener("scroll", handleScroll, true);
+      }
     };
   }, [setNavTrue, setNavFalse]);
   return <></>;

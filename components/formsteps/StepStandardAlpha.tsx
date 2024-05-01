@@ -5,7 +5,6 @@
 import { Button } from "../ui/button";
 import { striptQuotes } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import { CSSTransition } from "react-transition-group";
 
 interface StepStandardAlphaProps {
   question: string;

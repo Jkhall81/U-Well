@@ -3,27 +3,16 @@
   /* This will handle steps that require a number select.  Should only be neede for step two of the form */
 }
 
-import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { cn } from "@/lib/utils";
 
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { FormField, FormItem } from "@/components/ui/form";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
@@ -45,9 +34,7 @@ export const StepNumberSelect = ({
   currentStep,
   setCurrentStep,
   setStep,
-  answers,
 }: StepNumberSelectProps) => {
-  const [isOpen, setIsOpen] = useState(false);
   const handleClick = (answer: string) => {
     setCurrentStep(currentStep + 1);
     setStep(currentStep + 1, answer);
