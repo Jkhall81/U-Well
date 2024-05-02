@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoCloseOutline } from "react-icons/io5";
 import { navLinks } from "@/lib/data";
@@ -11,15 +12,22 @@ import { useNavStore } from "@/store/store";
 export const MobileNav = () => {
   const navState = useNavStore((state) => state.navSolid);
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="fixed right-0 top-0 z-50 flex h-[110px] w-full items-center justify-end lg:hidden">
-      <RxHamburgerMenu
-        className={cn("cursor-pointer pr-10", navState ? "hidden" : null)}
-        size={100}
-        color="white"
-        aria-label="Mobile hamburger menu"
-        onClick={() => setIsOpen(!isOpen)}
-      />
+      <motion.div
+        whileTap={{
+          scale: 1.4,
+        }}
+      >
+        <RxHamburgerMenu
+          className={cn("cursor-pointer pr-10", navState ? "hidden" : null)}
+          size={100}
+          color="white"
+          aria-label="Mobile hamburger menu"
+          onClick={() => setIsOpen(!isOpen)}
+        />
+      </motion.div>
       <aside
         className={cn(
           "fixed bottom-0 top-0 z-50 w-full bg-black/90 p-10 transition-all duration-500",
@@ -32,7 +40,13 @@ export const MobileNav = () => {
             onClick={() => setIsOpen(false)}
             className="absolute right-8 top-8 flex cursor-pointer items-center justify-center text-4xl text-white"
           >
-            <IoCloseOutline size={55} />
+            <motion.div
+              whileTap={{
+                scale: 1.4,
+              }}
+            >
+              <IoCloseOutline size={55} />
+            </motion.div>
           </div>
           <div className="flex h-full flex-col items-center justify-center gap-y-8">
             {navLinks.map((link, index) => {
