@@ -16,7 +16,7 @@ const ContactUsPage = () => {
       {/* Above Background Content */}
       <div className="content-container flex flex-col">
         {/* Left Header and Form Container*/}
-        <div className="flex h-[1700px] w-full flex-col items-center pt-[50px]">
+        <div className="absolute flex w-full flex-col items-center pt-[50px] md:h-[1900px]">
           <h1 className="pl-5 text-7xl font-semibold text-white lg:text-9xl">
             Contact Us
           </h1>

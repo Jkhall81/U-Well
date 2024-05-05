@@ -37,14 +37,14 @@ export const Footer = () => {
     <footer className={`h-[200px] w-full ${isVisible ? "flex" : "hidden"}`}>
       <div className="flex w-full flex-col text-white">
         <div className="mb-4 flex w-full justify-evenly text-2xl font-semibold">
-          <div className="flex-1"></div>
-          <div className="flex-1"></div>
-          <div className="flex-1">
+          <div className="md:flex-1"></div>
+          <div className="md:flex-1"></div>
+          <div className="px-6 md:flex-1">
             <div className="flex flex-col gap-4">
               <Link href="/">Terms & Conditions</Link>
               <Link href="/">Privacy Policy</Link>
               <p>
-                Site Made and Maintained by{" "}
+                Built and Maintained by{" "}
                 <Link href="/">
                   <span className="text-slate-300">Jason Hall</span>
                 </Link>
