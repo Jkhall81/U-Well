@@ -1,9 +1,61 @@
-import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
-import { Metadata } from "next";
-import { BackgroundContent } from "@/components/BackgroundContent";
+"use client";
 
-export const metadata: Metadata = {
-  title: "About Us",
+import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
+// import { Metadata } from "next";
+import { BackgroundContent } from "@/components/BackgroundContent";
+import Image from "next/image";
+import { cn, fadeIn, splitStringUsingRegex } from "@/lib/utils";
+import { motion } from "framer-motion";
+import LiComponent from "@/components/aboutUs/LiComponent";
+import { aboutUsDataOne, aboutUsDataTwo } from "@/lib/data";
+import { raleway } from "@/lib/fonts";
+
+// export const metadata: Metadata = {
+//   title: "About Us",
+// };
+
+const paragraphText = [
+  `U-Well Health is a cutting-edge mental health app that brings
+  patients and providers together by using matching via AI.
+  Whether you are looking for therapy, counseling, coaching, or
+  medication management, U-Well Health can help you find the
+  right provider for your needs and preferences. You can access
+  quality mental health care from the comfort of your home,
+  office, or anywhere you have an internet connection.`,
+
+  `Our mission is to make mental health care affordable and
+  accessible for everyone. We believe that everyone deserves
+  to have a healthy and happy mind, and that mental health
+  care should be easy, convenient, and effective. We are
+  committed to creating a platform that connects patients and
+  providers in a way that benefits both parties and improves
+  the overall quality of mental health care.`,
+
+  `Our founders are a team of passionate and experienced
+  professionals who have deep roots in the medical industry
+  and the mental health industry. They have witnessed the
+  challenges and gaps in the current mental health system, and
+  they have decided to create a solution that ddresses them.
+  They have combined their experitise in technology, business,
+  psychology, psychiatry, and social work to create U-Well
+  Health, the app that revolutionizes mental health care.`,
+
+  `You can access mental health care with an alias if you can use
+  the cash pay option. This will allow complete anonymity and
+  privacy for your sessions. You can choose any name and avatar
+  you want, and your provider will not have access to your real
+  identity or contact information. Incognito mode is perfect for
+  people who want to try out mental health care without worrying
+  about stigma, discrimination, or exposure.`,
+];
+
+const textChars = paragraphText.map((item) => {
+  return splitStringUsingRegex(item);
+});
+
+const charVariants = {
+  hidden: { opacity: 0 },
+  reveal: { opacity: 1 },
 };
 
 const AboutUsPage = () => {
@@ -13,35 +65,236 @@ const AboutUsPage = () => {
       <BackgroundContent />
 
       {/* Above Background Content */}
-      <div className="content-container flex">
+      <div className="content-container flex flex-col">
         {/* Left Heading and Paragraph Text */}
-        <div className="flex h-[1700px] w-full flex-col items-center pt-16">
-          <h1 className="text-9xl font-semibold text-white">
-            Why Choose U-Well?
-          </h1>
-          <div className="flex h-[50%] w-full flex-row">
-            <div className="flex h-full w-[50%] flex-col items-center">
-              <h1 className="pt-14 text-7xl text-white">Affordability</h1>
-              <p className="prose mt-14 px-16 text-3xl text-white">
-                Our goal is to make mental healthcare accessible and affordable
-                to everyone. We understand that access to affordable mental
-                healthcare is crucial for maintaining good health and
-                well-being. By providing affordable mental healthcare, we can
-                help ensure that everyone has access to the care they need to
-                stay healthy.
-              </p>
+        <div className="">
+          {/* Section 1 */}
+
+          <section className="min-h-screen w-full">
+            <div className="mt-12 flex flex-col items-center text-white">
+              <h1 className="heading-one text-9xl font-bold">About Us</h1>
+              <motion.p
+                variants={fadeIn("right", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="mb-10 mt-16 text-4xl"
+              >
+                U-Well Health: The app that connects you to the best mental
+                health care.
+              </motion.p>
             </div>
-            <div className="h-full w-[50%]"></div>
-          </div>
-          <div className="flex h-[50%] w-full">
-            <div className="h-full w-[50%]"></div>
-            <div className="flex h-full w-[50%] flex-col items-center">
-              <h1 className="pt-14 text-7xl text-white">Provider Matching</h1>
-              <p></p>
+            <div className="flex w-full flex-row">
+              <div className="ml-[50px] mt-[250px] flex w-[50%] flex-col items-center text-white">
+                <motion.h2
+                  variants={fadeIn("down", 0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="heading-two pb-20 text-6xl font-semibold"
+                >
+                  What is U-Well Health?
+                </motion.h2>
+                <motion.p
+                  initial="hidden"
+                  whileInView="reveal"
+                  transition={{ staggerChildren: 0.01 }}
+                  viewport={{ once: true }}
+                  className={cn(
+                    "prose px-14 text-4xl text-white",
+                    raleway.className,
+                  )}
+                >
+                  {textChars[0].map((char, index) => (
+                    <motion.span
+                      key={index}
+                      transition={{ duration: 0.6 }}
+                      variants={charVariants}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.p>
+              </div>
+              <motion.div
+                variants={fadeIn("left", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="w-[50%] py-10"
+              >
+                <Image
+                  src="/aboutUs1.png"
+                  alt="smiling woman"
+                  height={850}
+                  width={850}
+                  className="mx-auto mt-10 rounded-3xl"
+                />
+              </motion.div>
             </div>
-          </div>
+          </section>
+
+          {/* Section 2 */}
+
+          <section className="h-auto w-full">
+            <div>
+              <div>
+                <LiComponent
+                  title={aboutUsDataOne.title}
+                  text={aboutUsDataOne.text}
+                  listItems={aboutUsDataOne.listItems}
+                />
+              </div>
+              <div className="pt-20">
+                <LiComponent
+                  title={aboutUsDataTwo.title}
+                  text={aboutUsDataTwo.text}
+                  listItems={aboutUsDataTwo.listItems}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Section 3 */}
+
+          <section className="h-auto w-full">
+            <div className="mt-20 flex h-full flex-row">
+              <motion.div
+                variants={fadeIn("right", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex w-[50%] justify-center"
+              >
+                <Image
+                  src="/aboutUs2.png"
+                  alt="person with outstretched arms"
+                  width={850}
+                  height={850}
+                  className="mt-20 rounded-3xl"
+                />
+              </motion.div>
+              <div className="flex w-[50%] flex-col">
+                <div className="flex flex-col items-center text-white">
+                  <motion.h2
+                    variants={fadeIn("down", 0.6)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="heading-two mb-20 mt-14 text-6xl font-semibold"
+                  >
+                    What is our mission?
+                  </motion.h2>
+                  <motion.p
+                    initial="hidden"
+                    whileInView="reveal"
+                    transition={{ staggerChildren: 0.01 }}
+                    viewport={{ once: true }}
+                    className={cn(
+                      "prose px-10 pb-20 text-4xl text-white",
+                      raleway.className,
+                    )}
+                  >
+                    {textChars[1].map((char, index) => (
+                      <motion.span
+                        key={index}
+                        transition={{ duration: 0.6 }}
+                        variants={charVariants}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </div>
+                <div className="flex flex-col items-center text-white">
+                  <motion.h2
+                    variants={fadeIn("down", 0.6)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="heading-two mb-20 text-6xl font-semibold"
+                  >
+                    Who are our founders?
+                  </motion.h2>
+                  <motion.p
+                    initial="hidden"
+                    whileInView="reveal"
+                    transition={{ staggerChildren: 0.01 }}
+                    viewport={{ once: true }}
+                    className={cn(
+                      "prose px-10 text-4xl text-white",
+                      raleway.className,
+                    )}
+                  >
+                    {textChars[2].map((char, index) => (
+                      <motion.span
+                        key={index}
+                        transition={{ duration: 0.6 }}
+                        variants={charVariants}
+                      >
+                        {char}
+                      </motion.span>
+                    ))}
+                  </motion.p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Section 4 */}
+
+          <section className="h-[1600px] w-full">
+            <div className="mt-40 flex h-auto w-full flex-row ">
+              <div className="ml-[50px] mt-[200px] flex w-[50%] flex-col items-center text-white">
+                <motion.h2
+                  variants={fadeIn("right", 0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="heading-two mb-20 py-2 text-6xl font-semibold"
+                >
+                  Incognito Mode
+                </motion.h2>
+                <motion.p
+                  initial="hidden"
+                  whileInView="reveal"
+                  transition={{ staggerChildren: 0.01 }}
+                  viewport={{ once: true }}
+                  className={cn(
+                    "prose px-14 text-4xl text-white",
+                    raleway.className,
+                  )}
+                >
+                  {textChars[3].map((char, index) => (
+                    <motion.span
+                      key={index}
+                      transition={{ duration: 0.6 }}
+                      variants={charVariants}
+                    >
+                      {char}
+                    </motion.span>
+                  ))}
+                </motion.p>
+              </div>
+              <motion.div
+                variants={fadeIn("left", 0.6)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex w-[50%] justify-center"
+              >
+                <Image
+                  src="/aboutUs3.png"
+                  alt="woman stretching"
+                  height={850}
+                  width={850}
+                  className="rounded-3xl"
+                />
+              </motion.div>
+            </div>
+          </section>
         </div>
-        <UseClientComponent />
+        <UseClientComponent height={4500} />
       </div>
     </main>
   );

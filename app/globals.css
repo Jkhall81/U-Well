@@ -146,3 +146,11 @@
 .content-container {
   @apply absolute z-40 mt-[150px] h-full w-full;
 }
+
+.heading-one {
+  @apply bg-gradient-to-r from-white to-slate-500 bg-clip-text text-transparent;
+}
+
+.heading-two {
+  @apply bg-gradient-to-r from-slate-100 to-cyan-300 bg-clip-text text-transparent;
+}

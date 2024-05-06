@@ -405,3 +405,29 @@ export const FAQData = [
     ],
   },
 ];
+
+export const aboutUsDataOne = {
+  title: "How does U-Well Health Work?",
+  text: "U-Well Health simplifies the process of finding and receiving mental health care.  Here's how it works: ",
+  listItems: [
+    "Sign up and complete a brief questionnaire about your mental health goals, preferences, and insurance.",
+    "Get matched with a licensed and verified provider who specializes in your area of concern and meets your criteria.",
+    "Schedule a free consultation with your provider to see if you are a good fit.",
+    "Start your sessions via secure video chat, phone call or messaging.",
+    "Track your progress and get feedback from your provider.",
+    "Pay for your sessions with your insurance, credit card, or flexible spending account.",
+  ],
+};
+
+export const aboutUsDataTwo = {
+  title: "What are the benefits of U-Well Health?",
+  text: "U-Well Health offers many benefits for both patients and providers, such as: ",
+  listItems: [
+    "Convenience: You can access mental health care anytime, anywhere, without the hassle of commuting, parking, or waiting rooms.",
+    "Affordability: You can save money by using your insurance, paying lower fees, or choosing a sliding scale option.",
+    "Accessibility: You can find a provider who matches your needs, preferences, and availability, regardless of your location, schedule, or budget.",
+    "Privacy: You can enjoy the confidentiality and security of our app, which complies with all privacy laws and regulations.",
+    "Integration: You can sync your U-Well Health account with your provider's practice management and electronic health record systems, making it easier to manage your appointments, billing, and medical records.",
+    "Quality: You can receive high-quality mental health care from licensed and verified providers who have been vetted and trained by our team.",
+  ],
+};

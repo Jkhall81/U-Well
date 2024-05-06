@@ -25,7 +25,7 @@ const ProviderRegistrationPage = () => {
           <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
         </div>
 
-        <UseClientComponent />
+        <UseClientComponent height={500} />
       </div>
     </main>
   );
