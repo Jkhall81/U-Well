@@ -103,8 +103,8 @@ export const AnimationContent = () => {
             viewport={{ once: true }}
             className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]"
           >
-            <div className="relative h-[850px] w-[850px]">
-              <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
+            <div className="h-[850px] w-[850px] xl:relative">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
                   src="/aboutUs1.png"
                   alt="smiling woman"
@@ -152,8 +152,8 @@ export const AnimationContent = () => {
             viewport={{ once: true }}
             className="flex w-full justify-center xl:w-[50%]"
           >
-            <div className="relative mt-20 h-[850px] w-[850px]">
-              <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
+            <div className="mt-20 h-[850px] w-[850px] xl:relative">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
                   src="/aboutUs2.png"
                   alt="person with outstretched arms"
@@ -257,8 +257,8 @@ export const AnimationContent = () => {
             viewport={{ once: true }}
             className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%]"
           >
-            <div className="relative h-[850px] w-[850px]">
-              <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
+            <div className="h-[850px] w-[850px] xl:relative">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
                   src="/aboutUs3.png"
                   alt="woman stretching"
