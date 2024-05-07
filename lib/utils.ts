@@ -14,14 +14,14 @@ export const striptQuotes = (str: string) => {
 export const fadeIn = (direction: string, delay: number) => {
   return {
     hidden: {
-      y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
+      y: direction === "up" ? 90 : direction === "down" ? -90 : 0,
       opacity: 0,
-      x: direction === "left" ? 80 : direction === "right" ? -80 : 0,
+      x: direction === "left" ? 90 : direction === "right" ? -90 : 0,
       transition: {
         type: "tween",
         duration: 1.5,
         delay: delay,
-        ease: [0.25, 0.6, 0.3, 0.8],
+        ease: [0.25, 0.3, 0.45, 0.65],
       },
     },
     show: {
