@@ -6,6 +6,7 @@ import { easeInOut, motion } from "framer-motion";
 import LiComponent from "@/components/aboutUs/LiComponent";
 import { aboutUsDataOne, aboutUsDataTwo } from "@/lib/data";
 import { raleway } from "@/lib/fonts";
+import { Footer } from "../Footer";
 
 const paragraphText = [
   `U-Well Health is a cutting-edge mental health app that brings
@@ -221,7 +222,7 @@ export const AnimationContent = () => {
 
       {/* Section 4 */}
 
-      <section className="w-full xl:h-[1600px]">
+      <section className="mb-20 w-full xl:h-[1600px]">
         <div className="mt-20 flex h-auto w-full flex-col xl:mt-40 xl:flex-row ">
           <div className="flex w-full flex-col items-center text-white xl:ml-[50px] xl:mt-[200px] xl:w-[50%]">
             <h2 className="heading-two mx-auto mb-20 py-2 text-5xl font-semibold xl:text-6xl">
@@ -271,6 +272,7 @@ export const AnimationContent = () => {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

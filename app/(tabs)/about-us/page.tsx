@@ -17,7 +17,7 @@ const AboutUsPage = () => {
       <div className="content-container flex flex-col">
         {/* Left Heading and Paragraph Text */}
         <AnimationContent />
-        <UseClientComponent height={4500} />
+        {/* <UseClientComponent height={4500} /> */}
       </div>
     </main>
   );
