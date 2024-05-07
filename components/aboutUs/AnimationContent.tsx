@@ -59,14 +59,16 @@ export const AnimationContent = () => {
       {/* Section 1 */}
       <section className="min-h-screen w-full">
         <div className="mt-12 flex flex-col items-center text-white">
-          <h1 className="heading-one text-9xl font-bold">About Us</h1>
-          <p className="mb-10 mt-16 text-4xl">
+          <h1 className="heading-one text-8xl font-bold lg:text-9xl">
+            About Us
+          </h1>
+          <p className="mb-10 mt-16 px-10 text-3xl lg:text-4xl">
             U-Well Health: The app that connects you to the best mental health
             care.
           </p>
         </div>
-        <div className="flex w-full flex-row">
-          <div className="ml-[50px] mt-[250px] flex w-[50%] flex-col items-center text-white">
+        <div className="flex w-full flex-col xl:flex-row">
+          <div className="mt-[50px] flex w-full flex-col items-center text-white xl:ml-[50px] xl:mt-[250px] xl:w-[50%]">
             <h2 className="heading-two pb-20 text-6xl font-semibold">
               What is U-Well Health?
             </h2>
@@ -76,7 +78,7 @@ export const AnimationContent = () => {
               transition={{ staggerChildren: 0.01 }}
               viewport={{ once: true }}
               className={cn(
-                "prose px-14 text-4xl text-white",
+                "prose px-10 text-4xl text-white xl:px-14",
                 raleway.className,
               )}
             >
@@ -98,7 +100,7 @@ export const AnimationContent = () => {
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="w-[50%] py-10"
+            className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]"
           >
             <div className="relative h-[850px] w-[850px]">
               <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
@@ -140,14 +142,14 @@ export const AnimationContent = () => {
       {/* Section 3 */}
 
       <section className="h-auto w-full">
-        <div className="mt-20 flex h-full flex-row">
+        <div className="mt-20 flex h-full flex-col xl:flex-row">
           <motion.div
             variants={fadeIn("right", delay)}
             initial="hidden"
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="flex w-[50%] justify-center"
+            className="flex w-full justify-center xl:w-[50%]"
           >
             <div className="relative mt-20 h-[850px] w-[850px]">
               <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
@@ -162,9 +164,9 @@ export const AnimationContent = () => {
               </div>
             </div>
           </motion.div>
-          <div className="flex w-[50%] flex-col">
+          <div className="flex w-full flex-col xl:w-[50%]">
             <div className="flex flex-col items-center text-white">
-              <h2 className="heading-two mb-20 mt-14 text-6xl font-semibold">
+              <h2 className="heading-two mb-20 mt-14 text-5xl font-semibold xl:text-6xl">
                 What is our mission?
               </h2>
               <motion.p
@@ -189,7 +191,7 @@ export const AnimationContent = () => {
               </motion.p>
             </div>
             <div className="flex flex-col items-center text-white">
-              <h2 className="heading-two mb-20 text-6xl font-semibold">
+              <h2 className="heading-two mb-20 text-5xl font-semibold xl:text-6xl">
                 Who are our founders?
               </h2>
               <motion.p
@@ -219,10 +221,10 @@ export const AnimationContent = () => {
 
       {/* Section 4 */}
 
-      <section className="h-[1600px] w-full">
-        <div className="mt-40 flex h-auto w-full flex-row ">
-          <div className="ml-[50px] mt-[200px] flex w-[50%] flex-col items-center text-white">
-            <h2 className="heading-two mb-20 py-2 text-6xl font-semibold">
+      <section className="w-full xl:h-[1600px]">
+        <div className="mt-20 flex h-auto w-full flex-col xl:mt-40 xl:flex-row ">
+          <div className="flex w-full flex-col items-center text-white xl:ml-[50px] xl:mt-[200px] xl:w-[50%]">
+            <h2 className="heading-two mx-auto mb-20 py-2 text-5xl font-semibold xl:text-6xl">
               Incognito Mode
             </h2>
             <motion.p
@@ -252,7 +254,7 @@ export const AnimationContent = () => {
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="flex w-[50%] justify-center"
+            className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%]"
           >
             <div className="relative h-[850px] w-[850px]">
               <div className="absolute inset-0 rounded-3xl shadow-2xl shadow-cyan-300">

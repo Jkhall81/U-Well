@@ -57,7 +57,11 @@ export const Footer = () => {
           <Link href="/" target="_blank" aria-label="icon link to YouTube">
             <FaYoutube color="white" size={70} />
           </Link>
-          <Link href="/" target="_blank" aria-label="icon link to Meta">
+          <Link
+            href="https://www.facebook.com/profile.php?id=61554167284104"
+            target="_blank"
+            aria-label="icon link to Meta"
+          >
             <FaFacebook color="white" size={70} />
           </Link>
           <Link

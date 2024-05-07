@@ -17,7 +17,7 @@ const LiComponent = ({ title, text, listItems }: Props) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="heading-two pb-20 text-6xl font-semibold"
+        className="heading-two pb-20 text-5xl font-semibold xl:text-6xl"
       >
         {title}
       </motion.h2>
@@ -26,7 +26,7 @@ const LiComponent = ({ title, text, listItems }: Props) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="prose mb-10 text-4xl text-white"
+        className="prose mx-10 mb-10 text-3xl text-white xl:text-4xl"
       >
         {text}
       </motion.p>
@@ -39,7 +39,7 @@ const LiComponent = ({ title, text, listItems }: Props) => {
               whileInView="show"
               viewport={{ once: true }}
               key={index}
-              className="prose py-4 text-3xl text-white"
+              className="prose mx-10 py-4 text-2xl text-white xl:text-3xl"
             >
               {item}
             </motion.li>
