@@ -46,7 +46,7 @@ export const Footer = () => {
               <p>
                 Built and Maintained by{" "}
                 <Link href="/">
-                  <span className="text-slate-300">Jason Hall</span>
+                  <span className="web-master">Jason Hall</span>
                 </Link>
               </p>
               <p>&copy; 2024 U-Well</p>

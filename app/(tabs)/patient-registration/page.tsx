@@ -16,7 +16,7 @@ const PatientRegistrationPage = () => {
         {/* Above Background Content */}
         <div className="content-container flex flex-col">
           <div className="flex w-full flex-col items-center justify-center px-5">
-            <h1 className="heading-one mb-10 py-4 text-9xl font-bold">
+            <h1 className="heading-one mb-10 py-4 text-7xl font-bold lg:text-9xl">
               Registration
             </h1>
             <p className="prose pb-12 text-center text-3xl text-white">
