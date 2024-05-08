@@ -70,7 +70,7 @@ export const AnimationContent = () => {
         </div>
         <div className="flex w-full flex-col xl:flex-row">
           <div className="mt-[50px] flex w-full flex-col items-center text-white xl:ml-[50px] xl:mt-[250px] xl:w-[50%]">
-            <h2 className="heading-two pb-20 text-6xl font-semibold">
+            <h2 className="heading-two mx-10 pb-20 text-6xl font-semibold">
               What is U-Well Health?
             </h2>
             <motion.p
