@@ -29,7 +29,7 @@ const paragraphText = [
     professionals who have deep roots in the medical industry
     and the mental health industry. They have witnessed the
     challenges and gaps in the current mental health system, and
-    they have decided to create a solution that ddresses them.
+    they have decided to create a solution that addresses them.
     They have combined their experitise in technology, business,
     psychology, psychiatry, and social work to create U-Well
     Health, the app that revolutionizes mental health care.`,
