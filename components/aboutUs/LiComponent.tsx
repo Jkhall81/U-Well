@@ -17,7 +17,7 @@ const LiComponent = ({ title, text, listItems }: Props) => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="heading-two pb-20 text-5xl font-semibold xl:text-6xl"
+        className="heading-two pb-20 text-center text-5xl font-semibold xl:text-6xl"
       >
         {title}
       </motion.h2>
