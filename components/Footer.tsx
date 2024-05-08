@@ -45,7 +45,7 @@ export const Footer = () => {
               <Link href="/">Privacy Policy</Link>
               <p>
                 Built and Maintained by{" "}
-                <Link href="/">
+                <Link href="https://jason-hall.vercell.app" target="_blank">
                   <span className="web-master">Jason Hall</span>
                 </Link>
               </p>
