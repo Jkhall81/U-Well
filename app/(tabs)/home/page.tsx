@@ -38,11 +38,11 @@ const HomePage = () => {
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
             <h1
-              className={`heading-one text-8xl font-semibold text-white lg:text-9xl 3xl:pl-[200px]`}
+              className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]`}
             >
               U-Well
             </h1>
-            <h1 className="heading-one text-8xl font-semibold text-white lg:text-9xl 3xl:pl-[200px]">
+            <h1 className="heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]">
               Health
             </h1>
           </div>

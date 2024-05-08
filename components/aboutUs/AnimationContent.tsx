@@ -60,10 +60,10 @@ export const AnimationContent = () => {
       {/* Section 1 */}
       <section className="min-h-screen w-full">
         <div className="mt-12 flex flex-col items-center text-white">
-          <h1 className="heading-one text-8xl font-bold lg:text-9xl">
+          <h1 className="heading-one text-7xl font-bold lg:text-8xl">
             About Us
           </h1>
-          <p className="mb-10 mt-16 px-10 text-3xl lg:text-4xl">
+          <p className="mb-10 mt-16 px-10 text-2xl lg:text-3xl">
             U-Well Health: The app that connects you to the best mental health
             care.
           </p>
@@ -79,7 +79,7 @@ export const AnimationContent = () => {
               transition={{ staggerChildren: 0.01 }}
               viewport={{ once: true }}
               className={cn(
-                "prose px-10 text-4xl text-white xl:px-14",
+                "prose px-10 text-3xl text-white xl:px-14",
                 raleway.className,
               )}
             >
@@ -150,9 +150,9 @@ export const AnimationContent = () => {
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="flex w-full justify-center xl:w-[50%]"
+            className="flex w-full justify-center pb-[200px] xl:w-[50%] xl:pb-0"
           >
-            <div className="mt-20 h-[850px] w-[850px] xl:relative">
+            <div className="mt-20 h-[600px] w-[850px] xl:relative 2xl:h-[850px]">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
                   src="/aboutUs2.png"
@@ -176,7 +176,7 @@ export const AnimationContent = () => {
                 transition={{ staggerChildren: 0.01 }}
                 viewport={{ once: true }}
                 className={cn(
-                  "prose px-10 pb-20 text-4xl text-white",
+                  "prose px-10 pb-20 text-3xl text-white",
                   raleway.className,
                 )}
               >
@@ -201,7 +201,7 @@ export const AnimationContent = () => {
                 transition={{ staggerChildren: 0.01 }}
                 viewport={{ once: true }}
                 className={cn(
-                  "prose px-10 text-4xl text-white",
+                  "prose px-10 text-3xl text-white",
                   raleway.className,
                 )}
               >
@@ -234,7 +234,7 @@ export const AnimationContent = () => {
               transition={{ staggerChildren: 0.01 }}
               viewport={{ once: true }}
               className={cn(
-                "prose px-14 text-4xl text-white",
+                "prose px-14 text-3xl text-white",
                 raleway.className,
               )}
             >
@@ -255,7 +255,7 @@ export const AnimationContent = () => {
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%]"
+            className="mt-10 flex w-full justify-center pb-[200px] xl:mt-0 xl:w-[50%]"
           >
             <div className="h-[850px] w-[850px] xl:relative">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">

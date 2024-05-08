@@ -1,4 +1,3 @@
-import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
 import { Metadata } from "next";
 import { BackgroundContent } from "@/components/BackgroundContent";
 import { AnimationContent } from "@/components/aboutUs/AnimationContent";
