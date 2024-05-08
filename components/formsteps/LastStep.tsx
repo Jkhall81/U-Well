@@ -57,6 +57,24 @@ export const LastStep = ({
     return () => clearTimeout(timeout);
   }, []);
 
+  const formatPhoneNumber = (value: string) => {
+    const cleaned = value.replace(/\D/g, "");
+    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+
+    if (match) {
+      return `(${match[1]})-${match[2]}-${match[3]}`;
+    }
+    return value;
+  };
+
+  const handlePhoneNumberChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const { value } = event.target;
+    const formattedValue = formatPhoneNumber(value);
+    form.setValue("phoneNumber", formattedValue);
+  };
+
   const handleClick = () => {
     console.log("handle Click on last step!");
     console.log("form values", form.getValues());
@@ -120,6 +138,7 @@ export const LastStep = ({
                   className={`${inputStyles}`}
                   placeholder="806-123-3324"
                   {...field}
+                  onChange={handlePhoneNumberChange}
                 />
               </FormControl>
               <FormMessage />
