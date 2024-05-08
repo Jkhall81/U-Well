@@ -167,7 +167,7 @@ export const AnimationContent = () => {
           </motion.div>
           <div className="flex w-full flex-col xl:w-[50%]">
             <div className="flex flex-col items-center text-white">
-              <h2 className="heading-two mb-20 mt-14 text-5xl font-semibold xl:text-6xl">
+              <h2 className="heading-two mb-20 mt-14 text-center text-5xl font-semibold xl:text-6xl">
                 What is our mission?
               </h2>
               <motion.p
@@ -192,7 +192,7 @@ export const AnimationContent = () => {
               </motion.p>
             </div>
             <div className="flex flex-col items-center text-white">
-              <h2 className="heading-two mb-20 text-5xl font-semibold xl:text-6xl">
+              <h2 className="heading-two mb-20 text-center text-5xl font-semibold xl:text-6xl">
                 Who are our founders?
               </h2>
               <motion.p
