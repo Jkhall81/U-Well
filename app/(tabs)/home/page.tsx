@@ -158,7 +158,7 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            style={{ marginTop: `${1000}px` }}
+            style={{ marginTop: `${1200}px` }}
             className={`absolute left-0 flex w-full items-center justify-between pb-2`}
           >
             <Footer />

@@ -5,14 +5,11 @@ interface Props {
 }
 
 import { Footer } from "@/components/Footer";
-import { useFooterStore } from "@/store/store";
 
 export const PatientRegistrationFooter = ({ height }: Props) => {
-  const yHeight = useFooterStore((state) => state.pageHeight);
-
   return (
     <div
-      style={{ marginTop: `${yHeight + height}px` }}
+      style={{ marginTop: `${1500}px` }}
       className={`absolute left-0 flex w-full items-center justify-between pb-2`}
     >
       <Footer />

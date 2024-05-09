@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 const PatientRegistrationPage = () => {
   return (
     <main className="main-container">
-      <div className="absolute h-[1900px] w-full">
+      <div className="absolute h-full w-full">
         <div className="content-container flex flex-col">
           <div className="flex w-full flex-col items-center justify-center px-5">
             <h1 className="heading-one mb-10 py-4 text-6xl font-bold lg:text-8xl">
@@ -26,7 +26,7 @@ const PatientRegistrationPage = () => {
             <MultiStepForm />
           </div>
 
-          <PatientRegistrationFooter height={500} />
+          <PatientRegistrationFooter height={0} />
         </div>
       </div>
     </main>
