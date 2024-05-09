@@ -1,6 +1,5 @@
 import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
 import { Metadata } from "next";
-import { BackgroundContent } from "@/components/BackgroundContent";
 
 export const metadata: Metadata = {
   title: "Provider Registration",
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
 const ProviderRegistrationPage = () => {
   return (
     <main className="main-container">
-      {/* Above Background Content */}
       <div className="content-container flex">
         {/* Left Heading and Paragraph Text */}
         <div className="flex h-full w-[50%] flex-col">

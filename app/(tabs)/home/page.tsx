@@ -5,9 +5,7 @@ import { raleway } from "@/lib/fonts";
 import { fadeIn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
-import { useFooterStore } from "@/store/store";
 import { splitStringUsingRegex } from "@/lib/utils";
-import { BackgroundContent } from "@/components/BackgroundContent";
 
 // Text reveal animation constants
 const text = `At U-Well, we understand that your mental well-being is a
@@ -26,11 +24,8 @@ const charVariants = {
 };
 
 const HomePage = () => {
-  const yHeight = useFooterStore((state) => state.pageHeight);
-
   return (
     <main className="main-container">
-      {/* Above Background Content */}
       <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
 

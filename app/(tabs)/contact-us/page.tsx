@@ -1,7 +1,6 @@
 import { ContactUsUseClient } from "@/components/useClientComponents/ContactUsUseClient";
 import { Footer } from "@/components/Footer";
 import { Metadata } from "next";
-import { BackgroundContent } from "@/components/BackgroundContent";
 
 export const metadata: Metadata = {
   title: "Contact Us",
