@@ -112,7 +112,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Image Block */}
-            <div className=" hidden h-full w-[50%] pl-[10px] pt-[180px] 2xl:block">
+            <div className=" hidden h-full w-[50%] pl-[10px] pt-[180px] xl:block">
               <motion.div
                 variants={fadeIn("left", 0.6)}
                 initial="hidden"
