@@ -31,18 +31,17 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "relative h-full overflow-x-hidden bg-blue-500",
+          "h-full overflow-x-hidden bg-blue-500",
           open_sans.className,
         )}
       >
-        <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />
         <NavBar />
         <MobileNav />
         <main className="h-full w-full">
+          <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />
           <BackgroundContent />
           {children}
         </main>
-
         <ScrollDetector />
       </body>
     </html>
