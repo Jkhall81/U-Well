@@ -61,10 +61,10 @@ const HomePage = () => {
         </div>
 
         {/* Image */}
-        <div className="flex h-full w-[50%] ">
+        <div className="flex h-full w-full xl:w-[50%] ">
           {/* Left Image Block */}
-          <div className="ml-[-105px] flex min-h-[1000px] min-w-[1000px] flex-row sm:ml-0">
-            <div className="flex h-full w-[50%] flex-col pl-[150px] pr-6 pt-[220px]">
+          <div className="flex min-h-[1000px] w-full flex-row sm:ml-0 xl:ml-[-105px] xl:min-w-[1000px]">
+            <div className="mx-auto flex h-full flex-col pr-6 pt-[220px] xl:w-[50%] xl:pl-[150px]">
               <motion.div
                 variants={fadeIn("down", 0.6)}
                 initial="hidden"
