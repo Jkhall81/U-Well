@@ -14,7 +14,7 @@ const PatientRegistrationPage = () => {
       <BackgroundContent />
       <div className="absolute h-[1900px] w-full">
         {/* Above Background Content */}
-        <div className="content-container flex flex-col border-2 border-red-500">
+        <div className="content-container flex flex-col">
           <div className="flex w-full flex-col items-center justify-center px-5">
             <h1 className="heading-one mb-10 py-4 text-6xl font-bold lg:text-8xl">
               Registration
@@ -30,7 +30,7 @@ const PatientRegistrationPage = () => {
             <MultiStepForm />
           </div>
 
-          <PatientRegistrationFooter height={300} />
+          <PatientRegistrationFooter height={500} />
         </div>
       </div>
     </main>
