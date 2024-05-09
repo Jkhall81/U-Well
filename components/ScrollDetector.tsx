@@ -9,27 +9,25 @@ export const ScrollDetector = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const mainElement = document.body.querySelector("main");
-      if (mainElement) {
-        const scrollPosition = mainElement!.querySelector("main")!.scrollTop;
-        const scrollThreshold = 110;
-        if (scrollPosition >= scrollThreshold) {
-          setNavTrue();
-        } else {
-          setNavFalse();
-        }
+      console.log("Y Position:", window.scrollY);
+
+      // Detect if scrolling occurred here
+      if (window.scrollY > 0) {
+        setNavTrue(); // Set NavTrue if scrolling detected
+      } else {
+        setNavFalse(); // Otherwise, set NavFalse
       }
     };
-    document.body
-      .querySelector("main")!
-      .addEventListener("scroll", handleScroll, true);
 
+    // Add scroll event listener to the window
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup: Remove event listener on component unmount
     return () => {
-      const mainElement = document.body.querySelector("main");
-      if (mainElement) {
-        mainElement.removeEventListener("scroll", handleScroll, true);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [setNavTrue, setNavFalse]);
+
+  // Return empty fragment as this component doesn't render anything visible
   return <></>;
 };

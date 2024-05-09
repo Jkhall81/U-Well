@@ -1,6 +1,5 @@
 import { MultiStepForm } from "@/components/MultiStepForm";
 import { Metadata } from "next";
-import { BackgroundContent } from "@/components/BackgroundContent";
 import { PatientRegistrationFooter } from "@/components/useClientComponents/PatientRegistrationFooter";
 
 export const metadata: Metadata = {
@@ -10,8 +9,6 @@ export const metadata: Metadata = {
 const PatientRegistrationPage = () => {
   return (
     <main className="main-container">
-      {/* Background Stuff */}
-      <BackgroundContent />
       <div className="absolute h-[1900px] w-full">
         {/* Above Background Content */}
         <div className="content-container flex flex-col">

@@ -9,9 +9,6 @@ export const metadata: Metadata = {
 const FAQPage = () => {
   return (
     <main className="main-container">
-      {/* Background Stuff */}
-      <BackgroundContent />
-
       {/* Above Background Content */}
       <div className="content-container flex flex-col items-center 4xl:px-[350px]">
         <div className="mb-12 py-16">

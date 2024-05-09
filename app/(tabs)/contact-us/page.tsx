@@ -10,9 +10,6 @@ export const metadata: Metadata = {
 const ContactUsPage = () => {
   return (
     <main className="main-container">
-      {/* Background Stuff */}
-      <BackgroundContent />
-
       {/* Above Background Content */}
       <div className="content-container flex flex-col">
         {/* Left Header and Form Container*/}

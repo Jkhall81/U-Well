@@ -140,7 +140,7 @@
 }
 
 .main-container {
-  @apply relative h-full min-h-screen w-full overflow-y-scroll bg-blue-500;
+  @apply relative h-full min-h-screen w-full bg-blue-500;
 }
 
 .content-container {

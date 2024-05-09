@@ -30,11 +30,10 @@ const HomePage = () => {
 
   return (
     <main className="main-container">
-      {/* Background Stuff */}
-      <BackgroundContent />
       {/* Above Background Content */}
       <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
+
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
             <h1
@@ -118,7 +117,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Image Block */}
-            <div className="border-3 hidden h-full w-[50%] border-red-600 pl-[10px] pt-[180px] 2xl:block">
+            <div className=" hidden h-full w-[50%] pl-[10px] pt-[180px] 2xl:block">
               <motion.div
                 variants={fadeIn("left", 0.6)}
                 initial="hidden"
@@ -164,7 +163,7 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            style={{ marginTop: `${yHeight}px` }}
+            style={{ marginTop: `${1000}px` }}
             className={`absolute left-0 flex w-full items-center justify-between pb-2`}
           >
             <Footer />

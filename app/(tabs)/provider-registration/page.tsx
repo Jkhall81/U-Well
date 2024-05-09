@@ -9,9 +9,6 @@ export const metadata: Metadata = {
 const ProviderRegistrationPage = () => {
   return (
     <main className="main-container">
-      {/* Background Stuff */}
-      <BackgroundContent />
-
       {/* Above Background Content */}
       <div className="content-container flex">
         {/* Left Heading and Paragraph Text */}

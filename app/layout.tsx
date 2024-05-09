@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import { NavBar } from "@/components/NavBar";
-import { Footer } from "@/components/Footer";
-
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/MobileNav";
 import { ScrollDetector } from "@/components/ScrollDetector";
+import { BackgroundContent } from "@/components/BackgroundContent";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -30,14 +29,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("h-full min-h-screen", open_sans.className)}>
+      <body
+        className={cn(
+          "relative h-full overflow-x-hidden bg-blue-500",
+          open_sans.className,
+        )}
+      >
+        <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />
         <NavBar />
         <MobileNav />
-        <main className=" h-full min-h-screen w-full ">{children}</main>
+        <main className="h-full w-full">
+          <BackgroundContent />
+          {children}
+        </main>
 
-        {/* Footer  */}
-        <div className="absolute bottom-0 flex w-full"></div>
-        <div className="overflow-y absolute left-0 top-0 h-screen w-full bg-black/20 bg-gradient-to-r from-black" />
         <ScrollDetector />
       </body>
     </html>
