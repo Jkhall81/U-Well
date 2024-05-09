@@ -35,10 +35,7 @@ export const MobileNav = () => {
         )}
       >
         {/* Shapes */}
-        <div className="absolute h-[400px] w-[400px] rounded-full bg-blue-500 opacity-20 blur-lg" />
-        <div className="absolute ml-[500px] mt-[300px] h-[200px] w-[200px] rounded-full bg-blue-300 opacity-20 blur-lg" />
-        <div className="absolute ml-[-300px] mt-[200px] h-[600px] w-[600px] rounded-full bg-cyan-600 opacity-20 blur-xl" />
-        <div className="absolute ml-[90px] mt-[800px] h-[800px] w-[800px] rounded-full bg-green-800 opacity-20 blur-xl" />
+
         <div className="h-full">
           {/* nav close btn */}
           <div
