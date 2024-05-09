@@ -158,3 +158,7 @@
 .web-master {
   @apply bg-gradient-to-r from-rose-200 via-pink-400 to-red-600 bg-clip-text text-transparent;
 }
+
+html {
+  scroll-behavior: smooth;
+}
