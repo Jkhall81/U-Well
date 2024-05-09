@@ -255,7 +255,7 @@ export const AnimationContent = () => {
             whileInView="show"
             transition={easeInOut}
             viewport={{ once: true }}
-            className="mt-10 flex w-full justify-center pb-[200px] xl:mt-0 xl:w-[50%]"
+            className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%] xl:pb-[200px]"
           >
             <div className="h-[850px] w-[850px] xl:relative">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">

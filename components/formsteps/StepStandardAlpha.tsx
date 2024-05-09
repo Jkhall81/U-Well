@@ -47,7 +47,7 @@ export const StepStandardAlpha = ({
               size="lg"
               key={index}
             >
-              <span className="text-lg font-semibold">
+              <span className="font-semibold xl:text-lg">
                 {striptQuotes(answer)}
               </span>
             </Button>

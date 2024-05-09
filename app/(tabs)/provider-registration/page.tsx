@@ -20,10 +20,6 @@ const ProviderRegistrationPage = () => {
           <div className="flex h-[55%] w-full items-center justify-center pl-[45px]"></div>
         </div>
         {/* Image */}
-        <div className="flex h-full w-[50%]">
-          <div className="flex h-full w-[50%] flex-col pt-[220px]"></div>
-          <div className="h-full w-[50%] pl-[10px] pt-[180px]"></div>
-        </div>
 
         <UseClientComponent height={500} />
       </div>
