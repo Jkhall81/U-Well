@@ -6,4 +6,16 @@ describe("HomePage - Rendering", () => {
     render(<HomePage />);
     expect(screen.getByText("U-Well")).toBeInTheDocument();
   });
+
+  it("should have footer link with text Terms & Conditions", () => {
+    render(<HomePage />);
+    expect(screen.getByText("Terms & Conditions")).toBeInTheDocument();
+  });
+  // need to wait for the animation to bring the text in
+  it("should have designed to fit in a p tag", () => {
+    render(<HomePage />);
+    setTimeout(() => {
+      expect(screen.getByText(/designed to fit/)).toBeInTheDocument();
+    });
+  }, 3000);
 });

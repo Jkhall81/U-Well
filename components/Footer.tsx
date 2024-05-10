@@ -41,8 +41,8 @@ export const Footer = () => {
           <div className="md:flex-1"></div>
           <div className="px-6 md:flex-1">
             <div className="flex flex-col gap-4">
-              <Link href="/">Terms & Conditions</Link>
-              <Link href="/">Privacy Policy</Link>
+              <Link href="/terms-and-conditions">Terms & Conditions</Link>
+              <Link href="/privacy-policy">Privacy Policy</Link>
               <p>
                 Built and Maintained by{" "}
                 <Link href="https://jason-hall.vercel.app" target="_blank">
