@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "h-full overflow-x-hidden bg-blue-500",
+          "h-full overflow-x-hidden bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300",
           open_sans.className,
         )}
       >

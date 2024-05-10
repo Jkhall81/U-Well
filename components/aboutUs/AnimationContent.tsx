@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { cn, fadeIn, splitStringUsingRegex } from "@/lib/utils";
-import { easeInOut, motion } from "framer-motion";
+import { easeIn, motion } from "framer-motion";
 import LiComponent from "@/components/aboutUs/LiComponent";
 import { aboutUsDataOne, aboutUsDataTwo } from "@/lib/data";
 import { raleway } from "@/lib/fonts";
@@ -52,7 +52,7 @@ const charVariants = {
   reveal: { opacity: 1 },
 };
 
-const delay = 1.6;
+const delay = 0.6;
 
 export const AnimationContent = () => {
   return (
@@ -99,7 +99,7 @@ export const AnimationContent = () => {
             variants={fadeIn("left", delay)}
             initial="hidden"
             whileInView="show"
-            transition={easeInOut}
+            transition={easeIn}
             viewport={{ once: true }}
             className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]"
           >
@@ -148,7 +148,7 @@ export const AnimationContent = () => {
             variants={fadeIn("right", delay)}
             initial="hidden"
             whileInView="show"
-            transition={easeInOut}
+            transition={easeIn}
             viewport={{ once: true }}
             className="flex w-full justify-center pb-[200px] xl:w-[50%] xl:pb-0"
           >
@@ -253,7 +253,7 @@ export const AnimationContent = () => {
             variants={fadeIn("left", delay)}
             initial="hidden"
             whileInView="show"
-            transition={easeInOut}
+            transition={easeIn}
             viewport={{ once: true }}
             className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%] xl:pb-[200px]"
           >

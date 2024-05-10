@@ -140,7 +140,7 @@
 }
 
 .main-container {
-  @apply relative h-full min-h-screen w-full bg-blue-500;
+  @apply relative h-full min-h-screen w-full bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300;
 }
 
 .content-container {
