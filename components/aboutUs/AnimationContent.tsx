@@ -95,14 +95,7 @@ export const AnimationContent = () => {
             </motion.p>
           </div>
 
-          <motion.div
-            variants={fadeIn("left", delay)}
-            initial="hidden"
-            whileInView="show"
-            transition={easeIn}
-            viewport={{ once: true }}
-            className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]"
-          >
+          <div className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]">
             <div className="h-[850px] w-[850px] xl:relative">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
@@ -115,7 +108,7 @@ export const AnimationContent = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -144,14 +137,7 @@ export const AnimationContent = () => {
 
       <section className="h-auto w-full">
         <div className="mt-20 flex h-full flex-col xl:flex-row">
-          <motion.div
-            variants={fadeIn("right", delay)}
-            initial="hidden"
-            whileInView="show"
-            transition={easeIn}
-            viewport={{ once: true }}
-            className="flex w-full justify-center pb-[200px] xl:w-[50%] xl:pb-0"
-          >
+          <div className="flex w-full justify-center pb-[200px] xl:w-[50%] xl:pb-0">
             <div className="mt-20 h-[600px] w-[850px] xl:relative 2xl:h-[850px]">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
@@ -164,7 +150,7 @@ export const AnimationContent = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
           <div className="flex w-full flex-col xl:w-[50%]">
             <div className="flex flex-col items-center text-white">
               <h2 className="heading-two mb-20 mt-14 text-center text-5xl font-semibold xl:text-6xl">
@@ -249,15 +235,8 @@ export const AnimationContent = () => {
               ))}
             </motion.p>
           </div>
-          <motion.div
-            variants={fadeIn("left", delay)}
-            initial="hidden"
-            whileInView="show"
-            transition={easeIn}
-            viewport={{ once: true }}
-            className="mt-10 flex w-full justify-center xl:mt-0 xl:w-[50%] xl:pb-[200px]"
-          >
-            <div className="h-[850px] w-[850px] xl:relative">
+          <div className="mt-10 flex w-full justify-center pb-[200px] xl:mt-0 xl:w-[50%]">
+            <div className="relative w-[850px] xl:h-[850px]">
               <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
                 <Image
                   src="/aboutUs3.png"
@@ -269,7 +248,7 @@ export const AnimationContent = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       <Footer />

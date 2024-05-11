@@ -11,11 +11,22 @@ describe("HomePage - Rendering", () => {
     render(<HomePage />);
     expect(screen.getByText("Terms & Conditions")).toBeInTheDocument();
   });
-  // need to wait for the animation to bring the text in
-  it("should have designed to fit in a p tag", () => {
+  it("should be a image with smiling man alt", () => {
     render(<HomePage />);
-    setTimeout(() => {
-      expect(screen.getByText(/designed to fit/)).toBeInTheDocument();
+    const smilingManImages = screen.getAllByRole("img", {
+      name: "smiling man",
     });
-  }, 3000);
+    expect(smilingManImages.length).toBeGreaterThan(1);
+  });
+});
+
+describe("HomePage - Footer link", () => {
+  it("should have a link in the footer with the text jason hall", () => {
+    render(<HomePage />);
+    expect(screen.getByRole("link", { name: "Jason Hall" }));
+  });
+  it("should have a facebook icon link", () => {
+    render(<HomePage />);
+    expect(screen.getByRole("link", { name: "icon link to Meta" }));
+  });
 });
