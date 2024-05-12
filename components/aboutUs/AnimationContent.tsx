@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { cn, fadeIn, splitStringUsingRegex } from "@/lib/utils";
-import { easeIn, motion } from "framer-motion";
+import { cn, splitStringUsingRegex } from "@/lib/utils";
+import { motion } from "framer-motion";
 import LiComponent from "@/components/aboutUs/LiComponent";
 import { aboutUsDataOne, aboutUsDataTwo } from "@/lib/data";
 import { raleway } from "@/lib/fonts";
@@ -51,8 +51,6 @@ const charVariants = {
   hidden: { opacity: 0 },
   reveal: { opacity: 1 },
 };
-
-const delay = 0.6;
 
 export const AnimationContent = () => {
   return (
