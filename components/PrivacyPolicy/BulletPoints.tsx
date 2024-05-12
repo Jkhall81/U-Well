@@ -10,9 +10,13 @@ export const BulletPoints = ({ title, text, bullets }: Props) => {
   return (
     <main className="flex flex-col">
       <div className="mx-auto flex flex-col items-center pt-20 text-white">
-        <h2 className="text-6xl font-semibold text-white">{title}</h2>
-        <p className="prose mx-auto pt-10 text-3xl text-white">{text}</p>
-        <ul className="mx-[700px] space-y-4 pt-20 text-3xl">
+        <h2 className="mx-10 text-center text-6xl font-semibold text-white">
+          {title}
+        </h2>
+        <p className="prose mx-10 pt-10 text-3xl text-white xl:mx-auto">
+          {text}
+        </p>
+        <ul className="2xl:[300px] mx-10 space-y-4 pt-20 text-3xl 3xl:mx-[700px]">
           {bullets.map((bullet, index) => {
             return (
               <li key={index} className="flex justify-start">

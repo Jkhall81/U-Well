@@ -6,11 +6,14 @@ interface Props {
 export const TitleAndText = ({ title, text }: Props) => {
   return (
     <main>
-      <div className="mx-auto pt-20 text-white">
+      <div className="mx-10 pt-20 text-white xl:mx-auto">
         <h2 className="text-center text-6xl font-semibold">{title}</h2>
         {text.map((paragraph, index) => {
           return (
-            <p key={index} className="prose mx-auto pt-10 text-3xl text-white">
+            <p
+              key={index}
+              className="prose pt-10 text-3xl text-white xl:mx-auto"
+            >
               {paragraph}
             </p>
           );
