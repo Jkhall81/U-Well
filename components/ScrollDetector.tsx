@@ -9,8 +9,6 @@ export const ScrollDetector = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log("Y Position:", window.scrollY);
-
       // Detect if scrolling occurred here
       if (window.scrollY > 0) {
         setNavTrue(); // Set NavTrue if scrolling detected

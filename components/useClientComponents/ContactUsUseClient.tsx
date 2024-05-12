@@ -39,6 +39,7 @@ export const ContactUsUseClient = () => {
   const [position, setPosition] = useState("Member");
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
+    Object.assign(data, { senderStatus: position });
     console.log(data);
   };
 
@@ -104,7 +105,7 @@ export const ContactUsUseClient = () => {
                   <FormControl>
                     <Input
                       className={`w-full ${inputStyles}`}
-                      placeholder="John.Doe@email.com"
+                      placeholder="John.Doe@gmail.com"
                       {...field}
                     />
                   </FormControl>
@@ -148,9 +149,9 @@ export const ContactUsUseClient = () => {
                       <DropdownMenuTrigger asChild>
                         <Input
                           placeholder="Select your status."
-                          value={position}
                           className={`w-full text-gray-500 ${inputStyles}`}
-                          readOnly
+                          {...field}
+                          value={position}
                         />
                       </DropdownMenuTrigger>
                       <DropdownMenuContent className="w-56">
