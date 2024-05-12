@@ -1,6 +1,5 @@
 import { UseClientComponent } from "@/components/useClientComponents/UseClientComponent";
 import { Metadata } from "next";
-
 export const metadata: Metadata = {
   title: "Provider Registration",
 };
