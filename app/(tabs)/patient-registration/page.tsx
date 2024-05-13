@@ -25,7 +25,6 @@ const PatientRegistrationPage = () => {
           <div className="h-full w-full">
             <MultiStepForm />
           </div>
-
           <PatientRegistrationFooter height={0} />
         </div>
       </div>
