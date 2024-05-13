@@ -16,8 +16,8 @@ export const FAQAccordion = () => {
   const [accordionStates, setAccordionStates] = useState(
     Array(FAQData.length).fill(false),
   );
-  const setStateTrue = useNavStore((state) => state.setNavSolidTrue);
-  const setStateFalse = useNavStore((state) => state.setNavSolidFalse);
+  // const setStateTrue = useNavStore((state) => state.setNavSolidTrue);
+  // const setStateFalse = useNavStore((state) => state.setNavSolidFalse);
 
   const toggleAccordion = (index: number) => {
     const newAccordionStates = [...accordionStates];
@@ -25,14 +25,14 @@ export const FAQAccordion = () => {
     setAccordionStates(newAccordionStates);
   };
 
-  useEffect(() => {
-    const solidNav = accordionStates.some((state) => state);
-    if (solidNav) {
-      setStateTrue();
-    } else {
-      setStateFalse();
-    }
-  }, [accordionStates, setStateTrue, setStateFalse]);
+  // useEffect(() => {
+  //   const solidNav = accordionStates.some((state) => state);
+  //   if (solidNav) {
+  //     setStateTrue();
+  //   } else {
+  //     setStateFalse();
+  //   }
+  // }, [accordionStates, setStateTrue, setStateFalse]);
 
   return (
     <section className="text-white lg:px-14">

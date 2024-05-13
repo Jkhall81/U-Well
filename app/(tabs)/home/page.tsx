@@ -26,11 +26,11 @@ const charVariants = {
 const HomePage = () => {
   return (
     <main className="main-container">
-      <div className="content-container lg:flex">
+      <div className="content-container border-2 border-purple-700 lg:flex">
         {/* Left Heading and Paragraph Text */}
 
-        <div className="flex h-full flex-col lg:w-[50%]">
-          <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
+        <div className="flex h-full flex-col border-2 border-red-500 lg:w-[50%]">
+          <div className="flex h-[45%] w-full flex-col justify-center border-2 border-orange-500 pl-[40px]">
             <h1
               className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]`}
             >
@@ -158,7 +158,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute mt-[1300px] w-full">
+        <div className="absolute mt-[800px] w-full border-2 border-red-500 pt-[500px]">
           <Footer />
         </div>
       </div>

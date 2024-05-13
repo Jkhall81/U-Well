@@ -32,18 +32,18 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "overflow-y-hidden bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300",
+          "h-full bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300",
           open_sans.className,
         )}
       >
-        <main className="overflow-x-hidden">
+        <main className="">
           <NavBar />
           <MobileNav />
           <BackgroundContent />
           <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />
           {children}
+          <ScrollDetector />
         </main>
-        <ScrollDetector />
       </body>
     </html>
   );
