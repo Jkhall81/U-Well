@@ -26,11 +26,25 @@ const charVariants = {
 const HomePage = () => {
   return (
     <main className="main-container">
-      <div className="content-container border-2 border-purple-700 lg:flex">
+      <Image
+        src={"/shape2.png"}
+        alt="abstract shape"
+        height={650}
+        width={650}
+        className="absolute z-[40] mt-[150px] xl:ml-[150px]"
+      />
+      <Image
+        src="/shape.png"
+        alt="abstract shape"
+        height={950}
+        width={950}
+        className="absolute z-[40] xl:ml-[1350px] xl:mt-[350px]"
+      />
+      <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
 
-        <div className="flex h-full flex-col border-2 border-red-500 lg:w-[50%]">
-          <div className="flex h-[45%] w-full flex-col justify-center border-2 border-orange-500 pl-[40px]">
+        <div className="flex h-full flex-col lg:w-[50%]">
+          <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
             <h1
               className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]`}
             >
@@ -64,7 +78,7 @@ const HomePage = () => {
         <div className="flex h-full w-full xl:w-[50%] ">
           {/* Left Image Block */}
           <div className="ml-0 flex min-h-[1000px] flex-row  xl:ml-[-105px] xl:min-w-[1000px]">
-            <div className="flex h-full flex-col pr-6 pt-[220px] xl:ml-0 xl:w-[50%] xl:pl-[13vh]">
+            <div className="flex h-full flex-col pl-20 pr-6 pt-[220px] xl:w-[50%] xl:pl-[13vh]">
               <motion.div
                 variants={fadeIn("down", 0.6)}
                 initial="hidden"
@@ -158,7 +172,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute mt-[800px] w-full border-2 border-red-500 pt-[500px]">
+        <div className="absolute mt-[800px] w-full pt-[500px]">
           <Footer />
         </div>
       </div>
