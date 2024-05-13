@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { MobileNav } from "@/components/MobileNav";
 import { ScrollDetector } from "@/components/ScrollDetector";
 import { BackgroundContent } from "@/components/BackgroundContent";
+import { Footer } from "@/components/Footer";
 
 const open_sans = Open_Sans({
   subsets: ["latin"],
@@ -31,13 +32,13 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "h-full overflow-y-hidden bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300",
+          "overflow-y-hidden bg-gradient-to-r from-indigo-700  via-blue-600 to-sky-300",
           open_sans.className,
         )}
       >
-        <NavBar />
-        <MobileNav />
-        <main className="overflow-x-hidden overflow-y-scroll">
+        <main className="overflow-x-hidden">
+          <NavBar />
+          <MobileNav />
           <BackgroundContent />
           <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />
           {children}

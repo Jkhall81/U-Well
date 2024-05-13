@@ -157,12 +157,9 @@ const HomePage = () => {
               </motion.div>
             </div>
           </div>
-          <div
-            style={{ marginTop: `${1200}px` }}
-            className={`absolute left-0 flex w-full items-center justify-between pb-2`}
-          >
-            <Footer />
-          </div>
+        </div>
+        <div className="absolute mt-[1300px] w-full">
+          <Footer />
         </div>
       </div>
     </main>
