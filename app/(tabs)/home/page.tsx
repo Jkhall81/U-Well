@@ -38,7 +38,7 @@ const HomePage = () => {
         alt="abstract shape"
         height={950}
         width={950}
-        className="absolute z-[40] ml-[1050px] mt-[350px] hidden 3xl:flex"
+        className="absolute z-[40] ml-[900px] mt-[450px] hidden 3xl:flex"
       />
       <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
@@ -54,7 +54,7 @@ const HomePage = () => {
               Health
             </h1>
           </div>
-          <div className="flex h-[45%] w-full items-start pl-[45px] 2xl:w-[900px] 3xl:pl-[250px]">
+          <div className="flex h-[45%] w-full items-start pl-[45px] 2xl:w-[49vw] 3xl:pl-[250px]">
             <motion.p
               initial="hidden"
               whileInView="reveal"
@@ -75,10 +75,10 @@ const HomePage = () => {
         </div>
 
         {/* Image */}
-        <div className="flex h-full w-full">
+        <div className="flex h-full">
           {/* Left Image Block */}
-          <div className="ml-0 flex min-h-[1000px] flex-row xl:ml-[-105px] xl:min-w-[1000px]">
-            <div className="flex h-full flex-col pl-20 pr-6 pt-[220px] xl:w-[50%] xl:pl-[13vh]">
+          <div className="ml-0 flex min-h-[1000px] flex-row xl:ml-[-105px] xl:min-w-[900px]">
+            <div className="flex h-full flex-col pl-20 pr-6 pt-[220px] xl:w-[50%] xl:pl-[9vh]">
               <motion.div
                 variants={fadeIn("down", 0.6)}
                 initial="hidden"
