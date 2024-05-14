@@ -172,7 +172,7 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="absolute w-full lg:mt-[800px] lg:pt-[500px]">
+        <div className="absolute mt-[300px] w-full lg:mt-[800px] lg:pt-[500px]">
           <Footer />
         </div>
       </div>
