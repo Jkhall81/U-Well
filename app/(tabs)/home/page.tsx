@@ -38,7 +38,7 @@ const HomePage = () => {
         alt="abstract shape"
         height={950}
         width={950}
-        className="absolute z-[40] xl:ml-[1350px] xl:mt-[350px]"
+        className="absolute z-[40] ml-[1050px] mt-[350px] hidden 3xl:flex"
       />
       <div className="content-container lg:flex">
         {/* Left Heading and Paragraph Text */}
@@ -75,9 +75,9 @@ const HomePage = () => {
         </div>
 
         {/* Image */}
-        <div className="flex h-full w-full xl:w-[50%] ">
+        <div className="flex h-full w-full">
           {/* Left Image Block */}
-          <div className="ml-0 flex min-h-[1000px] flex-row  xl:ml-[-105px] xl:min-w-[1000px]">
+          <div className="ml-0 flex min-h-[1000px] flex-row xl:ml-[-105px] xl:min-w-[1000px]">
             <div className="flex h-full flex-col pl-20 pr-6 pt-[220px] xl:w-[50%] xl:pl-[13vh]">
               <motion.div
                 variants={fadeIn("down", 0.6)}
@@ -93,7 +93,7 @@ const HomePage = () => {
                 />
               </motion.div>
 
-              <div className="mt-8 flex w-full">
+              <div className="mt-8 flex">
                 <motion.div
                   variants={fadeIn("right", 0.6)}
                   initial="hidden"
@@ -126,7 +126,7 @@ const HomePage = () => {
             </div>
 
             {/* Right Image Block */}
-            <div className=" hidden h-full w-[50%] pl-[10px] pt-[180px] xl:block">
+            <div className="hidden h-full w-[50%] pl-[10px] pt-[180px] xl:flex xl:flex-col">
               <motion.div
                 variants={fadeIn("left", 0.6)}
                 initial="hidden"
