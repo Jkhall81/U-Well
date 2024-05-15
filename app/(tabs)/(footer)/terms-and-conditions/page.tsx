@@ -38,8 +38,8 @@ const TermsAndConditionsPage = () => {
           })}
         </div>
         <div className="mx-10 mt-20 flex flex-col items-center space-y-10 text-white">
-          <h2 className="text-6xl font-semibold">Contact Us</h2>
-          <p className="prose pb-[400px] text-3xl text-white">
+          <h2 className="text-4xl font-semibold xl:text-6xl">Contact Us</h2>
+          <p className="prose mx-auto pb-[400px] text-3xl text-white">
             If you have any questions, comments, or concerns about these Terms
             or the Application or the Services, please contact us at: <br />
             <br />
