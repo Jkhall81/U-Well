@@ -112,7 +112,7 @@ export const AnimationContent = () => {
 
       {/* Section 2 */}
 
-      <section className="h-auto w-full">
+      <section className="w-full">
         <div>
           <div>
             <LiComponent
