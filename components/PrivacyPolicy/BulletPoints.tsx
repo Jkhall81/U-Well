@@ -10,7 +10,7 @@ export const BulletPoints = ({ title, text, bullets }: Props) => {
   return (
     <main className="flex flex-col">
       <div className="mx-auto flex flex-col items-center pt-20 text-white">
-        <h2 className="mx-10 text-center text-6xl font-semibold text-white">
+        <h2 className="mx-10 text-center text-4xl font-semibold text-white xl:text-6xl">
           {title}
         </h2>
         <p className="prose mx-10 pt-10 text-3xl text-white xl:mx-auto">

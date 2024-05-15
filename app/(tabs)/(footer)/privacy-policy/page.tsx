@@ -109,7 +109,7 @@ const PrivacyPolicyPage = () => {
               text={TitleAndTextData[3].text}
             />
             <div className="flex flex-col items-center pt-20">
-              <h2 className="mx-10 text-6xl font-semibold">
+              <h2 className="mx-10 text-4xl font-semibold xl:text-6xl">
                 How Do You Contact Us?
               </h2>
               <p className="prose mx-10 pb-20 pt-20 text-3xl text-white">
