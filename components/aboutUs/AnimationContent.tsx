@@ -93,9 +93,9 @@ export const AnimationContent = () => {
             </motion.p>
           </div>
 
-          <div className="mt-20 flex w-full justify-center py-10 xl:block xl:w-[50%]">
-            <div className="h-[850px] w-[850px] xl:relative">
-              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
+          <div className="mt-20 flex w-full justify-center py-10 xl:w-[50%]">
+            <div className="xl:relative xl:h-[850px] xl:w-[850px]">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
                 <Image
                   src="/aboutUs1.png"
                   alt="smiling woman"
