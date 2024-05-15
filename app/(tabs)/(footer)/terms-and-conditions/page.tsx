@@ -44,7 +44,7 @@ const TermsAndConditionsPage = () => {
             or the Application or the Services, please contact us at: <br />
             <br />
             <a
-              className="text-2xl text-white xl:text-3xl"
+              className="text-xl text-white xl:text-3xl"
               href="mailto:support@mentalhealthsolutions.com"
             >
               support@mentalhealthsolutions.com
