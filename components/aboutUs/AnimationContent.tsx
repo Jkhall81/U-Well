@@ -137,7 +137,7 @@ export const AnimationContent = () => {
         <div className="mt-20 flex h-full flex-col xl:flex-row">
           <div className="flex w-full justify-center pb-[200px] xl:w-[50%] xl:pb-0">
             <div className="mt-20 h-[600px] w-[850px] xl:relative 2xl:h-[850px]">
-              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
                 <Image
                   src="/aboutUs2.png"
                   alt="person with outstretched arms"
@@ -235,7 +235,7 @@ export const AnimationContent = () => {
           </div>
           <div className="mt-10 flex w-full justify-center pb-[200px] xl:mt-0 xl:w-[50%]">
             <div className="relative w-[850px] xl:h-[850px]">
-              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300 xl:absolute">
+              <div className="inset-0 rounded-3xl shadow-2xl shadow-cyan-300">
                 <Image
                   src="/aboutUs3.png"
                   alt="woman stretching"
