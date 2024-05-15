@@ -11,6 +11,7 @@ export const Footer = () => {
   const setHeight = useFooterStore((state) => state.setPageHeight);
   // For some reason footer is initiall loading high up on the page.  Which is not at the bottom where it needs to be.  So this is keeping the footer invisible until the page renders.
   const [isVisible, setIsVisible] = useState(false);
+  const [iconSize, setIconSize] = useState(70);
 
   useEffect(() => {
     setIsVisible(true);
@@ -24,9 +25,16 @@ export const Footer = () => {
 
     const handleResize = () => {
       updatePageHeight();
+      if (window.innerWidth < 1280) {
+        setIconSize(50);
+      } else {
+        setIconSize(70);
+      }
     };
 
     window.addEventListener("resize", handleResize);
+
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -55,21 +63,21 @@ export const Footer = () => {
         </div>
         <div className="flex w-full justify-evenly pb-4">
           <Link href="/" target="_blank" aria-label="icon link to YouTube">
-            <FaYoutube color="white" size={70} />
+            <FaYoutube color="white" size={iconSize} />
           </Link>
           <Link
             href="https://www.facebook.com/profile.php?id=61554167284104"
             target="_blank"
             aria-label="icon link to Meta"
           >
-            <FaFacebook color="white" size={70} />
+            <FaFacebook color="white" size={iconSize} />
           </Link>
           <Link
             href="https://www.linkedin.com/company/u-well-health/"
             target="_blank"
             aria-label="icon link to Linkedin"
           >
-            <FaLinkedin className="text-white" size={70} />
+            <FaLinkedin className="text-white" size={iconSize} />
           </Link>
         </div>
       </div>

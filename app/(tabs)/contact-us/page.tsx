@@ -25,11 +25,11 @@ const ContactUsPage = () => {
           <ContactUsUseClient />
         </div>
         {/* Image */}
-        <div className="hidden h-full 4xl:flex">
+        {/* <div className="hidden h-full 4xl:flex">
           <div className="absolute right-[200px] top-[300px] h-[400px] w-[450px] animate-blob rounded-full bg-cyan-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-2000 absolute right-8 top-40 h-[340px] w-[340px] animate-blob rounded-full bg-sky-300 opacity-70 mix-blend-multiply blur-xl filter" />
           <div className="animation-delay-4000 absolute right-[350px] top-[390px] h-[550px] w-[550px] animate-blob rounded-full bg-blue-300 opacity-70 mix-blend-multiply blur-xl filter" />
-        </div>
+        </div> */}
         {/* Footer */}
         <div
           className={`absolute left-0 mt-[1900px] flex w-full items-center justify-between pb-2`}
