@@ -102,7 +102,7 @@ export const AnimationContent = () => {
                   height={850}
                   width={850}
                   priority
-                  className="mx-auto rounded-3xl"
+                  className="rounded-3xl"
                 />
               </div>
             </div>

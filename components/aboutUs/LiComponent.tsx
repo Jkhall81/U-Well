@@ -21,15 +21,15 @@ const LiComponent = ({ title, text, listItems }: Props) => {
       >
         {title}
       </motion.h2>
-      <motion.p
-        variants={fadeIn("left", 0.6)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+      <p
+        // variants={fadeIn("left", 0.6)}
+        // initial="hidden"
+        // whileInView="show"
+        // viewport={{ once: true }}
         className="prose mx-10 mb-10 text-3xl text-white xl:text-4xl"
       >
         {text}
-      </motion.p>
+      </p>
       <ul className="list-disc">
         {listItems.map((item, index) => {
           return (
