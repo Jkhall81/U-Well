@@ -31,6 +31,7 @@ export const StepMultipleAnswers = ({
 
   const handleClick = (answer: string) => {
     const isSelected = selectedAnswers.includes(answer);
+
     if (isSelected) {
       setSelectedAnswers(selectedAnswers.filter((item) => item !== answer));
     } else {
@@ -43,11 +44,22 @@ export const StepMultipleAnswers = ({
     setStep(currentStep + 1, selectedAnswers);
   };
 
+  const isNextDisabled = selectedAnswers.length === 0;
+
   return (
     <section className="flex flex-col items-center gap-4">
       <h1 className="prose mx-auto px-5 text-center text-3xl font-bold text-white">
         {question}
       </h1>
+
+      <p
+        className={cn(
+          "pt-4 text-xl font-semibold text-white",
+          `${isVisible ? "" : "hidden"}`,
+        )}
+      >
+        Select all that apply.
+      </p>
 
       <div
         className={cn(
@@ -84,9 +96,15 @@ export const StepMultipleAnswers = ({
         )}
         onClick={handleSubmit}
         size="lg"
+        disabled={isNextDisabled}
       >
         Next
       </Button>
+      {isNextDisabled && (
+        <p className={cn("text-red-500", `${isVisible ? "" : "hidden"}`)}>
+          Please select at least one answer to continue.
+        </p>
+      )}
     </section>
   );
 };
