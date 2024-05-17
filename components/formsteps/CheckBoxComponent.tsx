@@ -37,7 +37,7 @@ export const CheckBoxComponent = ({
   setStep,
   answers,
 }: CheckBoxComponentProps) => {
-  const handleClick = (answer: string) => {
+  const handleClick = (answer: string[]) => {
     setCurrentStep(currentStep + 1);
     setStep(currentStep + 1, answer);
   };
