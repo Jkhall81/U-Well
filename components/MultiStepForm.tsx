@@ -39,11 +39,11 @@ export const MultiStepForm = () => {
     setValue(step.toString(), option);
   };
 
-  // const handlePrevious = (currentStep: number) => {
-  //   if (currentStep > 0) {
-  //     setCurrentStep(currentStep - 1);
-  //   }
-  // };
+  const handlePrevious = (currentStep: number) => {
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1);
+    }
+  };
 
   // Autosubmit, currently 31 questions
   useEffect(() => {
