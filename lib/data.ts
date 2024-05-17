@@ -218,7 +218,7 @@ export const ProviderRegistrationSteps = [
 export const PatientRegistrationSteps = [
   {
     id: 1,
-    question: "What is your gender identify?",
+    question: "What is your gender identity?",
     answers: [
       "Woman",
       "Man",
