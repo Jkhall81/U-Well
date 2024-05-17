@@ -9,9 +9,10 @@ import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 import { CSSTransition } from "react-transition-group";
 import { LastStep } from "./formsteps/LastStep";
 import { EndOfForm } from "./EndOfForm";
+import { StepMultipleAnswers } from "./formsteps/StepMultipleAnswers";
 
 type Inputs = {
-  [step: string | number]: string;
+  [step: string | number]: string | string[];
 };
 
 export const MultiStepForm = () => {
@@ -34,15 +35,15 @@ export const MultiStepForm = () => {
     formState: { errors },
   } = useForm<Inputs>();
 
-  const setStep = (step: number, option: string) => {
+  const setStep = (step: number, option: string | string[]) => {
     setValue(step.toString(), option);
   };
 
-  const handlePrevious = (currentStep: number) => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
+  // const handlePrevious = (currentStep: number) => {
+  //   if (currentStep > 0) {
+  //     setCurrentStep(currentStep - 1);
+  //   }
+  // };
 
   // Autosubmit, currently 31 questions
   useEffect(() => {
@@ -125,15 +126,27 @@ export const MultiStepForm = () => {
                 }}
                 unmountOnExit
               >
-                <StepStandardAlpha
-                  answers={step.answers}
-                  setStep={(step: number, option: string) =>
-                    setStep(step, option)
-                  }
-                  question={step.question}
-                  currentStep={currentStep}
-                  setCurrentStep={setCurrentStep}
-                />
+                {currentStep === 10 || currentStep === 11 ? (
+                  <StepMultipleAnswers
+                    answers={step.answers}
+                    setStep={(step: number, option: string[]) =>
+                      setStep(step, option)
+                    }
+                    question={step.question}
+                    currentStep={currentStep}
+                    setCurrentStep={setCurrentStep}
+                  />
+                ) : (
+                  <StepStandardAlpha
+                    answers={step.answers}
+                    setStep={(step: number, option: string) =>
+                      setStep(step, option)
+                    }
+                    question={step.question}
+                    currentStep={currentStep}
+                    setCurrentStep={setCurrentStep}
+                  />
+                )}
               </CSSTransition>
             );
           })}
