@@ -67,7 +67,7 @@ export const ProviderRegistrationSteps = [
   },
   {
     id: 5,
-    question: "Do you consider yourself to be relifious?",
+    question: "Do you consider yourself to be religious?",
     answers: ["Yes", "No"],
   },
   {

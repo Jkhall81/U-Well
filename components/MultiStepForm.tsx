@@ -25,7 +25,9 @@ export const MultiStepForm = () => {
   };
 
   const onSubmit = (data: Inputs) => {
-    Object.assign(data, { 32: formData });
+    if (currentStep === 32) {
+      Object.assign(data, { 32: formData });
+    }
     console.log(data);
   };
 
@@ -126,7 +128,7 @@ export const MultiStepForm = () => {
                 }}
                 unmountOnExit
               >
-                {currentStep === 10 || currentStep === 11 ? (
+                {currentStep === 9 || currentStep === 10 ? (
                   <StepMultipleAnswers
                     answers={step.answers}
                     setStep={(step: number, option: string[]) =>

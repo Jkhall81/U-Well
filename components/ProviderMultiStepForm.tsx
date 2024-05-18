@@ -8,6 +8,7 @@ import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 // import { IoChevronBack } from "react-icons/io5";
 import { CSSTransition } from "react-transition-group";
 import { CheckBoxComponent } from "./formsteps/CheckBoxComponent";
+import { TextAreaComponent } from "./formsteps/TextAreaComponent";
 
 type Inputs = {
   [step: string | number]: string | string[];
@@ -30,12 +31,6 @@ export const ProviderMultiStepForm = () => {
     setValue(step.toString(), option);
   };
 
-  const handlePrevious = (currentStep: number) => {
-    if (currentStep > 0) {
-      setCurrentStep(currentStep - 1);
-    }
-  };
-
   // Autosubmit, currently 22 questions
   useEffect(() => {
     if (currentStep === 22) {
@@ -43,16 +38,10 @@ export const ProviderMultiStepForm = () => {
     }
   }, [currentStep, handleSubmit]);
 
-  console.log(currentStep);
+  console.log("currentStep", currentStep);
+  const checkBoxSteps = [3, 8, 9];
   return (
     <section className="z-50 flex justify-center pt-2">
-      <div
-        onClick={() => handlePrevious(currentStep)}
-        className="absolute left-5 mt-[200px] flex items-center hover:cursor-pointer"
-      >
-        {/* <IoChevronBack color="white" size={40} />
-        <span className="text-2xl font-semibold text-white">Previous Step</span> */}
-      </div>
       {/* animation container */}
       <div className="relative w-[640px] overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -102,10 +91,10 @@ export const ProviderMultiStepForm = () => {
 
           {/* Render steps 3 to 22 */}
           {stepData.slice(2).map((step, index) => {
-            const stepIndex = index + 2;
-            return (
+            let stepIndex = index + 2;
+            return checkBoxSteps.includes(stepIndex) ? (
               <CSSTransition
-                key={stepIndex}
+                key={`${stepIndex}-checkbox`}
                 className=""
                 in={currentStep === stepIndex}
                 timeout={300}
@@ -117,52 +106,76 @@ export const ProviderMultiStepForm = () => {
                 }}
                 unmountOnExit
               >
-                {/* TODO MAKE CHECKBOX COMPONENT */}
-                {currentStep === 4 ||
-                currentStep === 9 ||
-                currentStep === 10 ? (
-                  <CheckBoxComponent
-                    answers={step.answers}
-                    setStep={(step: number, option: string[]) =>
-                      setStep(step, option)
-                    }
-                    question={step.question}
-                    currentStep={currentStep}
-                    setCurrentStep={setCurrentStep}
-                  />
-                ) : (
-                  <StepStandardAlpha
-                    answers={step.answers}
-                    setStep={(step: number, option: string) =>
-                      setStep(step, option)
-                    }
-                    question={step.question}
-                    currentStep={currentStep}
-                    setCurrentStep={setCurrentStep}
-                  />
-                )}
+                <CheckBoxComponent
+                  answers={step.answers}
+                  setStep={(step: number, option: string[]) =>
+                    setStep(step, option)
+                  }
+                  question={step.question}
+                  currentStep={currentStep}
+                  setCurrentStep={setCurrentStep}
+                />
+              </CSSTransition>
+            ) : currentStep === 11 ? (
+              <CSSTransition
+                key={`${stepIndex}-textarea-11`}
+                className=""
+                in={currentStep === stepIndex}
+                timeout={300}
+                classNames={{
+                  enter: "left-enter",
+                  enterActive: "left-enter-active",
+                  exit: "left-exit",
+                  exitActive: "left-exit-active",
+                }}
+                unmountOnExit
+              >
+                <TextAreaComponent
+                  answers={step.answers}
+                  setStep={(step: number, option: string) =>
+                    setStep(step, option)
+                  }
+                  question={step.question}
+                  currentStep={currentStep}
+                  setCurrentStep={setCurrentStep}
+                />
+              </CSSTransition>
+            ) : (
+              <CSSTransition
+                key={`${stepIndex}-standard`}
+                className=""
+                in={currentStep === stepIndex}
+                timeout={300}
+                classNames={{
+                  enter: "left-enter",
+                  enterActive: "left-enter-active",
+                  exit: "left-exit",
+                  exitActive: "left-exit-active",
+                }}
+                unmountOnExit
+              >
+                <StepStandardAlpha
+                  answers={step.answers}
+                  setStep={(step: number, option: string) =>
+                    setStep(step, option)
+                  }
+                  question={step.question}
+                  currentStep={currentStep}
+                  setCurrentStep={setCurrentStep}
+                />
               </CSSTransition>
             );
           })}
-          {/* Last Step */}
-          {currentStep === 31 && (
-            <CSSTransition
-              key={currentStep}
-              className=""
-              in={currentStep === 31}
-              timeout={300}
-              classNames={{
-                enter: "left-enter",
-                enterActive: "left-enter-active",
-                exit: "left-exit",
-                exitActive: "left-exit-active",
-              }}
-              unmountOnExit
-            ></CSSTransition>
-          )}
         </form>
         {/* Thank you message */}
-        {currentStep === 22 && <div />}
+        {currentStep === 22 && (
+          <div className="flex justify-center">
+            <p className="prose text-2xl font-semibold text-white">
+              Thank you for completing the registration. Your submission has
+              been received and is under review.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Form,
@@ -15,6 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { cn } from "@/lib/utils";
 
 interface CheckBoxComponentProps {
   question: string;
@@ -44,9 +45,6 @@ export const CheckBoxComponent = ({
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      items: [""],
-    },
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
@@ -61,9 +59,11 @@ export const CheckBoxComponent = ({
           name="items"
           render={() => (
             <FormItem>
-              <div className="mb-4">
-                <FormLabel className="text-base">Sidebar</FormLabel>
-                <FormDescription>{question}</FormDescription>
+              <div className={cn("mb-6 flex flex-col")}>
+                <FormLabel className="text-3xl text-white">
+                  {question}
+                </FormLabel>
+                <FormDescription></FormDescription>
               </div>
               {answers.map((answer, index) => (
                 <FormField
@@ -72,26 +72,30 @@ export const CheckBoxComponent = ({
                   name="items"
                   render={({ field }) => {
                     return (
-                      <FormItem
-                        key={index}
-                        className="flex flex-row items-start space-x-3 space-y-0"
-                      >
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value?.includes(answer)}
-                            onCheckedChange={(checked) => {
-                              return checked
-                                ? field.onChange([...field.value, answer])
-                                : field.onChange(
-                                    field.value?.filter(
+                      <div className="flex justify-start">
+                        <FormItem
+                          key={index}
+                          className="flex flex-row items-center space-x-3 space-y-0"
+                        >
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value?.includes(answer)}
+                              onCheckedChange={(checked) => {
+                                const currentValue = field.value || [];
+                                const updatedValue = checked
+                                  ? [...currentValue, answer]
+                                  : currentValue.filter(
                                       (value) => value !== answer,
-                                    ),
-                                  );
-                            }}
-                          />
-                        </FormControl>
-                        <FormLabel className="font-normal">Hello</FormLabel>
-                      </FormItem>
+                                    );
+                                field.onChange(updatedValue);
+                              }}
+                            />
+                          </FormControl>
+                          <FormLabel className="text-2xl text-white">
+                            {answer}
+                          </FormLabel>
+                        </FormItem>
+                      </div>
                     );
                   }}
                 />
@@ -100,7 +104,17 @@ export const CheckBoxComponent = ({
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button
+          type="button"
+          className="w-[200px] rounded-3xl bg-white text-black hover:bg-blue-600 hover:text-white"
+          size="lg"
+          onClick={() => {
+            const checkedAnswers = form.getValues("items");
+            handleClick(checkedAnswers);
+          }}
+        >
+          Next
+        </Button>
       </form>
     </Form>
   );
