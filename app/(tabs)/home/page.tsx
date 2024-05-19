@@ -83,6 +83,7 @@ const HomePage = () => {
                 variants={fadeIn("down", 0.6)}
                 initial="hidden"
                 whileInView="show"
+                viewport={{ once: true }}
               >
                 <Image
                   src="/smiling_people/smiling_woman_1.png"
@@ -98,7 +99,7 @@ const HomePage = () => {
                   variants={fadeIn("right", 0.6)}
                   initial="hidden"
                   whileInView="show"
-                  viewport={{ once: false, amount: 0.4 }}
+                  viewport={{ once: true, amount: 0.4 }}
                 >
                   <Image
                     src="/smiling_people/smiling_woman_2.png"
@@ -112,7 +113,7 @@ const HomePage = () => {
                   variants={fadeIn("left", 0.6)}
                   initial="hidden"
                   whileInView="show"
-                  viewport={{ once: false, amount: 0.4 }}
+                  viewport={{ once: true, amount: 0.4 }}
                 >
                   <Image
                     src="/smiling_people/smiling_man_2.png"
@@ -131,7 +132,7 @@ const HomePage = () => {
                 variants={fadeIn("left", 0.6)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.4 }}
               >
                 <Image
                   src="/smiling_people/smiling_man_1.png"
@@ -145,7 +146,7 @@ const HomePage = () => {
                 variants={fadeIn("right", 0.6)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.4 }}
               >
                 <Image
                   src="/smiling_people/smiling_woman_3.png"
@@ -159,7 +160,7 @@ const HomePage = () => {
                 variants={fadeIn("left", 0.6)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: false, amount: 0.4 }}
+                viewport={{ once: true, amount: 0.4 }}
               >
                 <Image
                   src="/smiling_people/smiling_woman_4.png"
