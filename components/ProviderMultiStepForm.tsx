@@ -17,6 +17,7 @@ type Inputs = {
 export const ProviderMultiStepForm = () => {
   const stepData = ProviderRegistrationSteps;
   const [currentStep, setCurrentStep] = useState(0);
+  const [showThankYou, setShowThankYou] = useState(false);
   const onSubmit = (data: Inputs) => {
     console.log(data);
   };
@@ -35,6 +36,9 @@ export const ProviderMultiStepForm = () => {
   useEffect(() => {
     if (currentStep === 22) {
       handleSubmit(onSubmit)();
+      setTimeout(() => {
+        setShowThankYou(true);
+      }, 500);
     }
   }, [currentStep, handleSubmit]);
 
@@ -168,7 +172,7 @@ export const ProviderMultiStepForm = () => {
           })}
         </form>
         {/* Thank you message */}
-        {currentStep === 22 && (
+        {showThankYou && (
           <div className="flex justify-center">
             <p className="prose text-2xl font-semibold text-white">
               Thank you for completing the registration. Your submission has

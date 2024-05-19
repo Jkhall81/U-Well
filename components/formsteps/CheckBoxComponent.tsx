@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { useEffect, useState } from "react";
 
 import { Button } from "../ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -51,6 +52,16 @@ export const CheckBoxComponent = ({
     console.log(data);
   }
 
+  const [isDisabled, setIsDisabled] = useState(true);
+
+  useEffect(() => {
+    if ((form.watch("items") ?? []).length > 0) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }, [form, form.watch("items")]);
+
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -60,7 +71,7 @@ export const CheckBoxComponent = ({
           render={() => (
             <FormItem>
               <div className={cn("mb-6 flex flex-col")}>
-                <FormLabel className="text-3xl text-white">
+                <FormLabel className="mx-10 text-3xl text-white">
                   {question}
                 </FormLabel>
                 <FormDescription></FormDescription>
@@ -72,7 +83,7 @@ export const CheckBoxComponent = ({
                   name="items"
                   render={({ field }) => {
                     return (
-                      <div className="flex justify-start">
+                      <div className="mx-10 flex justify-start">
                         <FormItem
                           key={index}
                           className="flex flex-row items-center space-x-3 space-y-0"
@@ -106,15 +117,21 @@ export const CheckBoxComponent = ({
         />
         <Button
           type="button"
-          className="w-[200px] rounded-3xl bg-white text-black hover:bg-blue-600 hover:text-white"
+          className="mx-10 w-[200px] rounded-3xl bg-white text-xl text-black hover:bg-blue-600 hover:text-white"
           size="lg"
           onClick={() => {
             const checkedAnswers = form.getValues("items");
             handleClick(checkedAnswers);
           }}
+          disabled={isDisabled}
         >
           Next
         </Button>
+        {isDisabled && (
+          <p className="text-2xl font-bold text-red-500">
+            Please make at least one selection to continue.
+          </p>
+        )}
       </form>
     </Form>
   );

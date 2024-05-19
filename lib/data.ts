@@ -150,7 +150,7 @@ export const ProviderRegistrationSteps = [
       "Explain your understanding of the different types of psychotherapies and when they are most effective.",
     answers: [
       "Demonstrated knowledge of various approaches",
-      "Focused only on one type of therapy.",
+      "Focused only on one type of therapy",
       "Had no awareness of psychotherapies",
     ],
   },
@@ -176,7 +176,7 @@ export const ProviderRegistrationSteps = [
   {
     id: 19,
     question:
-      "Have you ever dealth with a client who was resistant to treatment?  If so, what was your approach?",
+      "Have you ever dealt with a client who was resistant to treatment?  If so, what was your approach?",
     answers: [
       "Explored reasons for resistance",
       "Terminated therapy immediately",

@@ -55,28 +55,35 @@ export const TextAreaComponent = ({
   const isDisabled = !!form.formState.errors.bio || !form.formState.isValid;
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex w-full flex-col items-center justify-center space-y-6"
+      >
         <FormField
           control={form.control}
           name="bio"
           render={({ field }) => (
             <FormItem>
-              <div className="pb-6">
-                <FormLabel className="text-2xl font-semibold text-white">
-                  {question}
+              <div className="mx-10 pb-6">
+                <FormLabel>
+                  <span className="text-2xl font-semibold text-white">
+                    {question}
+                  </span>
                 </FormLabel>
               </div>
               <FormControl>
-                <Textarea
-                  placeholder="Tell us a little bit about yourself"
-                  className="rounded-xl"
-                  rows={8}
-                  {...field}
-                />
+                <div className="mx-10">
+                  <Textarea
+                    placeholder="Tell us a little bit about yourself"
+                    className="rounded-xl"
+                    rows={8}
+                    {...field}
+                  />
+                </div>
               </FormControl>
               <FormDescription>
                 {isDisabled && (
-                  <span className="text-lg text-red-500">
+                  <span className="mx-10 text-lg text-red-500">
                     Bio must be at least 10 characters.
                   </span>
                 )}
@@ -87,7 +94,7 @@ export const TextAreaComponent = ({
         />
         <Button
           type="button"
-          className="w-[200px] rounded-3xl bg-white text-black hover:bg-blue-600 hover:text-white"
+          className="mx-10 w-[200px] rounded-3xl bg-white text-black hover:bg-blue-600 hover:text-white"
           size="lg"
           onClick={() => handleClick(bio)}
           disabled={isDisabled}
