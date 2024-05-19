@@ -10,7 +10,6 @@ import {
 import { Separator } from "./ui/separator";
 import { Footer } from "@/components/Footer";
 import { FAQData } from "@/lib/data";
-import { useNavStore } from "@/store/store";
 
 export const FAQAccordion = () => {
   const [accordionStates, setAccordionStates] = useState(

@@ -30,7 +30,7 @@ const paragraphText = [
     and the mental health industry. They have witnessed the
     challenges and gaps in the current mental health system, and
     they have decided to create a solution that addresses them.
-    They have combined their experitise in technology, business,
+    They have combined their expertise in technology, business,
     psychology, psychiatry, and social work to create U-Well
     Health, the app that revolutionizes mental health care.`,
 

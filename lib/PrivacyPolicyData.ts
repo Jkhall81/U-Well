@@ -4,7 +4,7 @@ export const TitleAndTextData = [
   {
     title: "Introduction",
     text: [
-      "We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way.  This policy outlines how we collect, use, discolse, and safeguard your information when you visit our website or use our services.",
+      "We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible way.  This policy outlines how we collect, use, disclose, and safeguard your information when you visit our website or use our services.",
 
       "Please read this policy carefully.  If you do not agree with the terms of this policy, please do not access or use our website or services.  By accessing or using our website or services, you signify your acceptance of this policy.",
     ],
@@ -12,9 +12,9 @@ export const TitleAndTextData = [
   {
     title: "How Do We Protect Your Information?",
     text: [
-      "We take reasonable measures to protect your information from unauthorized access, use, disclosure, modificiation, or destruction.  However, no method of transmission or storage is completely secure, and we cannot guarantee the absolute security of your information.  Any transmission or storage of your information is at your own risk.  Please use caution when providing us with your information, and do not discolse any sensitive information that you do not want to be public.",
+      "We take reasonable measures to protect your information from unauthorized access, use, disclosure, modification, or destruction.  However, no method of transmission or storage is completely secure, and we cannot guarantee the absolute security of your information.  Any transmission or storage of your information is at your own risk.  Please use caution when providing us with your information, and do not disclose any sensitive information that you do not want to be public.",
 
-      "We comply with the Health Insurance Portability and Accountability Act (HIPAA) and other applicable laws and regulations regarding the pravacy and security of your health information.  We treat your health information as protected health information (PHI) and only use and discolse it as authorized by law or with your consent.  We maintain appropriate administrative, technical, and physical safeguards to protect your PHI from unauthorized access, use, discolsure, modification, or destruction.",
+      "We comply with the Health Insurance Portability and Accountability Act (HIPAA) and other applicable laws and regulations regarding the privacy and security of your health information.  We treat your health information as protected health information (PHI) and only use and disclose it as authorized by law or with your consent.  We maintain appropriate administrative, technical, and physical safeguards to protect your PHI from unauthorized access, use, disclosure, modification, or destruction.",
     ],
   },
   {

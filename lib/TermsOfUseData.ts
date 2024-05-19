@@ -40,7 +40,7 @@ export const termsOfUseData = [
     ],
   },
   {
-    title: "Intelletual Property Rights",
+    title: "Intellectual Property Rights",
     text: [
       `We own and retain all intellectual property rights in the Application and the Services, including but not limited to the name, logo, design, layout, content, features, functionality, and software of the Application and the Services. You may not copy, modify, distribute, sell, or otherwise use or exploit any part of the Application or the Services, without our prior written consent. You may not use any trademarks, trade names, or service marks of us or the Application, without our prior written consent. You may not use any robots, spiders, crawlers, or other automated means to access or use the Application or the Services, without our prior written consent. You may not interfere with or disrupt the operation or security of the Application or the Services, or attempt to gain unauthorized access to the Application or the Services, or any data or content stored or shared on the Application.`,
 
