@@ -9,6 +9,8 @@ import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 import { CSSTransition } from "react-transition-group";
 import { CheckBoxComponent } from "./formsteps/CheckBoxComponent";
 import { TextAreaComponent } from "./formsteps/TextAreaComponent";
+import { LastStep } from "./formsteps/LastStep";
+import Image from "next/image";
 
 type Inputs = {
   [step: string | number]: string | string[];
@@ -18,7 +20,12 @@ export const ProviderMultiStepForm = () => {
   const stepData = ProviderRegistrationSteps;
   const [currentStep, setCurrentStep] = useState(0);
   const [showThankYou, setShowThankYou] = useState(false);
+  const [formData, setFormData] = useState({});
+
   const onSubmit = (data: Inputs) => {
+    if (currentStep === 23) {
+      Object.assign(data, { 23: formData });
+    }
     console.log(data);
   };
 
@@ -32,9 +39,13 @@ export const ProviderMultiStepForm = () => {
     setValue(step.toString(), option);
   };
 
-  // Autosubmit, currently 22 questions
+  const updateFormData = (data: any) => {
+    setFormData((prevData) => ({ ...prevData, ...data }));
+  };
+
+  // Autosubmit, currently 23 questions
   useEffect(() => {
-    if (currentStep === 22) {
+    if (currentStep === 23) {
       handleSubmit(onSubmit)();
       setTimeout(() => {
         setShowThankYou(true);
@@ -45,7 +56,7 @@ export const ProviderMultiStepForm = () => {
   console.log("currentStep", currentStep);
   const checkBoxSteps = [3, 8, 9];
   return (
-    <section className="z-50 flex justify-center pt-2">
+    <section className="z-50 flex flex-col items-center pt-2">
       {/* animation container */}
       <div className="relative w-[640px] overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -170,17 +181,47 @@ export const ProviderMultiStepForm = () => {
               </CSSTransition>
             );
           })}
+          {/* Last Step */}
+          {currentStep === 22 && (
+            <CSSTransition
+              key={currentStep}
+              className=""
+              in={currentStep === 22}
+              timeout={300}
+              classNames={{
+                enter: "left-enter",
+                enterActive: "left-enter-active",
+                exit: "left-exit",
+                exitActive: "left-exit-active",
+              }}
+              unmountOnExit
+            >
+              <LastStep
+                updateFormData={updateFormData}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                setStep={setStep}
+              />
+            </CSSTransition>
+          )}
         </form>
-        {/* Thank you message */}
-        {showThankYou && (
-          <div className="flex justify-center">
-            <p className="prose text-2xl font-semibold text-white">
-              Thank you for completing the registration. Your submission has
-              been received and is under review.
-            </p>
-          </div>
-        )}
       </div>
+      {/* Thank you message */}
+      {showThankYou && (
+        <div className="flex h-full w-full flex-col items-center">
+          <p className="prose mx-10 text-3xl font-semibold text-white">
+            Thank you for completing the registration. Your submission has been
+            received and is under review.
+          </p>
+          <Image
+            src="/Hero.png"
+            alt="image of water"
+            height={1550}
+            width={1550}
+            className="hidden xl:flex"
+          />
+        </div>
+      )}
     </section>
   );
 };

@@ -56,7 +56,7 @@ export const MultiStepForm = () => {
 
   console.log(currentStep);
   return (
-    <section className="z-50 flex justify-center pt-2">
+    <section className="z-50 flex flex-col items-center pt-2">
       <div
         onClick={() => handlePrevious(currentStep)}
         className="absolute left-5 mt-[200px] flex items-center hover:cursor-pointer"
@@ -176,9 +176,9 @@ export const MultiStepForm = () => {
             </CSSTransition>
           )}
         </form>
-        {/* Thank you message */}
-        {currentStep === 32 && <EndOfForm />}
       </div>
+      {/* Thank you message */}
+      {currentStep === 32 && <EndOfForm />}
     </section>
   );
 };
