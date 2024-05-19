@@ -52,8 +52,8 @@ export const ContactUsUseClient = () => {
   return (
     <>
       {isSubmitted ? (
-        <div className="flex flex-col items-center space-y-4 text-white">
-          <h2 className="heading-two mb-6 py-2 text-5xl font-semibold">
+        <div className="mx-10 flex flex-col items-center space-y-4 text-white">
+          <h2 className="heading-two mb-6 py-2 text-center text-5xl font-semibold">
             Thank you for reaching out!
           </h2>
           <div className="prose text-2xl text-white">

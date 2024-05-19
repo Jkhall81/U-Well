@@ -218,7 +218,7 @@ export const ProviderMultiStepForm = () => {
             alt="image of water"
             height={1550}
             width={1550}
-            className="hidden xl:flex"
+            className=""
           />
         </div>
       )}

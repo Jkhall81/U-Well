@@ -128,7 +128,7 @@ export const CheckBoxComponent = ({
           Next
         </Button>
         {isDisabled && (
-          <p className="text-2xl font-bold text-red-500">
+          <p className="mx-10 text-2xl font-bold text-red-500">
             Please make at least one selection to continue.
           </p>
         )}
