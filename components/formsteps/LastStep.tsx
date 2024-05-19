@@ -165,7 +165,7 @@ export const LastStep = ({
         />
         <Button
           onClick={handleClick}
-          className="mt-6 w-[400px] rounded-xl bg-white py-6 text-lg font-semibold text-black hover:bg-sky-600 hover:text-white lg:w-[600px]"
+          className="mt-6 w-[400px] rounded-xl bg-white py-6 text-lg font-semibold text-black hover:bg-blue-600 hover:text-white lg:w-[600px]"
         >
           Submit
         </Button>
