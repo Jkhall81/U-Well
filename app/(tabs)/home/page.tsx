@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { raleway } from "@/lib/fonts";
+import { lusitana } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
 import { fadeIn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
@@ -46,11 +48,13 @@ const HomePage = () => {
         <div className="flex h-full flex-col lg:w-[50%]">
           <div className="flex h-[45%] w-full flex-col justify-center pl-[40px]">
             <h1
-              className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]`}
+              className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px] ${lusitana.className}`}
             >
               U-Well
             </h1>
-            <h1 className="heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px]">
+            <h1
+              className={`heading-one text-7xl font-semibold text-white lg:text-8xl 3xl:pl-[200px] ${lusitana.className}`}
+            >
               Health
             </h1>
           </div>
