@@ -19,6 +19,8 @@ This front end project features a navbar which disappears after the user scrolls
 
 This project was made with Next.js. Animations effects are created using Framer Motion and React Transition Group. Shadcn UI, with modifications, was used for some of the components. Zod and react hook forms are being used in the forms. Zustand is being used to manage global state. Jest and the React testing library are being used for testing.
 
+Adobe Express was used to for image editing, and design asset creation.
+
 ## Getting Started
 
 If you wish you run this application on your local machine just clone the repo, enter the new directory and execute npm i. Node is required to run this application.
