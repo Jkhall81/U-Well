@@ -14,8 +14,7 @@ const open_sans = Open_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default:
-      "U-Well: Mental Health Support for Organizations | Customized Telephone Solutions",
+    default: "U-Well: Mental health support you can afford",
     template: "U-Well: %s",
   },
   description:

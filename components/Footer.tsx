@@ -62,7 +62,11 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex w-full justify-evenly pb-4">
-          <Link href="/" target="_blank" aria-label="icon link to YouTube">
+          <Link
+            href="https://www.youtube.com/channel/UCsPffW8up8Hf8mR_dyFhm_w"
+            target="_blank"
+            aria-label="icon link to YouTube"
+          >
             <FaYoutube color="white" size={iconSize} />
           </Link>
           <Link

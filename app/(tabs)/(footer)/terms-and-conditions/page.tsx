@@ -1,6 +1,11 @@
 import { TitleAndText } from "@/components/PrivacyPolicy/TitleAndText";
 import { termsOfUseData } from "@/lib/TermsOfUseData";
 import { Footer } from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+};
 
 const TermsAndConditionsPage = () => {
   return (

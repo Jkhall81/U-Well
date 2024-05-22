@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { AnimationContent } from "@/components/aboutUs/AnimationContent";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us",

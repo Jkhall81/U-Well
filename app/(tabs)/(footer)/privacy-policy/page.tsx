@@ -3,6 +3,11 @@ import { TitleAndTextData, BulletPointsData } from "@/lib/PrivacyPolicyData";
 import { TitleAndText } from "@/components/PrivacyPolicy/TitleAndText";
 import { BulletPoints } from "@/components/PrivacyPolicy/BulletPoints";
 import { FaCircle } from "react-icons/fa";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+};
 
 const listItemsOne = [
   "Name",
@@ -117,10 +122,19 @@ const PrivacyPolicyPage = () => {
                 policy or our privacy practices, please contact us at?
               </p>
               <ul className="space-y-4 text-3xl">
-                <li>[URL of the website]</li>
-                <li>[Address]</li>
-                <li>[Email]</li>
-                <li>[Phone]</li>
+                <li className="hover:text-blue-600">
+                  <a href="https://www.u-wellhealth.com">
+                    https://www.u-wellhealth.com
+                  </a>
+                </li>
+                <li className="hover:text-blue-600">
+                  <a href="mailto:jguillaume@u-wellhealth.com">
+                    contact@u-wellhealth.com
+                  </a>
+                </li>
+                <li className="hover:text-blue-600">
+                  <a href="tel:+18774893550">1-(877)-489-3550</a>
+                </li>
               </ul>
               <div className="flex h-full w-full items-center justify-between pt-[400px]">
                 <Footer />
