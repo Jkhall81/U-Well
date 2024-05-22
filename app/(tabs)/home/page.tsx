@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { raleway } from "@/lib/fonts";
 import { lusitana } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
 import { fadeIn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { Footer } from "@/components/Footer";
