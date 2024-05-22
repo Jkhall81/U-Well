@@ -63,38 +63,40 @@ export const TextAreaComponent = ({
           control={form.control}
           name="bio"
           render={({ field }) => (
-            <FormItem>
-              <div className="mx-10 pb-6">
-                <FormLabel>
-                  <span className="text-2xl font-semibold text-white">
+            <div>
+              <FormItem>
+                <div className="mx-10 mb-8">
+                  <FormLabel className="text-center text-xl font-semibold text-white">
                     {question}
-                  </span>
-                </FormLabel>
-              </div>
-              <FormControl>
-                <div className="mx-10">
-                  <Textarea
-                    placeholder="Tell us a little bit about yourself"
-                    className="rounded-xl"
-                    rows={8}
-                    {...field}
-                  />
+                  </FormLabel>
                 </div>
-              </FormControl>
-              <FormDescription>
-                {isDisabled && (
-                  <span className="mx-10 text-lg text-red-500">
-                    Bio must be at least 10 characters.
-                  </span>
-                )}
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
+                <div className="mx-10">
+                  <FormControl>
+                    <Textarea
+                      placeholder="Tell us a little bit about yourself"
+                      className="rounded-xl px-4 text-xl"
+                      rows={8}
+                      {...field}
+                    />
+                  </FormControl>
+                </div>
+                <div className="pt-8 text-center">
+                  <FormDescription>
+                    {isDisabled && (
+                      <span className="mx-10 text-lg text-red-500">
+                        Bio must be at least 10 characters.
+                      </span>
+                    )}
+                  </FormDescription>
+                </div>
+                <FormMessage />
+              </FormItem>
+            </div>
           )}
         />
         <Button
           type="button"
-          className="mx-10 w-[200px] rounded-3xl bg-white text-black hover:bg-blue-600 hover:text-white"
+          className="mx-10 h-[50px] w-[300px] rounded-3xl bg-white text-xl text-black hover:bg-blue-600 hover:text-white"
           size="lg"
           onClick={() => handleClick(bio)}
           disabled={isDisabled}

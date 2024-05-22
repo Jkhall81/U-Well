@@ -1,8 +1,9 @@
 "use client";
 {
-  /* This will handle steps that require a number select.  Should only be neede for step two of the form */
+  /* This will handle steps that require a number select. */
 }
 
+import { useEffect, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -16,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 interface StepNumberSelectProps {
   question: string;
@@ -35,6 +37,7 @@ export const StepNumberSelect = ({
   setCurrentStep,
   setStep,
 }: StepNumberSelectProps) => {
+  const [isVisible, setIsVisible] = useState(false);
   const handleClick = (answer: string) => {
     setCurrentStep(currentStep + 1);
     setStep(currentStep + 1, answer);
@@ -45,8 +48,19 @@ export const StepNumberSelect = ({
     resolver: zodResolver(formSchema),
   });
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 500);
+  });
+
   return (
-    <section className="flex flex-col items-center gap-4">
+    <section
+      className={cn(
+        "flex flex-col items-center gap-4",
+        `${isVisible ? "" : "hidden"}`,
+      )}
+    >
       <h1 className="prose mx-auto text-3xl font-bold text-white">
         {question}
       </h1>

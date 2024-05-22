@@ -139,6 +139,7 @@ export const ProviderMultiStepForm = () => {
           })}
           {currentStep === 21 && (
             <CSSTransition
+              key={`step21-textarea`}
               className=""
               in={currentStep === 21}
               timeout={300}
