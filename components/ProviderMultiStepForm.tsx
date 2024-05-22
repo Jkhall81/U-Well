@@ -54,59 +54,15 @@ export const ProviderMultiStepForm = () => {
   }, [currentStep, handleSubmit]);
 
   console.log("currentStep", currentStep);
-  const checkBoxSteps = [3, 8, 9];
+  const checkBoxSteps = [0, 1, 2];
   return (
     <section className="z-50 flex flex-col items-center pt-2">
       {/* animation container */}
       <div className="relative w-[640px] overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Step 1 */}
-          <CSSTransition
-            className=""
-            in={currentStep === 0}
-            timeout={300}
-            classNames={{
-              enter: "left-enter",
-              enterActive: "left-enter-active",
-              exit: "left-exit",
-              exitActive: "left-exit-active",
-            }}
-            unmountOnExit
-          >
-            <StepStandardAlpha
-              answers={stepData[0].answers}
-              setStep={setStep}
-              question={stepData[0].question}
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-            />
-          </CSSTransition>
-
-          {/* Step 2 */}
-          <CSSTransition
-            className=""
-            in={currentStep === 1}
-            timeout={300}
-            classNames={{
-              enter: "left-enter",
-              enterActive: "left-enter-active",
-              exit: "left-exit",
-              exitActive: "left-exit-active",
-            }}
-            unmountOnExit
-          >
-            <StepNumberSelect
-              answers={stepData[1].answers}
-              setStep={setStep}
-              question={stepData[1].question}
-              currentStep={currentStep}
-              setCurrentStep={setCurrentStep}
-            />
-          </CSSTransition>
-
-          {/* Render steps 3 to 22 */}
-          {stepData.slice(2).map((step, index) => {
-            let stepIndex = index + 2;
+          {stepData.slice(0, 21).map((step, index) => {
+            let stepIndex = index;
             return checkBoxSteps.includes(stepIndex) ? (
               <CSSTransition
                 key={`${stepIndex}-checkbox`}
@@ -131,7 +87,7 @@ export const ProviderMultiStepForm = () => {
                   setCurrentStep={setCurrentStep}
                 />
               </CSSTransition>
-            ) : currentStep === 11 ? (
+            ) : currentStep === 8 ? (
               <CSSTransition
                 key={`${stepIndex}-textarea-11`}
                 className=""
@@ -181,6 +137,28 @@ export const ProviderMultiStepForm = () => {
               </CSSTransition>
             );
           })}
+          {currentStep === 21 && (
+            <CSSTransition
+              className=""
+              in={currentStep === 21}
+              timeout={300}
+              classNames={{
+                enter: "left-enter",
+                enterActive: "left-enter-active",
+                exit: "left-exit",
+                exitActive: "left-exit-active",
+              }}
+              unmountOnExit
+            >
+              <StepNumberSelect
+                answers={stepData[21].answers}
+                setStep={setStep}
+                question={stepData[21].question}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+              />
+            </CSSTransition>
+          )}
           {/* Last Step */}
           {currentStep === 22 && (
             <CSSTransition

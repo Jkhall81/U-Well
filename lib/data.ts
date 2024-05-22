@@ -29,6 +29,168 @@ export const navLinks = links.map((link) => ({
 export const ProviderRegistrationSteps = [
   {
     id: 1,
+    question: "What areas do you primarily focus on?",
+    answers: [
+      "Depression",
+      "Stress",
+      "Grieving",
+      "Trauma",
+      "Talk therapy",
+      "Other",
+    ],
+  },
+  {
+    id: 2,
+    question: "What age group do you typically work with?",
+    answers: ["Adults", "Children"],
+  },
+  {
+    id: 3,
+    question: "What area(s) do you specialize in?",
+    answers: [
+      "Behavioral",
+      "Drug/Substance abuse",
+      "Marriage/Couples",
+      "Family",
+      "Talk therapy",
+      "Life coach",
+      "Other",
+    ],
+  },
+  {
+    id: 4,
+    question: "Do you consider yourself to be religious?",
+    answers: ["Yes", "No"],
+  },
+  {
+    id: 5,
+    question: "Which religion do you identify with?",
+    answers: ["Christianity", "Judaism", "Islam", "Other"],
+  },
+  {
+    id: 6,
+    question:
+      "Would you be okay working with a patient that has different religious beliefs than you?",
+    answers: ["Yes", "No"],
+  },
+  {
+    id: 7,
+    question: "Do you consider yourself to be spiritual?",
+    answers: ["Yes", "No"],
+  },
+
+  {
+    id: 8,
+    question: "Do you participate with insurance",
+    answers: ["Yes", "No"],
+  },
+  {
+    id: 9,
+    question:
+      "Please tells us about yourself and your experience in your own words.",
+    answers: [""],
+  },
+  {
+    id: 10,
+    question:
+      "What is your experience with providing counseling services to individuals from diverse backgrounds?",
+    answers: [
+      "Limited experience",
+      "Moderate experience",
+      "Extensive experience",
+    ],
+  },
+  {
+    id: 11,
+    question:
+      "Think back to a time when you had to manage a difficult situation in a counseling session.  How did you handle it?",
+    answers: [
+      "Actively listened and empathized",
+      "Sought supervision or consultation",
+      "Ended the session abruptly",
+    ],
+  },
+  {
+    id: 12,
+    question:
+      "How do you handle ethical dilemmas that arise during the course of counseling sessions?",
+    answers: [
+      "Followed professional codes of ethics",
+      "Ignored ethical concerns",
+      "Made decisions based on personal beliefs",
+    ],
+  },
+  {
+    id: 13,
+    question:
+      "Explain your understanding of the different types of psychotherapies and when they are most effective.",
+    answers: [
+      "Demonstrated knowledge of various approaches",
+      "Focused only on one type of therapy",
+      "Had no awareness of psychotherapies",
+    ],
+  },
+  {
+    id: 14,
+    question:
+      "What strategies do you use to build trust and rapport with clients?",
+    answers: [
+      "Shared personal experiences",
+      "Active listening and empathy",
+      "Avoided building relationships",
+    ],
+  },
+  {
+    id: 15,
+    question: "How do you assess for suicidal ideation in a client?",
+    answers: [
+      "Asked directly about suicidal thoughts",
+      "Ignored signs of distress",
+      "Assumed clients would disclose voluntarily",
+    ],
+  },
+  {
+    id: 16,
+    question:
+      "Have you ever dealt with a client who was resistant to treatment?  If so, what was your approach?",
+    answers: [
+      "Explored reasons for resistance",
+      "Terminated therapy immediately",
+      "Ignored client's resistance",
+    ],
+  },
+  {
+    id: 17,
+    question:
+      "Describe a patient case you have worked on that required a multidisciplinary approach.",
+    answers: [
+      "Collaborated with other professionals",
+      "Worked in isolation",
+      "Never encountered such cases",
+    ],
+  },
+  {
+    id: 18,
+    question:
+      "What techniques do you use to help clients identify their goals and objectives for therapy?",
+    answers: [
+      "conducted goal-setting discussions",
+      "Avoided discussing goals",
+      "Imposed goals on clients",
+    ],
+  },
+  {
+    id: 19,
+    question:
+      "How do you ensure that all clients feel comfortable discussing sensitive topics in a safe environment?",
+    answers: [
+      "Created a nonjudgmental space",
+      "Dismissed client's concerns",
+      "Avoided discussing sensitive issues",
+    ],
+  },
+  {
+    id: 20,
     question: "What is your gender identity?",
     answers: [
       "Woman",
@@ -43,175 +205,14 @@ export const ProviderRegistrationSteps = [
     ],
   },
   {
-    id: 2,
-    question: "How old are you?",
-    answers: [""],
-  },
-  {
-    id: 3,
+    id: 21,
     question: "How do you identify",
     answers: ["Straight", "Gay", "Lesbian", "Bi or Pan", "Prefer not to say"],
   },
   {
-    id: 4,
-    question: "What area(s) do you specialize in?",
-    answers: [
-      "Behavioral",
-      "Drug/Substance abuse",
-      "Marriage/Couples",
-      "Family",
-      "Talk therapy",
-      "Life coach",
-      "Other",
-    ],
-  },
-  {
-    id: 5,
-    question: "Do you consider yourself to be religious?",
-    answers: ["Yes", "No"],
-  },
-  {
-    id: 6,
-    question: "Which religion do you identify with?",
-    answers: ["Christianity", "Judaism", "Islam", "Other"],
-  },
-  {
-    id: 7,
-    question:
-      "Would you be okay working with a patient that has different religious beliefs than you?",
-    answers: ["Yes", "No"],
-  },
-  {
-    id: 8,
-    question: "Do you consider yourself to be spiritual?",
-    answers: ["Yes", "No"],
-  },
-  {
-    id: 9,
-    question: "What age group do you typically work with?",
-    answers: ["Adults", "Children"],
-  },
-  {
-    id: 10,
-    question: "What areas do you primarily focus on?",
-    answers: [
-      "Depression",
-      "Stress",
-      "Grieving",
-      "Trauma",
-      "Talk therapy",
-      "Other",
-    ],
-  },
-  {
-    id: 11,
-    question: "Do you participate with insurance",
-    answers: ["Yes", "No"],
-  },
-  {
-    id: 12,
-    question:
-      "Please tells us about yourself and your experience in your own words.",
-    answers: [""],
-  },
-  {
-    id: 13,
-    question:
-      "What is your experience with providing counseling services to individuals from diverse backgrounds?",
-    answers: [
-      "Limited experience",
-      "Moderate experience",
-      "Extensive experience",
-    ],
-  },
-  {
-    id: 14,
-    question:
-      "Think back to a time when you had to manage a difficult situation in a counseling session.  How did you handle it?",
-    answers: [
-      "Actively listened and empathized",
-      "Sought supervision or consultation",
-      "Ended the session abruptly",
-    ],
-  },
-  {
-    id: 15,
-    question:
-      "How do you handle ethical dilemmas that arise during the course of counseling sessions?",
-    answers: [
-      "Followed professional codes of ethics",
-      "Ignored ethical concerns",
-      "Made decisions based on personal beliefs",
-    ],
-  },
-  {
-    id: 16,
-    question:
-      "Explain your understanding of the different types of psychotherapies and when they are most effective.",
-    answers: [
-      "Demonstrated knowledge of various approaches",
-      "Focused only on one type of therapy",
-      "Had no awareness of psychotherapies",
-    ],
-  },
-  {
-    id: 17,
-    question:
-      "What strategies do you use to build trust and rapport with clients?",
-    answers: [
-      "Shared personal experiences",
-      "Active listening and empathy",
-      "Avoided building relationships",
-    ],
-  },
-  {
-    id: 18,
-    question: "How do you assess for suicidal ideation in a client?",
-    answers: [
-      "Asked directly about suicidal thoughts",
-      "Ignored signs of distress",
-      "Assumed clients would disclose voluntarily",
-    ],
-  },
-  {
-    id: 19,
-    question:
-      "Have you ever dealt with a client who was resistant to treatment?  If so, what was your approach?",
-    answers: [
-      "Explored reasons for resistance",
-      "Terminated therapy immediately",
-      "Ignored client's resistance",
-    ],
-  },
-  {
-    id: 20,
-    question:
-      "Describe a patient case you have worked on that required a multidisciplinary approach.",
-    answers: [
-      "Collaborated with other professionals",
-      "Worked in isolation",
-      "Never encountered such cases",
-    ],
-  },
-  {
-    id: 21,
-    question:
-      "What techniques do you use to help clients identify their goals and objectives for therapy?",
-    answers: [
-      "conducted goal-setting discussions",
-      "Avoided discussing goals",
-      "Imposed goals on clients",
-    ],
-  },
-  {
     id: 22,
-    question:
-      "How do you ensure that all clients feel comfortable discussing sensitive topics in a safe environment?",
-    answers: [
-      "Created a nonjudgmental space",
-      "Dismissed client's concerns",
-      "Avoided discussing sensitive issues",
-    ],
+    question: "How old are you?",
+    answers: [""],
   },
 ];
 
