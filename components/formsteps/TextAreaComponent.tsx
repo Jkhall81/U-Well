@@ -63,7 +63,7 @@ export const TextAreaComponent = ({
           control={form.control}
           name="bio"
           render={({ field }) => (
-            <div>
+            <div className="mx-20">
               <FormItem>
                 <div className="mx-10 mb-8">
                   <FormLabel className="text-center text-xl font-semibold text-white">

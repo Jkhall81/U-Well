@@ -64,13 +64,13 @@ export const CheckBoxComponent = ({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mx-10 space-y-8">
         <FormField
           control={form.control}
           name="items"
           render={() => (
             <FormItem>
-              <div className={cn("mb-6 flex flex-col")}>
+              <div className={cn("mx-10 mb-6 flex flex-col")}>
                 <FormLabel className="mx-10 text-3xl text-white">
                   {question}
                 </FormLabel>
@@ -90,6 +90,7 @@ export const CheckBoxComponent = ({
                         >
                           <FormControl>
                             <Checkbox
+                              className="ml-10"
                               checked={field.value?.includes(answer)}
                               onCheckedChange={(checked) => {
                                 const currentValue = field.value || [];
@@ -117,7 +118,7 @@ export const CheckBoxComponent = ({
         />
         <Button
           type="button"
-          className="mx-10 w-[200px] rounded-3xl bg-white text-xl text-black hover:bg-blue-600 hover:text-white"
+          className="mx-20 w-[200px] rounded-3xl bg-white text-xl text-black hover:bg-blue-600 hover:text-white"
           size="lg"
           onClick={() => {
             const checkedAnswers = form.getValues("items");
@@ -128,7 +129,7 @@ export const CheckBoxComponent = ({
           Next
         </Button>
         {isDisabled && (
-          <p className="mx-10 text-2xl font-bold text-red-500">
+          <p className="mx-20 text-2xl font-bold text-red-500">
             Please make at least one selection to continue.
           </p>
         )}
