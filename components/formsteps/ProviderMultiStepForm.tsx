@@ -3,13 +3,13 @@
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ProviderRegistrationSteps } from "@/lib/data";
-import { StepStandardAlpha } from "./formsteps/StepStandardAlpha";
-import { StepNumberSelect } from "./formsteps/StepNumberSelect";
+import { StepStandardAlpha } from "./StepStandardAlpha";
+import { StepNumberSelect } from "./StepNumberSelect";
 // import { IoChevronBack } from "react-icons/io5";
 import { CSSTransition } from "react-transition-group";
-import { CheckBoxComponent } from "./formsteps/CheckBoxComponent";
-import { TextAreaComponent } from "./formsteps/TextAreaComponent";
-import { LastStep } from "./formsteps/LastStep";
+import { CheckBoxComponent } from "./CheckBoxComponent";
+import { TextAreaComponent } from "./TextAreaComponent";
+import { LastStep } from "./LastStep";
 import Image from "next/image";
 
 type Inputs = {

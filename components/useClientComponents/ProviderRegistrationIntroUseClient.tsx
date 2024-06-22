@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ProviderMultiStepForm } from "@/components/ProviderMultiStepForm";
+import { ProviderMultiStepForm } from "../formsteps/ProviderMultiStepForm";
 import { PatientRegistrationFooter } from "@/components/useClientComponents/PatientRegistrationFooter";
 import { ProviderQuestionIntro } from "../ProviderQuestionIntro";
 

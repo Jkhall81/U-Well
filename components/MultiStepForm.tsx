@@ -8,7 +8,7 @@ import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 // import { IoChevronBack } from "react-icons/io5";
 import { CSSTransition } from "react-transition-group";
 import { LastStep } from "./formsteps/LastStep";
-import { EndOfForm } from "./EndOfForm";
+import { EndOfForm } from "./formsteps/EndOfForm";
 import { StepMultipleAnswers } from "./formsteps/StepMultipleAnswers";
 
 type Inputs = {
