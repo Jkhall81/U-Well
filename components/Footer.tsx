@@ -44,13 +44,20 @@ export const Footer = () => {
   return (
     <footer className={`h-[200px] w-full ${isVisible ? "flex" : "hidden"}`}>
       <div className="flex w-full flex-col text-white">
-        <div className="mb-4 flex w-full justify-evenly text-2xl font-semibold">
+        <div className="mb-4 flex w-full justify-evenly">
           <div className="md:flex-1"></div>
           <div className="md:flex-1"></div>
           <div className="px-6 md:flex-1">
-            <div className="flex flex-col gap-4">
-              <Link href="/terms-and-conditions">Terms & Conditions</Link>
-              <Link href="/privacy-policy">Privacy Policy</Link>
+            <div className="flex select-none flex-col gap-4 text-xl font-semibold">
+              <Link
+                className="hover:text-neutral-700"
+                href="/terms-and-conditions"
+              >
+                Terms & Conditions
+              </Link>
+              <Link href="/privacy-policy">
+                <span className="hover:text-neutral-700">Privacy Policy</span>
+              </Link>
               <p>
                 Built and Maintained by{" "}
                 <Link href="https://jason-hall.vercel.app" target="_blank">
