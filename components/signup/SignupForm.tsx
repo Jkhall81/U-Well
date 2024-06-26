@@ -3,9 +3,10 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { z } from "zod";
 import Link from "next/link";
-
+import { signup } from "@/lib/auth/signup";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -16,7 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Footer } from "../Footer";
 
 const labelStyles = "text-black text-2xl";
 const inputStyles = "h-[50px] border border-black";
@@ -40,12 +40,37 @@ const formSchema = z.object({
 });
 
 export const SignupForm = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password1: "",
+      password2: "",
+    },
   });
+
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    try {
+      const result = await signup(data);
+      if (result && result.error) {
+        console.error(result.error);
+      } else {
+        console.log("Signup successful", result);
+        router.push("/home");
+      }
+    } catch (error) {
+      console.error("an error occurred", error);
+    }
+  };
   return (
     <Form {...form}>
-      <form action="" className="flex w-full flex-col space-y-8 px-12 pt-10">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="flex w-full flex-col space-y-8 px-12 pt-10"
+      >
         <div className="flex w-full space-x-4">
           <FormField
             control={form.control}
@@ -165,12 +190,12 @@ export const SignupForm = () => {
           </Link>
         </p>
       </form>
-      <div className="h-[160px]" />
+      <div className="h-[70px]" />
       <div className="flex h-[100px] w-full items-center justify-center rounded-b-xl bg-blue-100">
         <p>
           Already have an account?{" "}
           <span className="text-blue-500">
-            <Link href="">Login</Link>
+            <Link href="/login">Login</Link>
           </span>
         </p>
       </div>

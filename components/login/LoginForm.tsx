@@ -5,6 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
+import { signIn } from "@/app/auth";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +18,11 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+
+interface LoginData {
+  username: string;
+  password: string;
+}
 
 const labelStyles = "text-black text-2xl";
 const inputStyles = "h-[50px] border border-black";
@@ -32,10 +39,39 @@ const formSchema = z.object({
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+      password: "",
+    },
   });
+  const router = useRouter();
+
+  const handleSubmit = async (data: LoginData) => {
+    try {
+      const result = await signIn("credentials", {
+        redirect: false,
+        username: data.username,
+        password: data.password,
+      });
+
+      if (!result.error) {
+        console.log("Login successful!");
+
+        router.push("/home");
+      } else {
+        console.error("Login failed:", result.error);
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+    }
+  };
+
   return (
     <Form {...form}>
-      <form action="" className="w-full space-y-8 px-12 pt-10">
+      <form
+        onSubmit={form.handleSubmit(handleSubmit)}
+        className="w-full space-y-8 px-12 pt-10"
+      >
         <FormField
           control={form.control}
           name="username"
@@ -87,7 +123,7 @@ export const LoginForm = () => {
         <p>
           Don&apos;t have an account?{" "}
           <span className="text-blue-500">
-            <Link href="">Create one</Link>
+            <Link href="/signup">Create one</Link>
           </span>
         </p>
       </div>
