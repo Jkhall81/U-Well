@@ -13,20 +13,51 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Patient {
   id            String          @id @default(cuid())
-  firstName     String?
-  lastName      String?
+  firstName     String
+  lastName      String
+  dateOfBirth   String
+  isAdult       String?
+  familyCode    String?
+  employeerCode String?
   email         String?         @unique
-  emailVerified DateTime?
+  emailVerified Boolean @default(false)
+  emailVerifiedAt DateTime?
+  phoneNumber   String?         @unique
+  phoneNumberVerified Boolean @default(false)
+  phoneNumberVerifiedAt DateTime?
   image         String?
   password      String?
   Session       Session[]
-  Account       Account?
+  Account       Account?  @relation("PatientAccount")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  @@map("users")
+  @@map("patients")
+}
+
+model ServiceProvider {
+  id            String          @id @default(cuid())
+  firstName     String?
+  lastName      String?
+  dateOfBirth   String
+  email         String?         @unique
+  emailVerified Boolean @default(false)
+  emailVerifiedAt DateTime?
+  phoneNumber   String          @unique
+  phoneNumberVerified Boolean  @default(false)
+  phoneNumberVerifiedAt DateTime?
+  providerCode  String?
+  providerAccountVerified Boolean @default(false)
+  image         String?
+  password      String?
+  Session       Session[]
+  Account       Account?  @relation("ServiceProviderAccount")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("serviceProviders")
 }
  
 model Account {
@@ -43,8 +74,8 @@ model Account {
   id_token                 String? @db.Text
   session_state            String?
   refresh_token_expires_in Int?
-  user                     User?   @relation(fields: [userId], references: [id])
- 
+  patient                     Patient?   @relation("PatientAccount", fields: [userId], references: [id], map: "account_patient_fk")
+  serviceProvider             ServiceProvider?   @relation("ServiceProviderAccount", fields: [userId], references: [id], map: "account_service_provider_fk")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
  
@@ -59,7 +90,8 @@ model Session {
   sessionToken String   @unique
   userId       String
   expires      DateTime
-  user         User     @relation(fields: [userId], references: [id])
+  patient      Patient     @relation(fields: [userId], references: [id], map: "session_patient_fk")
+  serviceProvider     ServiceProvider     @relation(fields: [userId], references: [id], map: "session_service_provider_fk")
  
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
