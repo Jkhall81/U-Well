@@ -29,6 +29,7 @@ export const signup = async (data: SignUpData) => {
       lastName,
       email,
       password: hashedPassword,
+      dateOfBirth: "1990-01-01",
     },
   });
 

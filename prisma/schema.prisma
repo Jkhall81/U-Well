@@ -15,9 +15,15 @@ datasource db {
 
 model User {
   id String @id @default(cuid())
+  firstName     String
+  lastName      String
+  dateOfBirth   String
   email String @unique
   emailVerified Boolean @default(false)
   emailVerifiedAt DateTime?
+  phoneNumber   String?         @unique
+  phoneNumberVerified Boolean @default(false)
+  phoneNumberVerifiedAt DateTime?
   password String
   patientId String? @unique
   serviceProviderId String? @unique
@@ -33,15 +39,9 @@ model User {
 
 model Patient {
   id            String          @id @default(cuid())
-  firstName     String
-  lastName      String
-  dateOfBirth   String
   isAdult       String?
   familyCode    String?
-  employeerCode String?
-  phoneNumber   String?         @unique
-  phoneNumberVerified Boolean @default(false)
-  phoneNumberVerifiedAt DateTime?
+  employerCode String?
   image         String?
   Session       Session[]
   Account       Account?  @relation("PatientAccount")
@@ -54,12 +54,6 @@ model Patient {
 
 model ServiceProvider {
   id            String          @id @default(cuid())
-  firstName     String?
-  lastName      String?
-  dateOfBirth   String
-  phoneNumber   String          @unique
-  phoneNumberVerified Boolean  @default(false)
-  phoneNumberVerifiedAt DateTime?
   providerCode  String?
   providerAccountVerified Boolean @default(false)
   image         String?
