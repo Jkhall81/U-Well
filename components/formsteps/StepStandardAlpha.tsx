@@ -27,7 +27,7 @@ export const StepStandardAlpha = ({
   };
 
   return (
-    <section className="mx-20 flex flex-col items-center gap-4">
+    <section className="mx-20 flex flex-col items-center gap-4 4xl:mx-0">
       <h1 className="prose px-5 text-center text-3xl font-bold text-white">
         {question}
       </h1>
