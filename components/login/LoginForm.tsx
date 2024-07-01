@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Link from "next/link";
-import { signIn } from "@/app/auth";
+import { login } from "@/lib/auth/login";
 import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ import {
 import { Input } from "@/components/ui/input";
 
 interface LoginData {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -28,7 +28,7 @@ const labelStyles = "text-black text-2xl";
 const inputStyles = "h-[50px] border border-black";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
+  email: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
   password: z.string().min(2, {
@@ -40,7 +40,7 @@ export const LoginForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      email: "",
       password: "",
     },
   });
@@ -48,18 +48,11 @@ export const LoginForm = () => {
 
   const handleSubmit = async (data: LoginData) => {
     try {
-      const result = await signIn("credentials", {
-        redirect: false,
-        username: data.username,
-        password: data.password,
-      });
-
-      if (!result.error) {
-        console.log("Login successful!");
-
+      console.log("email", data.email);
+      console.log("password", data.password);
+      const result = await login(data);
+      if (result) {
         router.push("/home");
-      } else {
-        console.error("Login failed:", result.error);
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -74,14 +67,14 @@ export const LoginForm = () => {
       >
         <FormField
           control={form.control}
-          name="username"
+          name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={`${labelStyles}`}>Username</FormLabel>
+              <FormLabel className={`${labelStyles}`}>Email</FormLabel>
               <FormControl>
                 <Input
                   className={`${inputStyles}`}
-                  placeholder="Enter your username"
+                  placeholder="Enter your email"
                   {...field}
                 />
               </FormControl>

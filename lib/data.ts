@@ -17,6 +17,9 @@ let links = [
     title: "Patient Registration",
   },
   {
+    title: "Login",
+  },
+  {
     title: "Contact Us",
   },
 ];
