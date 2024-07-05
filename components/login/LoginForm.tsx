@@ -48,12 +48,11 @@ export const LoginForm = () => {
 
   const handleSubmit = async (data: LoginData) => {
     try {
-      console.log("email", data.email);
-      console.log("password", data.password);
       const result = await login(data);
-      if (result) {
+      router.refresh();
+      setTimeout(() => {
         router.push("/home");
-      }
+      }, 200);
     } catch (error) {
       console.error("Login error:", error);
     }

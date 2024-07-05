@@ -21,6 +21,7 @@ model User {
   email String @unique
   emailVerified Boolean @default(false)
   emailVerifiedAt DateTime?
+  emailVerificationToken   String @unique
   phoneNumber   String         @unique
   phoneNumberVerified Boolean @default(false)
   phoneNumberVerifiedAt DateTime?

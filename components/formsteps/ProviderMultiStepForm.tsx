@@ -9,7 +9,7 @@ import { StepNumberSelect } from "./StepNumberSelect";
 import { CSSTransition } from "react-transition-group";
 import { CheckBoxComponent } from "./CheckBoxComponent";
 import { TextAreaComponent } from "./TextAreaComponent";
-import { LastStep } from "./LastStep";
+import { ProviderAccountCreation } from "./ProviderAccountCreation";
 import Image from "next/image";
 
 type Inputs = {
@@ -61,13 +61,36 @@ export const ProviderMultiStepForm = () => {
       <div className="relative w-[640px] overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* Step 1 */}
+          {currentStep === 0 && (
+            <CSSTransition
+              key={currentStep}
+              className=""
+              in={currentStep === 0}
+              timeout={300}
+              classNames={{
+                enter: "left-enter",
+                enterActive: "left-enter-active",
+                exit: "left-exit",
+                exitActive: "left-exit-active",
+              }}
+              unmountOnExit
+            >
+              <ProviderAccountCreation
+                updateFormData={updateFormData}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                setStep={setStep}
+              />
+            </CSSTransition>
+          )}
+          {/* step 2 and on */}
           {stepData.slice(0, 21).map((step, index) => {
             let stepIndex = index;
             return checkBoxSteps.includes(stepIndex) ? (
               <CSSTransition
                 key={`${stepIndex}-checkbox`}
                 className=""
-                in={currentStep === stepIndex}
+                in={currentStep === stepIndex + 1}
                 timeout={300}
                 classNames={{
                   enter: "left-enter",
@@ -87,7 +110,7 @@ export const ProviderMultiStepForm = () => {
                   setCurrentStep={setCurrentStep}
                 />
               </CSSTransition>
-            ) : currentStep === 8 ? (
+            ) : currentStep === 9 ? (
               <CSSTransition
                 key={`${stepIndex}-textarea-11`}
                 className=""
@@ -115,7 +138,7 @@ export const ProviderMultiStepForm = () => {
               <CSSTransition
                 key={`${stepIndex}-standard`}
                 className=""
-                in={currentStep === stepIndex}
+                in={currentStep === stepIndex + 1}
                 timeout={300}
                 classNames={{
                   enter: "left-enter",
@@ -137,11 +160,11 @@ export const ProviderMultiStepForm = () => {
               </CSSTransition>
             );
           })}
-          {currentStep === 21 && (
+          {currentStep === 22 && (
             <CSSTransition
               key={`step21-textarea`}
               className=""
-              in={currentStep === 21}
+              in={currentStep === 22}
               timeout={300}
               classNames={{
                 enter: "left-enter",
@@ -157,29 +180,6 @@ export const ProviderMultiStepForm = () => {
                 question={stepData[21].question}
                 currentStep={currentStep}
                 setCurrentStep={setCurrentStep}
-              />
-            </CSSTransition>
-          )}
-          {/* Last Step */}
-          {currentStep === 22 && (
-            <CSSTransition
-              key={currentStep}
-              className=""
-              in={currentStep === 22}
-              timeout={300}
-              classNames={{
-                enter: "left-enter",
-                enterActive: "left-enter-active",
-                exit: "left-exit",
-                exitActive: "left-exit-active",
-              }}
-              unmountOnExit
-            >
-              <LastStep
-                updateFormData={updateFormData}
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-                setStep={setStep}
               />
             </CSSTransition>
           )}

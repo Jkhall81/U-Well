@@ -6,11 +6,14 @@ import { NavLink } from "./NavLink";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { useNavStore } from "@/store/store";
-import { useSession } from "next-auth/react";
+import { Session } from "next-auth";
 
-export const NavBar = () => {
+interface Props {
+  session: Session;
+}
+
+export const NavBar = ({ session }: Props) => {
   const navState = useNavStore((state) => state.navSolid);
-  const session = useSession();
 
   return (
     <nav
@@ -33,13 +36,9 @@ export const NavBar = () => {
       <div className="hidden gap-6 lg:flex">
         {navLinks.map((item, index) => {
           const title =
-            item.title === "Login" && session.data !== null
-              ? "Account"
-              : item.title;
+            item.title === "Login" && session !== null ? "Account" : item.title;
           const href =
-            item.title === "Login" && session.data !== null
-              ? "/account"
-              : item.href;
+            item.title === "Login" && session !== null ? "/account" : item.href;
           return <NavLink key={index} title={title} href={href} />;
         })}
       </div>

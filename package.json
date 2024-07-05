@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "email": "email dev"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",
@@ -21,6 +22,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@react-email/components": "0.0.21",
     "add": "^2.0.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -32,9 +34,11 @@
     "prisma": "^5.15.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-email": "^2.1.5",
     "react-hook-form": "^7.51.3",
     "react-icons": "^5.0.1",
     "react-transition-group": "^4.4.5",
+    "resend": "^3.4.0",
     "shadcn-ui": "^0.2.3",
     "tailwind-merge": "^2.2.2",
     "tailwindcss-animate": "^1.0.7",

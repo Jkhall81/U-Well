@@ -2,16 +2,19 @@
 
 import { signIn } from "@/app/auth";
 import { AuthError } from "next-auth";
+import { auth } from "@/app/auth";
 
 export const login = async (data: any) => {
   const { email, password } = data;
+
   try {
     await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
-    return { success: true };
+    const session = await auth();
+    return session;
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {

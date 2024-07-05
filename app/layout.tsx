@@ -29,6 +29,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
+  console.log("session from layout", session);
   return (
     <html lang="en">
       <SessionProvider session={session}>
@@ -39,7 +40,7 @@ export default async function RootLayout({
           )}
         >
           <main className="">
-            <NavBar />
+            <NavBar session={session} />
             <MobileNav />
             <BackgroundContent />
             <div className="fixed bottom-0 left-0 top-0 z-[15] h-full w-full bg-black/20 bg-gradient-to-r from-black" />

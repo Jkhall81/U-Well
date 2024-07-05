@@ -24,12 +24,30 @@ const passwordSchema = z
 
 export const patientRegistrationFormSchema = z
   .object({
-    firstName: z.string().min(4),
-    lastName: z.string().min(4),
+    firstName: z.string().min(2),
+    lastName: z.string().min(2),
     dateOfBirth: z.string().min(8),
     isAdult: z.boolean(),
     familyCode: z.string().min(4),
     employerCode: z.string().optional(),
+    phoneNumber: z.string().min(10).max(15),
+    email: z.string().email(),
+    passwordOne: passwordSchema,
+    passwordTwo: z
+      .string()
+      .min(8, "Password must be at least 8 characters long"),
+  })
+  .refine((data) => data.passwordOne === data.passwordTwo, {
+    message: "Passwords must match",
+    path: ["passwordTwo"],
+  });
+
+export const providerRegistrationFormSchema = z
+  .object({
+    firstName: z.string().min(2),
+    lastName: z.string().min(2),
+    dateOfBirth: z.string().min(8),
+    providerCode: z.string().min(4),
     phoneNumber: z.string().min(10).max(15),
     email: z.string().email(),
     passwordOne: passwordSchema,
