@@ -36,7 +36,7 @@ export const VerificationTemplate = ({
       <Preview>Welcome to U-Well!</Preview>
       <Body className="border-2 border-red-500">
         <Container className="flex flex-col items-center px-4 3xl:px-0">
-          <div className="mb-16 flex justify-center">
+          <div className="mx-auto mb-16 flex justify-center">
             <Img
               src="https://u-wellhealth.com/_next/image?url=%2Flogo.png&w=96&q=100"
               alt="U-Well"
@@ -63,10 +63,16 @@ export const VerificationTemplate = ({
           </Section>
           <Hr />
           <div className="flex justify-evenly">
-            <Button href="https://u-wellhealth.com/terms-and-conditions">
+            <Button
+              className="mr-10"
+              href="https://u-wellhealth.com/terms-and-conditions"
+            >
               Terms & Conditions
             </Button>
-            <Button href="https://u-wellhealth.com/privacy-policy">
+            <Button
+              className="ml-10"
+              href="https://u-wellhealth.com/privacy-policy"
+            >
               Privacy Policy
             </Button>
           </div>

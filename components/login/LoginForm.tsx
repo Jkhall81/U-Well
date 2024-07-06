@@ -50,9 +50,15 @@ export const LoginForm = () => {
     try {
       const result = await login(data);
       router.refresh();
-      setTimeout(() => {
-        router.push("/home");
-      }, 200);
+      console.log(result);
+      if (result === "email not verified") {
+        router.push("/email-not-verified");
+      } else {
+        router.refresh();
+        setTimeout(() => {
+          router.push("/home");
+        }, 200);
+      }
     } catch (error) {
       console.error("Login error:", error);
     }

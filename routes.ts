@@ -11,6 +11,8 @@ export const publicRoutes = [
   "/contact-us",
   "/privacy-policy",
   "/terms-and-conditions",
+  "/email-not-verified",
+  "/auth/verify-email",
 ];
 
 // could redirected logged in users away from here.
