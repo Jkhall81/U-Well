@@ -27,7 +27,7 @@ export default {
         const user = (await prisma.user.findUnique({
           where: { email: email },
         })) as UserWithPassword | null;
-
+        console.log("checking this user object", user);
         // 2. Check if user exists and password matches
         if (
           user &&

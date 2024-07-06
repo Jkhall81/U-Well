@@ -9,7 +9,7 @@ import { useNavStore } from "@/store/store";
 import { Session } from "next-auth";
 
 interface Props {
-  session: Session;
+  session: Session | null;
 }
 
 export const NavBar = ({ session }: Props) => {
