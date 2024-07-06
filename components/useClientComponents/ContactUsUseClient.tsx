@@ -15,7 +15,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { formSchema } from "@/schemas/form";
+import { formSchema } from "@/schemas/formSchemas";
 import {
   DropdownMenu,
   DropdownMenuContent,

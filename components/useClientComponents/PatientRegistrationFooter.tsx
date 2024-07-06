@@ -10,7 +10,7 @@ export const PatientRegistrationFooter = ({ height }: Props) => {
   return (
     <div
       style={{ marginTop: `${1300}px` }}
-      className={`absolute left-0 flex w-full items-center justify-between pb-2 pt-[200px]`}
+      className={`absolute left-0 flex w-full items-center justify-between pb-2 pt-[350px] 4xl:pt-[200px]`}
     >
       <Footer />
     </div>

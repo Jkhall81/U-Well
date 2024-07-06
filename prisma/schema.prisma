@@ -14,8 +14,107 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
+  id String @id @default(cuid())
+  firstName     String
+  lastName      String
+  dateOfBirth   String
   email String @unique
-  name String?
+  emailVerified Boolean @default(false)
+  emailVerifiedAt DateTime?
+  emailVerificationToken   String? @unique
+  phoneNumber   String         @unique
+  phoneNumberVerified Boolean @default(false)
+  phoneNumberVerifiedAt DateTime?
   password String
+  patientId String? @unique
+  serviceProviderId String? @unique
+  sesssions Session[]
+  accounts Account[]
+  patient Patient? @relation(fields: [patientId], references: [id])
+  serviceProvider ServiceProvider? @relation(fields: [serviceProviderId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Patient {
+  id            String          @id @default(cuid())
+  isAdult       Boolean
+  familyCode    String?
+  employerCode String?
+  image         String?
+  Session       Session[]
+  Account       Account?  @relation("PatientAccount")
+  user  User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("patients")
+}
+
+model ServiceProvider {
+  id            String          @id @default(cuid())
+  providerCode  String?
+  providerAccountVerified Boolean @default(false)
+  image         String?
+  Session       Session[]
+  Account       Account?  @relation("ServiceProviderAccount")
+  user User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("serviceProviders")
+}
+ 
+model Account {
+  id                       String  @id @default(cuid())
+  userId                   String  @unique
+  type                     String
+  provider                 String
+  providerAccountId        String
+  refresh_token            String? @db.Text
+  access_token             String? @db.Text
+  expires_at               Int?
+  token_type               String?
+  scope                    String?
+  id_token                 String? @db.Text
+  session_state            String?
+  refresh_token_expires_in Int?
+  patient                     Patient?   @relation("PatientAccount", fields: [userId], references: [id], map: "account_patient_fk")
+  serviceProvider             ServiceProvider?   @relation("ServiceProviderAccount", fields: [userId], references: [id], map: "account_service_provider_fk")
+  user  User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+
+  @@map("accounts")
+}
+ 
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  patient      Patient     @relation(fields: [userId], references: [id], map: "session_patient_fk")
+  serviceProvider     ServiceProvider     @relation(fields: [userId], references: [id], map: "session_service_provider_fk")
+  user  User @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+ 
+  @@index([userId])
+
+  @@map("sessions")
+}
+ 
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+ 
+  @@unique([identifier, token])
+
+  @@map("verification_tokens")
 }

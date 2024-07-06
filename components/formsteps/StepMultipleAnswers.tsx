@@ -90,7 +90,7 @@ export const StepMultipleAnswers = ({
       </div>
       <Button
         className={cn(
-          "z-10 w-[200px] rounded-3xl bg-white px-6 py-3 text-lg text-black hover:bg-blue-600 hover:text-white",
+          "z-10 w-[400px] rounded-3xl bg-white px-6 py-3 text-lg text-black hover:bg-blue-600 hover:text-white",
           `${isVisible ? "flex" : "hidden"}`,
         )}
         onClick={handleSubmit}

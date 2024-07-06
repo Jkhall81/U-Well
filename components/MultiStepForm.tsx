@@ -7,9 +7,9 @@ import { StepStandardAlpha } from "./formsteps/StepStandardAlpha";
 import { StepNumberSelect } from "./formsteps/StepNumberSelect";
 // import { IoChevronBack } from "react-icons/io5";
 import { CSSTransition } from "react-transition-group";
-import { LastStep } from "./formsteps/LastStep";
-import { EndOfForm } from "./EndOfForm";
+import { EndOfForm } from "./formsteps/EndOfForm";
 import { StepMultipleAnswers } from "./formsteps/StepMultipleAnswers";
+import { PatientAccountCreation } from "./formsteps/PatientAccountCreation";
 
 type Inputs = {
   [step: string | number]: string | string[];
@@ -21,7 +21,7 @@ export const MultiStepForm = () => {
   const [formData, setFormData] = useState({});
 
   const updateFormData = (data: any) => {
-    setFormData((prevData) => ({ ...prevData, ...data }));
+    setFormData((prevData) => ({ ...prevData, 1: data }));
   };
 
   const onSubmit = (data: Inputs) => {
@@ -67,10 +67,33 @@ export const MultiStepForm = () => {
       {/* animation container */}
       <div className="relative w-[640px] overflow-hidden">
         <form onSubmit={handleSubmit(onSubmit)}>
+          {currentStep === 0 && (
+            <CSSTransition
+              key={currentStep}
+              className=""
+              in={currentStep === 0}
+              timeout={300}
+              classNames={{
+                enter: "left-enter",
+                enterActive: "left-enter-active",
+                exit: "left-exit",
+                exitActive: "left-exit-active",
+              }}
+              unmountOnExit
+            >
+              <PatientAccountCreation
+                updateFormData={updateFormData}
+                currentStep={currentStep}
+                setCurrentStep={setCurrentStep}
+                setStep={setStep}
+              />
+            </CSSTransition>
+          )}
+
           {/* Step 1 */}
           <CSSTransition
             className=""
-            in={currentStep === 0}
+            in={currentStep === 1}
             timeout={300}
             classNames={{
               enter: "left-enter",
@@ -92,7 +115,7 @@ export const MultiStepForm = () => {
           {/* Step 2 */}
           <CSSTransition
             className=""
-            in={currentStep === 1}
+            in={currentStep === 2}
             timeout={300}
             classNames={{
               enter: "left-enter",
@@ -118,7 +141,7 @@ export const MultiStepForm = () => {
               <CSSTransition
                 key={stepIndex}
                 className=""
-                in={currentStep === stepIndex}
+                in={currentStep === stepIndex + 1}
                 timeout={300}
                 classNames={{
                   enter: "left-enter",
@@ -128,7 +151,7 @@ export const MultiStepForm = () => {
                 }}
                 unmountOnExit
               >
-                {currentStep === 9 || currentStep === 10 ? (
+                {currentStep === 10 || currentStep === 11 ? (
                   <StepMultipleAnswers
                     answers={step.answers}
                     setStep={(step: number, option: string[]) =>
@@ -153,28 +176,6 @@ export const MultiStepForm = () => {
             );
           })}
           {/* Last Step */}
-          {currentStep === 31 && (
-            <CSSTransition
-              key={currentStep}
-              className=""
-              in={currentStep === 31}
-              timeout={300}
-              classNames={{
-                enter: "left-enter",
-                enterActive: "left-enter-active",
-                exit: "left-exit",
-                exitActive: "left-exit-active",
-              }}
-              unmountOnExit
-            >
-              <LastStep
-                updateFormData={updateFormData}
-                currentStep={currentStep}
-                setCurrentStep={setCurrentStep}
-                setStep={setStep}
-              />
-            </CSSTransition>
-          )}
         </form>
       </div>
       {/* Thank you message */}
