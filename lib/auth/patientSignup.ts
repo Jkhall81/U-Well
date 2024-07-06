@@ -21,7 +21,7 @@ interface SignUpData {
   phoneNumber: string;
   passwordOne: string;
   passwordTwo: string;
-  emailVerificationToken: string;
+  emailVerificationToken?: string;
 }
 
 export const patientSignup = async (data: SignUpData) => {

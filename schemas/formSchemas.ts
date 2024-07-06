@@ -30,6 +30,7 @@ export const patientRegistrationFormSchema = z
     isAdult: z.boolean(),
     familyCode: z.string().min(4),
     employerCode: z.string().optional(),
+    emailVerificationToken: z.string().optional(),
     phoneNumber: z.string().min(10).max(15),
     email: z.string().email(),
     passwordOne: passwordSchema,
