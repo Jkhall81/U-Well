@@ -4,10 +4,7 @@ import { auth } from "@/app/auth";
 
 const AccountPage = async () => {
   const session = await auth();
-  console.log("AUTH_SECRET", process.env.AUTH_SECRET);
-  console.log("DATABASE_URL", process.env.DATABASE_URL);
-  console.log("RESENT_API_KEY", process.env.RESEND_API_KEY);
-  console.log("AUTH_TRUST_HOST", process.env.AUTH_TRUST_HOST);
+
   return (
     <div className="flex h-full w-full">
       <div className="z-30 m-[150px] flex h-full min-h-screen w-[90%] items-center justify-center rounded-[40px] 4xl:w-[70%]">
