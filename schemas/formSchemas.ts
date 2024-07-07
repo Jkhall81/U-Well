@@ -32,6 +32,7 @@ export const patientRegistrationFormSchema = z
     city: z.string(),
     state: z.string().min(2, "Please use a two letter abbreviation"),
     zipcode: z.string(),
+    usingInsurance: z.boolean(),
     familyCode: z.string().min(4),
     employerCode: z.string().optional(),
     emailVerificationToken: z.string().optional(),

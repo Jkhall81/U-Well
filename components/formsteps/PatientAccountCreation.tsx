@@ -51,6 +51,7 @@ export const PatientAccountCreation = ({
       email: "",
       passwordOne: "",
       passwordTwo: "",
+      usingInsurance: false,
     },
   });
 
