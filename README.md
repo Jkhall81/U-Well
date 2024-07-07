@@ -29,6 +29,8 @@ If you wish you run this application on your local machine just clone the repo, 
 
 A test build for the application is currently deployed on Vercel. The production build for this application will be deployed on AWS.
 
+AWS build: https://u-wellhealth.com/
+
 ## Testing
 
 Jest was used to test this application. At the moment there are tests to test page rendering, state changes, form functionality, link functionality, and mobile responsiveness.
