@@ -41,8 +41,15 @@ model User {
 model Patient {
   id            String          @id @default(cuid())
   isAdult       Boolean
+  sex           String?
   familyCode    String?
-  employerCode String?
+  employerCode  String?
+  address       String
+  city          String
+  state         String
+  zipcode       String
+  usingInsurance     Boolean
+  insurance     Json?
   image         String?
   Session       Session[]
   Account       Account?  @relation("PatientAccount")

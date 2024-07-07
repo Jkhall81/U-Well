@@ -13,7 +13,9 @@ import {
 } from "@react-email/components";
 
 function getBaseUrl() {
-  return `http://localhost:3000`;
+  return process.env.NODE_ENV === "development"
+    ? "http://localhost:3000"
+    : "https://u-well.vercel.app";
 }
 
 // Obtain the base URL using the imported function

@@ -2,11 +2,9 @@
 
 import { signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
-import { envTest } from "@/lib/auth/envTest";
 
 const LogoutButton = () => {
   const handleSignOut = () => {
-    console.log("Variables!!", envTest());
     signOut();
   };
   return (

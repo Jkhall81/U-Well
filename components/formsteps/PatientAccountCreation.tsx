@@ -39,6 +39,10 @@ export const PatientAccountCreation = ({
     defaultValues: {
       firstName: "",
       lastName: "",
+      address: "",
+      city: "",
+      state: "",
+      zipcode: "",
       dateOfBirth: "",
       isAdult: false,
       familyCode: "null",
@@ -130,6 +134,7 @@ export const PatientAccountCreation = ({
               <FormControl>
                 <Input
                   className={`${inputStyles}`}
+                  required
                   placeholder="Doe"
                   {...field}
                 />
@@ -148,10 +153,91 @@ export const PatientAccountCreation = ({
               <FormLabel className={`${labelStyles}`}>Date of Birth</FormLabel>
               <FormControl>
                 <Input
+                  required
                   className={`${inputStyles}`}
                   placeholder="01-01-1991"
                   {...field}
                   onChange={handleDateOfBirthChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* Address */}
+        <FormField
+          control={form.control}
+          name="address"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>Address</FormLabel>
+              <FormControl>
+                <Input
+                  required
+                  className={`${inputStyles}`}
+                  placeholder="123 N 1st st"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* City */}
+        <FormField
+          control={form.control}
+          name="city"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>City</FormLabel>
+              <FormControl>
+                <Input
+                  required
+                  className={`${inputStyles}`}
+                  placeholder="Paris"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* State */}
+        <FormField
+          control={form.control}
+          name="state"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>State</FormLabel>
+              <FormControl>
+                <Input
+                  className={`${inputStyles}`}
+                  placeholder="TX"
+                  {...field}
+                  required
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* Zipcode */}
+        <FormField
+          control={form.control}
+          name="zipcode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>Zipcode</FormLabel>
+              <FormControl>
+                <Input
+                  className={`${inputStyles}`}
+                  placeholder="85038"
+                  {...field}
+                  required
                 />
               </FormControl>
               <FormMessage />

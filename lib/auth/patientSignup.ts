@@ -16,6 +16,11 @@ interface SignUpData {
   dateOfBirth: string;
   employerCode?: string;
   familyCode: string;
+  address: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  usingInsurance: boolean;
   isAdult: boolean;
   email: string;
   phoneNumber: string;
@@ -32,6 +37,10 @@ export const patientSignup = async (data: SignUpData) => {
     employerCode,
     familyCode,
     isAdult,
+    address,
+    city,
+    state,
+    zipcode,
     phoneNumber,
     email,
     passwordOne,
@@ -62,6 +71,11 @@ export const patientSignup = async (data: SignUpData) => {
     const patient = await prisma.patient.create({
       data: {
         isAdult,
+        usingInsurance: false,
+        address,
+        city,
+        state,
+        zipcode,
         familyCode,
         employerCode,
       },
