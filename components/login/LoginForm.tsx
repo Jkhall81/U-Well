@@ -7,6 +7,7 @@ import { z } from "zod";
 import Link from "next/link";
 import { login } from "@/lib/auth/login";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -45,6 +46,7 @@ export const LoginForm = () => {
     },
   });
   const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (data: LoginData) => {
     try {
@@ -61,6 +63,7 @@ export const LoginForm = () => {
       }
     } catch (error) {
       console.error("Login error:", error);
+      setErrorMessage("Error logging in, please try again!");
     }
   };
 
@@ -115,6 +118,9 @@ export const LoginForm = () => {
           Sign in <FaArrowRightLong className="pl-4" size={40} />
         </Button>
         <p className="text-center text-xl">Forgot your password?</p>
+        {errorMessage && (
+          <p className="text-center text-2xl text-red-500">{errorMessage}</p>
+        )}
       </form>
       <div className="h-[280px]" />
       <div className="flex h-[100px] w-full items-center justify-center rounded-b-xl bg-blue-100">
