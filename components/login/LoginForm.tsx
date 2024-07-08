@@ -50,11 +50,11 @@ export const LoginForm = () => {
 
   const handleSubmit = async (data: LoginData) => {
     try {
-      const result = await login(data);
+      const result: any = await login(data);
       router.refresh();
       console.log(result);
-      if (result === "email not verified") {
-        router.push("/email-not-verified");
+      if (result?.message === "email not verified") {
+        router.push(`/email-not-verified/${result.email}`);
       } else {
         router.refresh();
         setTimeout(() => {

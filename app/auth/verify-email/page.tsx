@@ -5,12 +5,10 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
-import { PrismaClient } from "@prisma/client";
+import prisma from "@/lib/auth/prisma";
 import Link from "next/link";
 import { MdMarkEmailRead } from "react-icons/md";
 import { LuMailWarning } from "react-icons/lu";
-
-const prisma = new PrismaClient();
 
 interface VerifyEmailPageProps {
   searchParams: { [key: string]: string | string[] | undefined };
@@ -41,6 +39,7 @@ export default async function VerifyEmailPage({
         },
         data: {
           emailVerified: true,
+          emailVerifiedAt: new Date(),
         },
       });
 

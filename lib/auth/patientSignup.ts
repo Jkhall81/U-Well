@@ -1,14 +1,12 @@
 "use server";
 
-import { PrismaClient } from "@prisma/client";
+import prisma from "./prisma";
 import { hash } from "bcryptjs";
 import { signIn } from "@/app/auth";
 import { sendEmail } from "./email-actions";
 import { VerificationTemplate } from "@/emails/verification-template";
 import { generateSecureToken } from "../utils";
 import React from "react";
-
-const prisma = new PrismaClient();
 
 interface SignUpData {
   firstName: string;

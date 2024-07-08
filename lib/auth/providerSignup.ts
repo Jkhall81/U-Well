@@ -1,10 +1,8 @@
 "use server";
 
-import { PrismaClient } from "@prisma/client";
+import prisma from "./prisma";
 import { hash } from "bcryptjs";
 import { signIn } from "@/app/auth";
-
-const prisma = new PrismaClient();
 
 interface SignUpData {
   firstName: string;

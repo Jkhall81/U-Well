@@ -35,7 +35,7 @@ export const login = async (data: any) => {
         throw error;
       }
     } else {
-      return "email not verified";
+      return { message: "email not verified", email: user.email };
     }
   } else {
     throw Error;
