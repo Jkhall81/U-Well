@@ -74,7 +74,9 @@ export const PatientAccountCreation = ({
   ) => {
     const { value } = event.target;
     const formattedValue = formatPhoneNumber(value);
-    form.setValue("phoneNumber", formattedValue);
+    form.setValue("phoneNumber", formattedValue, {
+      shouldValidate: true,
+    });
   };
 
   const handleDateOfBirthChange = (
@@ -82,7 +84,7 @@ export const PatientAccountCreation = ({
   ) => {
     const { value } = event.target;
     const formattedValue = formatDateOfBirth(value);
-    form.setValue("dateOfBirth", formattedValue);
+    form.setValue("dateOfBirth", formattedValue, { shouldValidate: true });
   };
 
   const handleClick = (data: z.infer<typeof patientRegistrationFormSchema>) => {
@@ -187,44 +189,50 @@ export const PatientAccountCreation = ({
         />
         {/* ******** */}
         {/* City */}
-        <FormField
-          control={form.control}
-          name="city"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className={`${labelStyles}`}>City</FormLabel>
-              <FormControl>
-                <Input
-                  required
-                  className={`${inputStyles}`}
-                  placeholder="Paris"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        {/* ******** */}
-        {/* State */}
-        <FormField
-          control={form.control}
-          name="state"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className={`${labelStyles}`}>State</FormLabel>
-              <FormControl>
-                <Input
-                  className={`${inputStyles}`}
-                  placeholder="TX"
-                  {...field}
-                  required
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="flex w-full">
+          <div className="ml-[120px] lg:ml-[17px]">
+            <FormField
+              control={form.control}
+              name="city"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className={`${labelStyles}`}>City</FormLabel>
+                  <FormControl>
+                    <Input
+                      required
+                      className={`mr-[15px] w-[190px] rounded-xl text-lg font-semibold lg:mr-0 lg:w-[290px]`}
+                      placeholder="Paris"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          {/* ******** */}
+          {/* State */}
+          <div className="lg:ml-6">
+            <FormField
+              control={form.control}
+              name="state"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className={`${labelStyles}`}>State</FormLabel>
+                  <FormControl>
+                    <Input
+                      className={`w-[190px] rounded-xl text-lg font-semibold lg:w-[288px]`}
+                      placeholder="TX"
+                      {...field}
+                      required
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
         {/* ******** */}
         {/* Zipcode */}
         <FormField

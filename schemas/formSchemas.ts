@@ -24,9 +24,9 @@ const passwordSchema = z
 
 export const patientRegistrationFormSchema = z
   .object({
-    firstName: z.string().min(2),
-    lastName: z.string().min(2),
-    dateOfBirth: z.string().min(8),
+    firstName: z.string().min(2, "First name must have at least 2 letters."),
+    lastName: z.string().min(2, "Last name must have at least 2 letters."),
+    dateOfBirth: z.string().min(8, "Date of birth must contain 8 numbers."),
     isAdult: z.boolean(),
     address: z.string(),
     city: z.string(),
