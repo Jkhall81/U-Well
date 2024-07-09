@@ -2,40 +2,22 @@
 
 import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
-import { getUser } from "@/lib/auth/getUser";
-import React, { useEffect, useState } from "react";
-
-type User = {
-  id: string;
-  firstName: string;
-  lastName: string;
-  dateOfBirth: string;
-  email: string;
-  emailVerified: boolean;
-  emailVerifiedAt: Date | null;
-  emailVerificationToken: string | null;
-  phoneNumber: string | null;
-  phoneNumberVerified: boolean;
-  phoneNumberVerifiedAt: Date | null;
-  phoneNumberVerificationCode?: string | null;
-  createdAt: Date;
-  updatedAt: Date;
-};
+import { clientSendEmail } from "@/lib/auth/useClientSendEmail";
+import { useState } from "react";
 
 const Page = () => {
   const { email } = useParams();
   const decodedEmail = decodeURIComponent(email as string);
-  const [user, setUser] = useState<User | null>(null);
+  const [message, setMessage] = useState("");
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      const userData = await getUser(decodedEmail);
-      setUser(userData);
-      console.log("inside useEffect", userData);
-    };
-    fetchUser();
-  }, [decodedEmail]);
-
+  const handleClick = () => {
+    clientSendEmail(decodedEmail);
+    setMessage(
+      "A verification link has been sent to your email address.  Please check your email!",
+    );
+    setIsDisabled(true);
+  };
   return (
     <div className="relative z-[40] flex w-full flex-col items-center">
       <h1 className="mt-[200px] text-4xl font-semibold text-white">
@@ -45,11 +27,13 @@ const Page = () => {
         Please check your email, or resend the verification link below:
       </p>
       <Button
-        onClick={() => {}}
-        className="mt-10 h-[60px] w-[600px] rounded-3xl bg-blue-600 text-2xl"
+        disabled={isDisabled}
+        onClick={handleClick}
+        className="mt-10 h-[60px] w-[600px] rounded-3xl bg-white text-2xl text-black hover:bg-blue-600 hover:text-white"
       >
         Resend Verification Link
       </Button>
+      <p className="mt-20 text-4xl font-bold text-amber-400">{message}</p>
     </div>
   );
 };
