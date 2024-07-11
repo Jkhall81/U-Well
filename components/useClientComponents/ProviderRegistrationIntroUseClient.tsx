@@ -26,7 +26,7 @@ export const ProviderRegistrationIntroUseClient = () => {
             <ProviderMultiStepForm />
           </div>
 
-          <PatientRegistrationFooter height={0} />
+          <PatientRegistrationFooter height={1500} />
         </>
       )}
     </div>

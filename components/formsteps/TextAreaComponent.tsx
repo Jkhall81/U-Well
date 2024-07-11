@@ -65,7 +65,7 @@ export const TextAreaComponent = ({
           render={({ field }) => (
             <div className="mx-20">
               <FormItem>
-                <div className="mx-10 mb-8">
+                <div className="mx-10 mb-8 2xl:mx-0">
                   <FormLabel className="text-center text-xl font-semibold text-white">
                     {question}
                   </FormLabel>

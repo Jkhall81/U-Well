@@ -16,7 +16,7 @@ const passwordRegex =
 
 const passwordSchema = z
   .string()
-  .min(8)
+  .min(8, "Password must be at least 8 characters long.")
   .refine((value) => passwordRegex.test(value), {
     message:
       "Password must contain at least one uppercase letter, one lowercase letter, one digit, and one special character.",
@@ -50,10 +50,17 @@ export const patientRegistrationFormSchema = z
 
 export const providerRegistrationFormSchema = z
   .object({
-    firstName: z.string().min(2),
-    lastName: z.string().min(2),
-    dateOfBirth: z.string().min(8),
+    firstName: z.string().min(2, "First Name must have at least 2 letters."),
+    lastName: z.string().min(2, "Last Name must have at least 2 letters."),
+    dateOfBirth: z
+      .string()
+      .min(8, "Date of birth must contain at least 8 numbers."),
     providerCode: z.string().min(4),
+    npi: z.string().optional(),
+    acceptInsurance: z.boolean(),
+    carryMalpracticeInsurance: z.boolean(),
+    taxonomyCode: z.string().optional(),
+    taxId: z.string().optional(),
     phoneNumber: z.string().min(10).max(15),
     email: z.string().email(),
     passwordOne: passwordSchema,

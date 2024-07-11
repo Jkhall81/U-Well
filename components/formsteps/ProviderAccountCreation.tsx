@@ -45,6 +45,8 @@ export const ProviderAccountCreation = ({
       email: "",
       passwordOne: "",
       passwordTwo: "",
+      acceptInsurance: false,
+      carryMalpracticeInsurance: false,
     },
   });
 
@@ -53,7 +55,7 @@ export const ProviderAccountCreation = ({
   ) => {
     const { value } = event.target;
     const formattedValue = formatPhoneNumber(value);
-    form.setValue("phoneNumber", formattedValue);
+    form.setValue("phoneNumber", formattedValue, { shouldValidate: true });
   };
 
   const handleDateOfBirthChange = (
@@ -61,7 +63,7 @@ export const ProviderAccountCreation = ({
   ) => {
     const { value } = event.target;
     const formattedValue = formatDateOfBirth(value);
-    form.setValue("dateOfBirth", formattedValue);
+    form.setValue("dateOfBirth", formattedValue, { shouldValidate: true });
   };
 
   const handleClick = (
@@ -138,6 +140,63 @@ export const ProviderAccountCreation = ({
                   placeholder="01-01-1991"
                   {...field}
                   onChange={handleDateOfBirthChange}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* npi */}
+        <FormField
+          control={form.control}
+          name="npi"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>NPI Number</FormLabel>
+              <FormControl>
+                <Input
+                  className={`${inputStyles}`}
+                  placeholder=".........."
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* taxId */}
+        <FormField
+          control={form.control}
+          name="taxId"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>Tax ID</FormLabel>
+              <FormControl>
+                <Input
+                  className={`${inputStyles}`}
+                  placeholder=".........."
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        {/* ******** */}
+        {/* taxonomyCode */}
+        <FormField
+          control={form.control}
+          name="taxonomyCode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel className={`${labelStyles}`}>Taxonomy Code</FormLabel>
+              <FormControl>
+                <Input
+                  className={`${inputStyles}`}
+                  placeholder=".........."
+                  {...field}
                 />
               </FormControl>
               <FormMessage />
