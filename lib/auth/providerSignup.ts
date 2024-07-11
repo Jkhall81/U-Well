@@ -2,7 +2,11 @@
 
 import prisma from "./prisma";
 import { hash } from "bcryptjs";
+import { sendEmail } from "./email-actions";
 import { signIn } from "@/app/auth";
+import React from "react";
+import VerificationTemplate from "@/emails/verification-template";
+import { generateSecureToken } from "../utils";
 
 interface SignUpData {
   firstName: string;
@@ -31,6 +35,8 @@ export const providerSignup = async (data: SignUpData) => {
     return { error: "Passwords dont match!" };
   }
 
+  const emailVerificationToken = generateSecureToken();
+
   const hashedPassword = await hash(passwordOne, 10);
 
   try {
@@ -39,6 +45,7 @@ export const providerSignup = async (data: SignUpData) => {
         firstName,
         lastName,
         email,
+        emailVerificationToken,
         password: hashedPassword,
         dateOfBirth,
         phoneNumber,
@@ -76,6 +83,15 @@ export const providerSignup = async (data: SignUpData) => {
       email,
       password: passwordOne,
       redirect: false,
+    });
+
+    await sendEmail({
+      to: [user.email],
+      subject: "Verify your email address",
+      react: React.createElement(VerificationTemplate, {
+        email: user.email,
+        emailVerificationToken,
+      }),
     });
     return response;
   } catch (error) {
