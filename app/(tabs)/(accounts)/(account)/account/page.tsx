@@ -1,12 +1,17 @@
 import { Footer } from "@/components/Footer";
 import LogoutButton from "@/components/account/LogoutButton";
 import { auth } from "@/app/auth";
+import { getUser } from "@/lib/auth/getUser";
 
 const AccountPage = async () => {
   const session = await auth();
+  let email = session?.user?.email;
+  console.log("email", email);
+  const user = await getUser(email as string);
+  console.log("user info", user);
 
   return (
-    <div className="flex h-full w-full">
+    <main className="flex h-full w-full">
       <div className="z-30 m-[150px] flex h-full min-h-screen w-[90%] items-center justify-center rounded-[40px] 4xl:w-[70%]">
         <LogoutButton />
       </div>
@@ -20,7 +25,7 @@ const AccountPage = async () => {
       >
         <Footer />
       </div>
-    </div>
+    </main>
   );
 };
 export default AccountPage;
