@@ -6,10 +6,7 @@ import { getUser } from "@/lib/auth/getUser";
 const AccountPage = async () => {
   const session = await auth();
   let email = session?.user?.email;
-  console.log("email", email);
   const user = await getUser(email as string);
-  console.log("user info", user);
-
   return (
     <main className="flex h-full w-full">
       <div className="z-30 m-[150px] flex h-full min-h-screen w-[90%] items-center justify-center rounded-[40px] 4xl:w-[70%]">
